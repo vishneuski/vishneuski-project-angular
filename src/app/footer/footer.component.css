@@ -4,6 +4,8 @@
 }
 
 .footer {
+  padding: 1em 0;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
   border-top: 1px solid lightgray;
