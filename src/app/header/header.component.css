@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  max-width: 70em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 2em 0;
+}
+
+.user-info {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-info-item {
+  box-sizing: border-box;
+  padding: 0 0.5em;
+}
+
+.basket {
+  width: 1em;
+  height: 1em;
+}
+
+.user {
+  display: flex;
+}

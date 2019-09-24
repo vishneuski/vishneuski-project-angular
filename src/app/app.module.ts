@@ -7,7 +7,8 @@ import {AboutComponent} from './about/about.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {ServicesComponent} from './services/services.component';
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
+import {HeaderComponent} from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     AboutComponent,
     ContactsComponent,
     NotFoundComponent,
-    ServicesComponent
+    ServicesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -26,4 +28,5 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
