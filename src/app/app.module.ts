@@ -9,6 +9,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {ServicesComponent} from './services/services.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HeaderComponent} from './header/header.component';
     ContactsComponent,
     NotFoundComponent,
     ServicesComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
