@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Nav } from "./model/nav";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'project';
+  nav: Nav[] = [
+    {
+      link: '/',
+      name: 'Home',
+      exact: true
+    },
+    {
+      link: '/products',
+      name: 'Products',
+      exact: true
+    },
+    {
+      link: '/services',
+      name: 'Services',
+      exact: true
+    },
+    {
+      link: '/about',
+      name: 'About',
+      exact: true
+    },
+    {
+      link: '/contacts',
+      name: 'Contacts',
+      exact: true
+    }
+  ];
 }
