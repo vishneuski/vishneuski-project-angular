@@ -1,0 +1,23 @@
+.product-cart-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 50vw;
+  height: 50vh;
+}
+
+.product-cart-photo {
+  width: calc(50% - 1em);
+  height: 100%;
+  background-color: #3a4250;
+}
+
+.product-cart-detail {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: calc(50% - 1em);
+  height: 100%;
+  background-color: lightblue;
+
+}

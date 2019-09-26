@@ -1,7 +1,11 @@
 export interface Product {
   id: number;
-  name: string;
+  producer: string;
+  country: string;
+  vintage: number;
+  type: string;
+  available: number;
+  volume: number;
   prise: number;
   photo?: string;
-
 }

@@ -10,6 +10,8 @@ import {ServicesComponent} from './services/services.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductCartComponent } from './shared/product-cart/product-cart.component';
+import { ProductCartService } from "./shared/product-cart/product-cart.service";
 
 @NgModule({
   declarations: [
@@ -21,13 +23,14 @@ import { FooterComponent } from './footer/footer.component';
     NotFoundComponent,
     ServicesComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProductCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [ProductCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
