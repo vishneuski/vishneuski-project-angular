@@ -1,0 +1,28 @@
+.product-cart-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 35vw;
+  height: 50vh;
+}
+
+.product-cart-photo {
+  width: 50%;
+  height: 100%;
+  background-color: lightgray;
+}
+
+.product-cart-detail {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 50%;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.product-cart-photo-item {
+  width: 100%;
+  height: 70%;
+  padding-top: 15%;
+}

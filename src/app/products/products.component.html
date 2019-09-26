@@ -1,1 +1,23 @@
-<p>products works!</p>
+<div class="product-cart-container">
+  <div class="product-cart-photo">
+    <img class="product-cart-photo-item" src="./../../assets/images/bottle.jpg" alt="">
+  </div>
+  <div class="product-cart-detail">
+    <div *ngFor="let product of products">
+      <ul>
+        <li>
+          {{product.producer}}
+        </li>
+        <li>
+          {{product.country}}
+        </li>
+        <li>
+          {{product.vintage}}
+        </li>
+        <li>
+          {{product.prise | currency}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
