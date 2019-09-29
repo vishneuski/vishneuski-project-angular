@@ -1,0 +1,13 @@
+.signInForm {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1em;
+  width: 50vw;
+  height: 20em;
+  border: 1px solid darkgray;
+
+}
+
+h3 {
+  text-align: center;
+}

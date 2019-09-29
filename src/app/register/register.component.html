@@ -1,32 +1,43 @@
-<form>
+<form class="registerForm">
   <h3>Create New Account</h3>
   <div>
     First name:
-    <input type="text" [formControl]="firstNameControl">
+    <input type="text"
+           placeholder="first name"
+           [formControl]="firstNameControl">
   </div>
   <div>
     Last name:
-    <input type="text" [formControl]="lastNameControl">
+    <input type="text"
+           placeholder="last name"
+           [formControl]="lastNameControl">
   </div>
   <div>
     Date of birth:
-    <input type="date" [formControl]="dateOfBirthControl">
+    <input type="date"
+           placeholder="date of birth"
+           [formControl]="dateOfBirthControl">
   </div>
   <div>
     Phone:
-    <input type="text" [formControl]="phoneControl">
+    <input type="text"
+           placeholder="your phone"
+           [formControl]="phoneControl">
   </div>
   <div>
     Email:
-    <input type="text" [formControl]="mailControl">
+    <input type="text"
+           placeholder="your email"
+           [formControl]="mailControl">
   </div>
   <div>
-    <input type="checkbox" [formControl]="ageControl">
-    I am over 18 years old and agree to the Terms and Conditions.
+    <input type="checkbox"
+           [formControl]="ageControl">
+    I am over 18 years.
   </div>
   <div>
     <button [formControl]="submitControl">
-      Submit
+      Create new account
     </button>
   </div>
 </form>

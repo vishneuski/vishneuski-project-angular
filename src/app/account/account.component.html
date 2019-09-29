@@ -1,3 +1,28 @@
-<div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, officiis!
-</div>
+<form class="signInForm">
+  <h3>Log In</h3>
+  <div>
+    <label for="email">
+      Email:
+    </label>
+    <br>
+    <input type="text"
+           id="email"
+           placeholder="email"
+           [formControl]="emailControl">
+  </div>
+  <div>
+    <label for="password">
+      Password:
+    </label>
+    <br>
+    <input type="text"
+           id="password"
+           placeholder="password"
+           [formControl]="passwordControl">
+  </div>
+  <div>
+    <button [formControl]="submitControl">
+      Log In
+    </button>
+  </div>
+</form>
