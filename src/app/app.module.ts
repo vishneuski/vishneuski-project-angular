@@ -1,5 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+
+
 import {AppComponent} from './app.component';
 import {ProductsComponent} from './products/products.component';
 import {HomeComponent} from './home/home.component';
@@ -9,9 +11,12 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {ServicesComponent} from './services/services.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ProductCartComponent } from './shared/product-cart/product-cart.component';
-import { ProductCartService } from "./shared/product-cart/product-cart.service";
+import {FooterComponent} from './footer/footer.component';
+import {ProductCartComponent} from './shared/product-cart/product-cart.component';
+import {ProductCartService} from "./shared/product-cart/product-cart.service";
+import {AccountComponent} from './header/account/account.component';
+import {RegisterComponent} from './header/register/register.component';
+import {BasketComponent} from "./header/basket/basket.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { ProductCartService } from "./shared/product-cart/product-cart.service";
     ServicesComponent,
     HeaderComponent,
     FooterComponent,
-    ProductCartComponent
+    ProductCartComponent,
+    AccountComponent,
+    RegisterComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

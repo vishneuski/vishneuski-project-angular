@@ -20,11 +20,6 @@
   padding: 0 0.5em;
 }
 
-.basket {
-  width: 1em;
-  height: 1em;
-}
-
 .user {
   display: flex;
 }

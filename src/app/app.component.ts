@@ -29,6 +29,11 @@ export class AppComponent {
       exact: true
     },
     {
+      link: '/account',
+      name: 'Account',
+      exact: true
+    },
+    {
       link: '/contacts',
       name: 'Contacts',
       exact: true

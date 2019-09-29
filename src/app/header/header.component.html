@@ -3,15 +3,14 @@
     <div class="logo">Great wines</div>
     <div class="search">
       Search:
-      <input type="text">
+      <input type="text"
+             placeholder="We search wine for you">
     </div>
     <ul class="user-info">
-      <li class="user-info-item">Account</li>
+      <app-account-component></app-account-component>
       <li class="user-info-item">|</li>
-      <li class="user-info-item">Register</li>
-      <li class="user-info-item">
-        <img class="basket" src="./../../assets/images/shopping-basket.png" alt="basket">
-      </li>
+      <app-register-component></app-register-component>
+      <app-basket-component></app-basket-component>
     </ul>
   </div>
 </header>
