@@ -7,7 +7,9 @@ import {ServicesComponent} from "./services/services.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {ProductsComponent} from "./products/products.component";
 import {AboutComponent} from "./about/about.component";
-import {AccountComponent} from "./header/account/account.component";
+import {AccountComponent} from "./account/account.component";
+import {RegisterComponent} from "./register/register.component";
+import {BasketComponent} from "./basket/basket.component";
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'account', component: AccountComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'basket', component: BasketComponent},
   { path: '**', component: NotFoundComponent }
 ];
 

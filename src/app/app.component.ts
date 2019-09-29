@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Nav } from "./model/nav";
+import {Component} from '@angular/core';
+import {Nav} from "./model/nav";
 
 @Component({
   selector: 'app-root',
@@ -26,11 +26,6 @@ export class AppComponent {
     {
       link: '/about',
       name: 'About',
-      exact: true
-    },
-    {
-      link: '/account',
-      name: 'Account',
       exact: true
     },
     {

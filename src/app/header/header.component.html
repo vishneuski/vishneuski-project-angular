@@ -4,13 +4,25 @@
     <div class="search">
       Search:
       <input type="text"
-             placeholder="We search wine for you">
+             placeholder="input wine">
     </div>
     <ul class="user-info">
-      <app-account-component></app-account-component>
+      <li class="user-info-item">
+        <a [routerLink]="'/account'">
+          Account
+        </a>
+      </li>
       <li class="user-info-item">|</li>
-      <app-register-component></app-register-component>
-      <app-basket-component></app-basket-component>
+      <li class="user-info-item">
+        <a [routerLink]="'/register'">
+          Register
+        </a>
+      </li>
+      <li class="user-info-item">
+        <a [routerLink]="'/basket'">
+          <img class="basket" src="./../../assets/images/shopping-basket.png" alt="basket">
+        </a>
+      </li>
     </ul>
   </div>
 </header>

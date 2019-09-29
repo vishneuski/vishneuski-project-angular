@@ -14,9 +14,9 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ProductCartComponent} from './shared/product-cart/product-cart.component';
 import {ProductCartService} from "./shared/product-cart/product-cart.service";
-import {AccountComponent} from './header/account/account.component';
-import {RegisterComponent} from './header/register/register.component';
-import {BasketComponent} from "./header/basket/basket.component";
+import {AccountComponent} from './account/account.component';
+import {RegisterComponent} from './register/register.component';
+import {BasketComponent} from "./basket/basket.component";
 
 @NgModule({
   declarations: [
