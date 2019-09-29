@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 import {AppComponent} from './app.component';
@@ -37,6 +38,8 @@ import {BasketComponent} from "./basket/basket.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductCartService],
   bootstrap: [AppComponent]

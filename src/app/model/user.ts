@@ -3,7 +3,6 @@ export interface User {
   firstName: string;
   lastName: string;
   dateOfBirth: string;
-  contactPreferense: string;
   mail?: string;
   phone?: number;
   address: {

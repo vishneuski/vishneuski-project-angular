@@ -1,3 +1,32 @@
-<div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eligendi illo quod. Blanditiis incidunt iste iure neque, nulla veritatis voluptatibus?
-</div>
+<form>
+  <h3>Create New Account</h3>
+  <div>
+    First name:
+    <input type="text" [formControl]="firstNameControl">
+  </div>
+  <div>
+    Last name:
+    <input type="text" [formControl]="lastNameControl">
+  </div>
+  <div>
+    Date of birth:
+    <input type="date" [formControl]="dateOfBirthControl">
+  </div>
+  <div>
+    Phone:
+    <input type="text" [formControl]="phoneControl">
+  </div>
+  <div>
+    Email:
+    <input type="text" [formControl]="mailControl">
+  </div>
+  <div>
+    <input type="checkbox" [formControl]="ageControl">
+    I am over 18 years old and agree to the Terms and Conditions.
+  </div>
+  <div>
+    <button [formControl]="submitControl">
+      Submit
+    </button>
+  </div>
+</form>
