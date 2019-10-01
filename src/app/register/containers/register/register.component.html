@@ -1,38 +1,98 @@
-<form class="registerForm">
+<form [formGroup]="registerForm">
   <h3>Create New Account</h3>
   <div>
     First name:
     <input type="text"
            placeholder="first name"
-           [formControl]="firstNameControl">
+           name="firstName"
+           [formControl]="firstName">
   </div>
   <div>
     Last name:
     <input type="text"
            placeholder="last name"
-           [formControl]="lastNameControl">
+           name="lastName"
+           [formControl]="lastName">
   </div>
   <div>
     Date of birth:
     <input type="date"
            placeholder="date of birth"
-           [formControl]="dateOfBirthControl">
+           name="dateOfBirth"
+           [formControl]="dateOfBirth">
   </div>
   <div>
     Phone:
     <input type="text"
            placeholder="your phone"
-           [formControl]="phoneControl">
+           name="phone"
+           [formControl]="phone">
   </div>
   <div>
     Email:
     <input type="text"
            placeholder="your email"
-           [formControl]="mailControl">
+           name="email"
+           [formControl]="email">
   </div>
   <div>
-    <button [formControl]="submitControl">
-      Create new account
-    </button>
+    Password:
+    <input type="text"
+           placeholder="password"
+           name="password"
+           [formControl]="password">
+  </div>
+  <div>
+    Repeat password:
+    <input type="text"
+           placeholder="repeat password"
+           name="repeatPassword"
+           [formControl]="repeatPassword">
+  </div>
+  <div>
+    <button>Register</button>
   </div>
 </form>
+
+
+
+
+
+<!--<form class="registerForm">-->
+  <!--<h3>Create New Account</h3>-->
+  <!--<div>-->
+    <!--First name:-->
+    <!--<input type="text"-->
+           <!--placeholder="first name"-->
+           <!--[formControl]="firstNameControl">-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--Last name:-->
+    <!--<input type="text"-->
+           <!--placeholder="last name"-->
+           <!--[formControl]="lastNameControl">-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--Date of birth:-->
+    <!--<input type="date"-->
+           <!--placeholder="date of birth"-->
+           <!--[formControl]="dateOfBirthControl">-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--Phone:-->
+    <!--<input type="text"-->
+           <!--placeholder="your phone"-->
+           <!--[formControl]="phoneControl">-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--Email:-->
+    <!--<input type="text"-->
+           <!--placeholder="your email"-->
+           <!--[formControl]="mailControl">-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--<button [formControl]="submitControl">-->
+      <!--Create new account-->
+    <!--</button>-->
+  <!--</div>-->
+<!--</form>-->
