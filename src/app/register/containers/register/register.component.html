@@ -7,7 +7,7 @@
            name="name"
            formControlName="firstName">
   </div>
-  <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched">
+  <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched" class="error">
     Input your name!
   </div>
   <div>
@@ -17,12 +17,18 @@
            name="surName"
            formControlName="lastName">
   </div>
+  <div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched" class="error">
+    Input your last name!
+  </div>
   <div>
     Date of birth:
     <input type="date"
            placeholder="date of birth"
            name="birth"
            formControlName="dateOfBirth">
+  </div>
+  <div *ngIf="registerForm.controls['dateOfBirth'].invalid && registerForm.controls['dateOfBirth'].touched" class="error">
+    Input your date of birth!
   </div>
   <div>
     Phone:
@@ -31,12 +37,18 @@
            name="mobile"
            formControlName="phone">
   </div>
+  <div *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched" class="error">
+    Input your phone!
+  </div>
   <div>
     Email:
     <input type="text"
            placeholder="your email"
            name="mail"
            formControlName="email">
+  </div>
+  <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error">
+    Input your email!
   </div>
   <div>
     Password:
@@ -45,12 +57,18 @@
            name="passOne"
            formControlName="password">
   </div>
+  <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error">
+    Input your password!
+  </div>
   <div>
     Repeat password:
     <input type="text"
            placeholder="repeat password"
            name="passTwo"
            formControlName="repeatPassword">
+  </div>
+  <div *ngIf="registerForm.controls['repeatPassword'].invalid && registerForm.controls['repeatPassword'].touched" class="error">
+    Repeat your password!
   </div>
   <div>
     <button [disabled]="!registerForm.valid">Register</button>
