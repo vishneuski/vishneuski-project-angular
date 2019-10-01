@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {RegisterService} from "../../services/register.service";
+import {RegisterInfo} from "../../model/register-info";
 
 @Component({
   selector: 'app-register-component',
@@ -8,19 +9,17 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class RegisterComponent implements OnInit {
 
- registerForm: FormGroup;
+  user: RegisterInfo;
 
- constructor() {}
+  newRegister(event: RegisterInfo) {
+    console.log(`Register event - ${event.firstName}`
+    )
+  }
+
+  constructor(private registerService: RegisterService) {
+  }
 
   ngOnInit() {
-    this.registerForm = new FormGroup({
-      'firstName': new FormControl(null, Validators.required),
-      'lastName': new FormControl(null, Validators.required),
-      'dateOfBirth': new FormControl(null, Validators.required),
-      'phone': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, Validators.required),
-      'repeatPassword': new FormControl(null, Validators.required),
-    })
+    this.user = this.registerService.getUser();
   }
 }

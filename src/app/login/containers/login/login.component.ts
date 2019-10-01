@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SignIn } from "../../model/signIn";
-import { LogInService} from "../../services/logIn.service";
+import {Component, OnInit} from '@angular/core';
+import {SignIn} from "../../model/signIn";
+import {LoginService} from "../../services/login.service";
 
 
 @Component({
@@ -14,11 +14,12 @@ export class LoginComponent implements OnInit {
 
   newSignIn(event: SignIn) {
     console.log(
-   `Event mail - ${event.email}
+      `Event mail - ${event.email}
     Event password - ${event.password}`);
   }
 
-  constructor(private accountService: LogInService){}
+  constructor(private accountService: LoginService) {
+  }
 
   ngOnInit() {
     this.user = this.accountService.getUser();

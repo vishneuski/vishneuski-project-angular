@@ -4,7 +4,7 @@ import {SignIn} from "../model/signIn";
 @Injectable({
   providedIn: 'root'
 })
-export class LogInService {
+export class LoginService {
   user: SignIn = {
     email: '',
     password: ''
