@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
-
 import {AppComponent} from './app.component';
 import {ProductsComponent} from './products/products.component';
 import {HomeComponent} from './home/home.component';
@@ -15,9 +14,10 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ProductCartComponent} from './shared/product-cart/product-cart.component';
 import {ProductCartService} from "./shared/product-cart/product-cart.service";
-import {AccountComponent} from './account/account.component';
+import {LogInComponent} from './logIn/containers/logIn/logIn.component';
 import {RegisterComponent} from './register/register.component';
 import {BasketComponent} from "./basket/basket.component";
+import { LogInViewComponent } from './logIn/components/log-in-view/log-in-view.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +31,10 @@ import {BasketComponent} from "./basket/basket.component";
     HeaderComponent,
     FooterComponent,
     ProductCartComponent,
-    AccountComponent,
+    LogInComponent,
     RegisterComponent,
-    BasketComponent
+    BasketComponent,
+    LogInViewComponent
   ],
   imports: [
     BrowserModule,

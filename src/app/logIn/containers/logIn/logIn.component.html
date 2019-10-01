@@ -1,0 +1,33 @@
+<form #myForm="ngForm" (ngSubmit)="submitData(myForm.value, myForm.valid)" class="signInForm">
+  <div>
+    Email
+    <input type="text"
+           name="email"
+           [ngModel]="user?.email"
+           required
+           #userMailControl="ngModel">
+    <div *ngIf="userMailControl.invalid && userMailControl.touched" class="error">
+      User mail is required
+    </div>
+  </div>
+  <div>
+    Password
+    <input type="text"
+           name="password"
+           required
+           #userPasswordControl="ngModel"
+           [ngModel]="user?.password">
+    <div *ngIf="userPasswordControl.invalid && userPasswordControl.touched" class="error">
+      User name is required
+    </div>
+  </div>
+  <div>
+    <button type="submit"
+            name="submit"
+            [disabled]="!myForm.valid">
+      Submit
+    </button>
+  </div>
+  <hr>
+  {{myForm.value | json}}
+</form>
