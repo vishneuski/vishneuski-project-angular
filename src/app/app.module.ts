@@ -14,10 +14,11 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ProductCartComponent} from './shared/product-cart/product-cart.component';
 import {ProductCartService} from "./shared/product-cart/product-cart.service";
-import {LoginComponent} from './logIn/containers/login/login.component';
-import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/containers/login/login.component';
+import {RegisterComponent} from './register/containers/register/register.component';
 import {BasketComponent} from "./basket/basket.component";
-import { LoginViewComponent } from './logIn/components/login-view/login-view.component';
+import { LoginViewComponent } from './login/components/login-view/login-view.component';
+import { RegisterViewComponent } from './register/components/register-view/register-view.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LoginViewComponent } from './logIn/components/login-view/login-view.com
     LoginComponent,
     RegisterComponent,
     BasketComponent,
-    LoginViewComponent
+    LoginViewComponent,
+    RegisterViewComponent
   ],
   imports: [
     BrowserModule,

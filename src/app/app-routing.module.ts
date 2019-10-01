@@ -7,8 +7,8 @@ import {ServicesComponent} from "./services/services.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {ProductsComponent} from "./products/products.component";
 import {AboutComponent} from "./about/about.component";
-import {LoginComponent} from "./logIn/containers/login/login.component";
-import {RegisterComponent} from "./register/register.component";
+import {LoginComponent} from "./login/containers/login/login.component";
+import {RegisterComponent} from "./register/containers/register/register.component";
 import {BasketComponent} from "./basket/basket.component";
 
 
