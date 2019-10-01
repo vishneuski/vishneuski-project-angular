@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { SignIn } from "../../../model/signIn";
+import { SignIn } from "../../model/signIn";
 import { LogInService} from "../../services/logIn.service";
 
 
 @Component({
   selector: 'app-account-component',
-  templateUrl: './logIn.component.html',
-  styleUrls: ['./logIn.component.css']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class LogInComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   user: SignIn;
+
+  newSignIn(event: SignIn) {
+    console.log(
+   `Event mail - ${event.email}
+    Event password - ${event.password}`);
+  }
 
   constructor(private accountService: LogInService){}
 
@@ -18,8 +24,5 @@ export class LogInComponent implements OnInit {
     this.user = this.accountService.getUser();
   }
 
-  submitData(user: SignIn, isValid) {
-    console.log(user);
-    console.log(isValid);
-  }
+
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 
 @Component({
@@ -13,7 +13,6 @@ export class RegisterComponent implements OnInit {
   dateOfBirthControl: FormControl;
   phoneControl: FormControl;
   mailControl: FormControl;
-  ageControl: FormControl;
   submitControl: FormControl;
 
   ngOnInit() {
@@ -22,7 +21,6 @@ export class RegisterComponent implements OnInit {
     this.dateOfBirthControl = new FormControl('01/01/2001', Validators.required);
     this.phoneControl = new FormControl('', Validators.required);
     this.mailControl = new FormControl('', Validators.required);
-    this.ageControl = new FormControl();
     this.submitControl = new FormControl('');
   }
 }

@@ -14,10 +14,10 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ProductCartComponent} from './shared/product-cart/product-cart.component';
 import {ProductCartService} from "./shared/product-cart/product-cart.service";
-import {LogInComponent} from './logIn/containers/logIn/logIn.component';
+import {LoginComponent} from './logIn/containers/login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {BasketComponent} from "./basket/basket.component";
-import { LogInViewComponent } from './logIn/components/log-in-view/log-in-view.component';
+import { LoginViewComponent } from './logIn/components/login-view/login-view.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +31,10 @@ import { LogInViewComponent } from './logIn/components/log-in-view/log-in-view.c
     HeaderComponent,
     FooterComponent,
     ProductCartComponent,
-    LogInComponent,
+    LoginComponent,
     RegisterComponent,
     BasketComponent,
-    LogInViewComponent
+    LoginViewComponent
   ],
   imports: [
     BrowserModule,
