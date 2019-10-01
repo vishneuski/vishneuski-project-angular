@@ -1,7 +1,7 @@
 export class RegisterInfo {
   firstName: string;
   lastName: string;
-  dateOfBirth?: date;
+  dateOfBirth?: any;
   phone?: string;
   email: string;
   password: string;

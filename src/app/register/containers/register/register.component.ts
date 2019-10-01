@@ -14,13 +14,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = new FormGroup({
-      'firstName': new FormControl('user', Validators.required),
-      'lastName': new FormControl('', Validators.required),
-      'dateOfBirth': new FormControl('', Validators.required),
-      'phone': new FormControl('', Validators.required),
-      'email': new FormControl('', [Validators.required, Validators.email]),
-      'password': new FormControl('', Validators.required),
-      'repeatPassword': new FormControl('', Validators.required),
+      'firstName': new FormControl(null, Validators.required),
+      'lastName': new FormControl(null, Validators.required),
+      'dateOfBirth': new FormControl(null, Validators.required),
+      'phone': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'password': new FormControl(null, Validators.required),
+      'repeatPassword': new FormControl(null, Validators.required),
     })
   }
 }

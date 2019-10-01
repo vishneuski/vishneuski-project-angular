@@ -1,98 +1,61 @@
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" class="registerForm">
   <h3>Create New Account</h3>
   <div>
     First name:
     <input type="text"
            placeholder="first name"
-           name="firstName"
-           [formControl]="firstName">
+           name="name"
+           formControlName="firstName">
+  </div>
+  <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched">
+    Input your name!
   </div>
   <div>
     Last name:
     <input type="text"
            placeholder="last name"
-           name="lastName"
-           [formControl]="lastName">
+           name="surName"
+           formControlName="lastName">
   </div>
   <div>
     Date of birth:
     <input type="date"
            placeholder="date of birth"
-           name="dateOfBirth"
-           [formControl]="dateOfBirth">
+           name="birth"
+           formControlName="dateOfBirth">
   </div>
   <div>
     Phone:
     <input type="text"
            placeholder="your phone"
-           name="phone"
-           [formControl]="phone">
+           name="mobile"
+           formControlName="phone">
   </div>
   <div>
     Email:
     <input type="text"
            placeholder="your email"
-           name="email"
-           [formControl]="email">
+           name="mail"
+           formControlName="email">
   </div>
   <div>
     Password:
     <input type="text"
            placeholder="password"
-           name="password"
-           [formControl]="password">
+           name="passOne"
+           formControlName="password">
   </div>
   <div>
     Repeat password:
     <input type="text"
            placeholder="repeat password"
-           name="repeatPassword"
-           [formControl]="repeatPassword">
+           name="passTwo"
+           formControlName="repeatPassword">
   </div>
   <div>
-    <button>Register</button>
+    <button [disabled]="!registerForm.valid">Register</button>
+  </div>
+  <div>
+    {{registerForm.value | json}}
   </div>
 </form>
-
-
-
-
-
-<!--<form class="registerForm">-->
-  <!--<h3>Create New Account</h3>-->
-  <!--<div>-->
-    <!--First name:-->
-    <!--<input type="text"-->
-           <!--placeholder="first name"-->
-           <!--[formControl]="firstNameControl">-->
-  <!--</div>-->
-  <!--<div>-->
-    <!--Last name:-->
-    <!--<input type="text"-->
-           <!--placeholder="last name"-->
-           <!--[formControl]="lastNameControl">-->
-  <!--</div>-->
-  <!--<div>-->
-    <!--Date of birth:-->
-    <!--<input type="date"-->
-           <!--placeholder="date of birth"-->
-           <!--[formControl]="dateOfBirthControl">-->
-  <!--</div>-->
-  <!--<div>-->
-    <!--Phone:-->
-    <!--<input type="text"-->
-           <!--placeholder="your phone"-->
-           <!--[formControl]="phoneControl">-->
-  <!--</div>-->
-  <!--<div>-->
-    <!--Email:-->
-    <!--<input type="text"-->
-           <!--placeholder="your email"-->
-           <!--[formControl]="mailControl">-->
-  <!--</div>-->
-  <!--<div>-->
-    <!--<button [formControl]="submitControl">-->
-      <!--Create new account-->
-    <!--</button>-->
-  <!--</div>-->
-<!--</form>-->
