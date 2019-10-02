@@ -10,20 +10,23 @@ import {LoginService} from "../../services/login.service";
 })
 export class LoginComponent implements OnInit {
 
-  user: SignIn;
-
-  newSignIn(event: SignIn) {
-    console.log(
-      `Event mail - ${event.email}
-    Event password - ${event.password}`);
-  }
+  users: SignIn[];
 
   constructor(private accountService: LoginService) {
   }
 
   ngOnInit() {
-    this.user = this.accountService.getUser();
+    this.users = this.accountService.getUsers();
   }
 
-
+  newSignIn(user: SignIn) {
+    let userAccepted = this.users
+      .filter(valOne => valOne.email === user.email)
+      .filter(valTwo => valTwo.password === user.password);
+    if (userAccepted && userAccepted.length === 1) {
+      console.log(`Access complete!`);
+    } else {
+      console.log(`Password or email wrong!`);
+    }
+  }
 }

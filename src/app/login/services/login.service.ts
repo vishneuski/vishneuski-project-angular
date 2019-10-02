@@ -5,12 +5,13 @@ import {SignIn} from "../model/signIn";
   providedIn: 'root'
 })
 export class LoginService {
-  user: SignIn = {
-    email: '',
-    password: ''
-  };
+  users: SignIn []= [
+    {email: 'q.com', password: 'qwe'},
+    {email: 'a.com', password: 'asd'},
+    {email: 'z.com', password: 'zxc'},
+    ];
 
-  getUser(): SignIn {
-    return this.user;
+  getUsers(): SignIn {
+    return this.users;
   }
 }
