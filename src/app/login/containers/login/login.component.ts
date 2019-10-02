@@ -23,11 +23,10 @@ export class LoginComponent implements OnInit {
     this.users = this.accountService.getUsers();
   }
 
-  newSignIn(user: SignIn) {
-    let userAccepted = this.users
-      .filter(valOne => valOne.email === user.email)
-      .filter(valTwo => valTwo.password === user.password);
-    if (userAccepted && userAccepted.length === 1) {
+  logIn(user: SignIn) {
+    console.log('Catch in Login Comp!');
+    let loggedInUser = this.accountService.logIn(user.userName, user.password);
+    if (loggedInUser) {
       this.router.navigate(['basket']);
       this.loginError = null;
       console.log(`Access complete!`);

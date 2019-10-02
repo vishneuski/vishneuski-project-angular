@@ -1,14 +1,14 @@
 <form #myForm="ngForm" (ngSubmit)="submitData(myForm.value, myForm.valid)" class="signInForm">
   <h3>Log In</h3>
   <div>
-    Email
+    Name
     <input type="text"
-           name="email"
-           [ngModel]="user?.email"
+           name="name"
+           [ngModel]="user?.userName"
            required
-           #userMailControl="ngModel">
-    <div *ngIf="userMailControl.invalid && userMailControl.touched" class="error">
-      User mail is required
+           #userNameControl="ngModel">
+    <div *ngIf="userNameControl.invalid && userNameControl.touched" class="error">
+      User name is required
     </div>
   </div>
   <div>
