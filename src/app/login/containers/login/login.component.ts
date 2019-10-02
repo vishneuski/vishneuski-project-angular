@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   logIn(user: SignIn) {
     console.log('Catch in Login Comp!');
+    console.log(`In logIn ${user.userName}, ${user.password}`);
     let loggedInUser = this.accountService.logIn(user.userName, user.password);
     if (loggedInUser) {
       this.router.navigate(['basket']);

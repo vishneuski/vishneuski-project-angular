@@ -25,7 +25,8 @@ export class LoginViewComponent implements OnInit {
   }
 
   submitData(user: SignIn, isValid) {
-    console.log(user);
+    console.log(`In login-view ${user.userName}`);
+    console.log(`In login view ${user.passw}`);
     console.log(isValid);
     this.sighInTry.emit(user);
   }
