@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SignIn} from "../../model/signIn";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-log-in-view',
@@ -24,10 +25,7 @@ export class LoginViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitData(user: SignIn, isValid) {
-    console.log(`In login-view ${user.userName}`);
-    console.log(`In login view ${user.passw}`);
-    console.log(isValid);
+  submitData(user: SignIn) {
     this.sighInTry.emit(user);
   }
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SignIn} from "../../model/signIn";
 import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
+import {Subscription} from "rxjs/internal/Subscription";
 
 
 @Component({
@@ -11,6 +12,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
+  request: Subscription;
   loginError: string;
   users: SignIn[];
 
@@ -24,16 +26,19 @@ export class LoginComponent implements OnInit {
   }
 
   logIn(user: SignIn) {
-    console.log('Catch in Login Comp!');
-    console.log(`In logIn ${user.userName}, ${user.password}`);
-    let loggedInUser = this.accountService.logIn(user.userName, user.password);
-    if (loggedInUser) {
-      this.router.navigate(['basket']);
-      this.loginError = null;
-      console.log(`Access complete!`);
-    } else {
-      this.loginError = 'Wrong password or email!';
-      console.log(`Password or email wrong!`);
+    if(this.request) {
+      this.request.unsubscribe();
     }
+    this.request = this.accountService
+      .logIn(user.userName, user.password)
+      .subscribe((IUser) => {
+        if (IUser) {
+          this.router.navigate(['basket']);
+          this.loginError = null;
+          console.log(`Access complete!`);
+        } else {
+          this.loginError = 'Wrong password or email!';
+        }
+      });
   }
 }
