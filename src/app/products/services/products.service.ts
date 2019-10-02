@@ -40,39 +40,39 @@ export class ProductsService {
       prise: 1000,
       photo: '../../assets/images/bottle.jpg'
     },
-    {
-      id: 4,
-      producer: 'best',
-      country: 'France',
-      vintage: 1970,
-      type: 'white',
-      available: 2,
-      volume: 0.75,
-      prise: 100,
-      photo: '../../assets/images/bottle.jpg'
-    },
-    {
-      id: 5,
-      producer: 'best',
-      country: 'France',
-      vintage: 1970,
-      type: 'white',
-      available: 2,
-      volume: 0.75,
-      prise: 100,
-      photo: '../../assets/images/bottle.jpg'
-    },
-    {
-      id: 6,
-      producer: 'best',
-      country: 'France',
-      vintage: 1970,
-      type: 'white',
-      available: 2,
-      volume: 0.75,
-      prise: 100,
-      photo: '../../assets/images/bottle.jpg'
-    }
+    // {
+    //   id: 4,
+    //   producer: 'best',
+    //   country: 'France',
+    //   vintage: 1970,
+    //   type: 'white',
+    //   available: 2,
+    //   volume: 0.75,
+    //   prise: 100,
+    //   photo: '../../assets/images/bottle.jpg'
+    // },
+    // {
+    //   id: 5,
+    //   producer: 'best',
+    //   country: 'France',
+    //   vintage: 1970,
+    //   type: 'white',
+    //   available: 2,
+    //   volume: 0.75,
+    //   prise: 100,
+    //   photo: '../../assets/images/bottle.jpg'
+    // },
+    // {
+    //   id: 6,
+    //   producer: 'best',
+    //   country: 'France',
+    //   vintage: 1970,
+    //   type: 'white',
+    //   available: 2,
+    //   volume: 0.75,
+    //   prise: 100,
+    //   photo: '../../../assets/images/bottle.jpg'
+    // }
   ];
 
   getProducts(): Product[] {
