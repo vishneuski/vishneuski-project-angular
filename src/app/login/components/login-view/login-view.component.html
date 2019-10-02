@@ -22,6 +22,10 @@
       User name is required
     </div>
   </div>
+  <div *ngIf="loginError && loginError.length > 0"
+       class="error" >
+    {{loginError}}
+  </div>
   <div>
     <button type="submit"
             name="submit"

@@ -12,10 +12,14 @@ export class LoginViewComponent implements OnInit {
   @Input()
   user: SignIn;
 
+  @Input()
+  loginError: string;
+
   @Output()
   sighInTry: EventEmitter<SignIn> = new EventEmitter<SignIn>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

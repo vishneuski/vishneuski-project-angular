@@ -19,6 +19,7 @@ import {RegisterComponent} from './register/containers/register/register.compone
 import {BasketComponent} from "./basket/basket.component";
 import { LoginViewComponent } from './login/components/login-view/login-view.component';
 import { RegisterViewComponent } from './register/components/register-view/register-view.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RegisterViewComponent } from './register/components/register-view/regis
     RegisterComponent,
     BasketComponent,
     LoginViewComponent,
-    RegisterViewComponent
+    RegisterViewComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
