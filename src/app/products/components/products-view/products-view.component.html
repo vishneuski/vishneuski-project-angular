@@ -1,3 +1,8 @@
+<div>
+  Search:
+  <input type="text"
+         placeholder="input wine">
+</div>
 <div class="product-cart-layout">
   <div *ngFor="let product of products">
     <div class="product-cart-container">
@@ -17,6 +22,9 @@
         <div>
           {{product?.prise | currency}}
         </div>
+        <button (click)="buyProduct(product?.id)">
+          Buy
+        </button>
       </div>
     </div>
   </div>

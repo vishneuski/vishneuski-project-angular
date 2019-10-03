@@ -15,4 +15,8 @@ export class ProductsViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  buyProduct(id) {
+    console.log(id);
+  }
+
 }
