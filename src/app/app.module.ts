@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {MaterialModule} from "./modules/material/material/material.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AppComponent} from './app.component';
@@ -19,6 +20,8 @@ import {LoginViewComponent} from './login/components/login-view/login-view.compo
 import {RegisterViewComponent} from './register/components/register-view/register-view.component';
 import {AccountComponent} from './account/account.component';
 import {ProductsViewComponent} from './products/components/products-view/products-view.component';
+import { BlogComponent } from './blog/blog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,13 +40,19 @@ import {ProductsViewComponent} from './products/components/products-view/product
     LoginViewComponent,
     RegisterViewComponent,
     AccountComponent,
-    ProductsViewComponent
+    ProductsViewComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
+  ],
+  exports: [
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
