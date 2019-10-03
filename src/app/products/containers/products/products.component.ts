@@ -15,25 +15,29 @@ import {Subscription} from "rxjs/internal/Subscription";
 export class ProductsComponent implements OnInit {
 
   request: Subscription;
+  searchString: string;
   products: Product[];
-  filteredProducts: Product[] = [];
+  filteredProducts: Product[] = this.products;
 
-  private _searchItem: string;
+  // private _searchItem: string;
+  //
+  // set searchItem(item: string) {
+  //   this._searchItem = item;
+  //   this.filteredProducts = this.filterProducts(item);
+  // }
+  //
+  // get searchItem(): string {
+  //   return this._searchItem;
+  // }
 
-  set searchItem(item: string) {
-    this._searchItem = item;
-    this.filteredProducts = this.filterProducts(item);
-  }
-
-  get searchItem(): string {
-    return this._searchItem;
-  }
-
-  filterProducts(searchString: string) {
-    return this.products
-      .filter((product) =>
-        product.producer.indexOf(searchString) !== 1);
-  }
+  // filteredProducts = this.filterProducts(this.searchString);
+  //
+  // filterProducts(searchString: string) {
+  //   console.log('Filter Work!');
+  //   return this.products
+  //     .filter((product) =>
+  //       product.producer.indexOf(searchString) !== 1);
+  // }
 
   constructor(
     private productsService:ProductsService,
@@ -57,7 +61,8 @@ export class ProductsComponent implements OnInit {
     console.log('Smart - ',product.id);
   }
 
-  productFilter(producer: string) {
+  productFilter(producer: string): void{
     console.log(`Smart producer - ${producer}`);
+    this.searchString = producer;
   }
 }

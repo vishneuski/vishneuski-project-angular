@@ -5,6 +5,9 @@
          (change)="filterProduct(searchItem)"
          placeholder="input wine">
 </div>
+<div>
+  {{filteredProducts}}
+</div>
 <div class="product-cart-layout">
   <div *ngFor="let product of products">
     <div class="product-cart-container">

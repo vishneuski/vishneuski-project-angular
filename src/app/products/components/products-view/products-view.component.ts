@@ -8,7 +8,6 @@ import {Product} from "../../model/product";
 })
 export class ProductsViewComponent implements OnInit {
 
-  searchItem: string;
   buyProductList: Product[] = [];
 
   @Input()
@@ -36,7 +35,7 @@ export class ProductsViewComponent implements OnInit {
     this.purchase.emit(product);
   }
 
-  filterProduct(producer: string) {
-    this.filter.emit(this.searchItem);
+  filterProduct(searchItem: string) {
+    this.filter.emit(searchItem);
   }
 }
