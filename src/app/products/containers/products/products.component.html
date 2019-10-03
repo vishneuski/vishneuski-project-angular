@@ -1,1 +1,4 @@
-<app-products-view [products]="products" ></app-products-view>
+<app-products-view
+  [products]="products"
+  (purchase)="addPurchase($event)">
+</app-products-view>

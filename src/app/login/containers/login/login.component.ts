@@ -18,9 +18,7 @@ export class LoginComponent implements OnInit {
   users: SignIn[];
 
   constructor(private accountService: LoginService,
-              private router: Router) {
-
-  }
+              private router: Router) {}
 
   ngOnInit() {
     this.users = this.accountService.getUsers();
@@ -32,8 +30,8 @@ export class LoginComponent implements OnInit {
     }
     this.request = this.accountService
       .logIn(user.userName, user.password)
-      .subscribe((IUser) => {
-        if (IUser) {
+      .subscribe((value) => {
+        if (value) {
           this.router.navigate(['basket']);
           this.loginError = null;
           console.log(`Access complete!`);

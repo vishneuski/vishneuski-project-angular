@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Product } from "../model/product";
+import {Injectable} from '@angular/core';
+import {Product} from "../model/product";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -79,5 +80,16 @@ export class ProductsService {
     return this.products;
   }
 
-  constructor() { }
+  purchaseProduct(id): Observable<Product> {
+    let purchaseProduct = this.products
+      .filter(val => val.id === id);
+    if (purchaseProduct && purchaseProduct.length === 1) {
+      return of(purchaseProduct[0]);
+    } else {
+      return of(null);
+    }
+  }
+
+  constructor() {
+  }
 }
