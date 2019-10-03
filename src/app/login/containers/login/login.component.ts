@@ -8,7 +8,8 @@ import {Subscription} from "rxjs/internal/Subscription";
 @Component({
   selector: 'app-account-component',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
 

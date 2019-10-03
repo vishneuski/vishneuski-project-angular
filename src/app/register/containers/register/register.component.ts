@@ -5,7 +5,8 @@ import {RegisterInfo} from "../../model/register-info";
 @Component({
   selector: 'app-register-component',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [RegisterService]
 })
 export class RegisterComponent implements OnInit {
 

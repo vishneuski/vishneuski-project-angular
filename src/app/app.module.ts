@@ -12,15 +12,13 @@ import {ServicesComponent} from './services/services.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {ProductCartComponent} from './shared/product-cart/product-cart.component';
-import {ProductCartService} from "./shared/product-cart/product-cart.service";
 import {LoginComponent} from './login/containers/login/login.component';
 import {RegisterComponent} from './register/containers/register/register.component';
 import {BasketComponent} from "./basket/basket.component";
-import { LoginViewComponent } from './login/components/login-view/login-view.component';
-import { RegisterViewComponent } from './register/components/register-view/register-view.component';
-import { AccountComponent } from './account/account.component';
-import { ProductsViewComponent } from './products/components/products-view/products-view.component';
+import {LoginViewComponent} from './login/components/login-view/login-view.component';
+import {RegisterViewComponent} from './register/components/register-view/register-view.component';
+import {AccountComponent} from './account/account.component';
+import {ProductsViewComponent} from './products/components/products-view/products-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +31,6 @@ import { ProductsViewComponent } from './products/components/products-view/produ
     ServicesComponent,
     HeaderComponent,
     FooterComponent,
-    ProductCartComponent,
     LoginComponent,
     RegisterComponent,
     BasketComponent,
@@ -48,7 +45,6 @@ import { ProductsViewComponent } from './products/components/products-view/produ
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ProductCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
