@@ -16,6 +16,24 @@ export class ProductsComponent implements OnInit {
 
   request: Subscription;
   products: Product[];
+  filteredProducts: Product[] = [];
+
+  private _searchItem: string;
+
+  set searchItem(item: string) {
+    this._searchItem = item;
+    this.filteredProducts = this.filterProducts(item);
+  }
+
+  get searchItem(): string {
+    return this._searchItem;
+  }
+
+  filterProducts(searchString: string) {
+    return this.products
+      .filter((product) =>
+        product.producer.indexOf(searchString) !== 1);
+  }
 
   constructor(
     private productsService:ProductsService,
@@ -24,6 +42,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.productsService.getProducts();
+    this.filteredProducts = this.products;
   }
 
   addPurchase(product: Product) {
@@ -36,5 +55,9 @@ export class ProductsComponent implements OnInit {
         }
       });
     console.log('Smart - ',product.id);
+  }
+
+  productFilter(producer: string) {
+    console.log(`Smart producer - ${producer}`);
   }
 }

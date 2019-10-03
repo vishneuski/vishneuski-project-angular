@@ -8,22 +8,35 @@ import {Product} from "../../model/product";
 })
 export class ProductsViewComponent implements OnInit {
 
-  buyProductList: any[] = [];
+  searchItem: string;
+  buyProductList: Product[] = [];
 
   @Input()
   products: Product[];
 
+  @Input()
+  filteredProducts: Product[];
+
   @Output()
   purchase: EventEmitter<Product> = new EventEmitter<Product>();
 
-  constructor() { }
+  @Output()
+  filter: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor() {
+  }
 
   ngOnInit() {
+
   }
 
   buyProduct(product: Product) {
     this.buyProductList.push(product);
     console.log(this.buyProductList);
     this.purchase.emit(product);
+  }
+
+  filterProduct(producer: string) {
+    this.filter.emit(this.searchItem);
   }
 }
