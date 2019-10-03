@@ -1,1 +1,23 @@
-<p>products-view works!</p>
+<div class="product-cart-layout">
+  <div *ngFor="let product of products">
+    <div class="product-cart-container">
+      <div>
+        <img class="photo" [src]='product.photo'>
+      </div>
+      <div>
+        <div>
+          {{product?.producer}}
+        </div>
+        <div>
+          {{product?.country}}
+        </div>
+        <div>
+          {{product?.vintage}}
+        </div>
+        <div>
+          {{product?.prise | currency}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
