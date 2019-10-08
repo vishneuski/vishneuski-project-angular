@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {MaterialModule} from "./modules/material/material/material.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {FakeBackendInterceptor} from "./fake-back-end/fake-back-end.interceptor";
 
 import {AppComponent} from './app.component';
 import {ProductsComponent} from './products/containers/products/products.component';
@@ -49,12 +51,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   exports: [
     BrowserAnimationsModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FakeBackendInterceptor,
+      multi: true
+    }
+  ]
 })
 export class AppModule {
 }

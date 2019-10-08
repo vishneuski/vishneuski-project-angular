@@ -1,31 +1,28 @@
-<div>
-  Search:
-  <input type="text"
-         [(ngModel)]="searchItem"
-         (change)="filterProduct(searchItem)"
-         placeholder="input wine">
-</div>
-<div>
-  {{filteredProducts}}
-</div>
+<!--<div>-->
+  <!--Search:-->
+  <!--<input type="text"-->
+         <!--[(ngModel)]="searchItem"-->
+         <!--(change)="filterProduct(searchItem)"-->
+         <!--placeholder="input wine">-->
+<!--</div>-->
+<!--<div>-->
+  <!--{{filteredProducts}}-->
+<!--</div>-->
 <div class="product-cart-layout">
   <div *ngFor="let product of products">
     <div class="product-cart-container">
       <div>
-        <img class="photo" [src]='product.photo'>
+        <!--<img class="photo" [src]='product.photo'>-->
       </div>
       <div>
         <div>
-          {{product?.producer}}
+          {{product?.name}}
         </div>
         <div>
           {{product?.country}}
         </div>
         <div>
-          {{product?.vintage}}
-        </div>
-        <div>
-          {{product?.prise | currency}}
+          {{product?.price | currency}}
         </div>
         <button (click)="buyProduct(product)">
           Buy
