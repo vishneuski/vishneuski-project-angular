@@ -8,8 +8,6 @@ import {Product} from "../../models/product.interface";
 })
 export class ProductsViewComponent implements OnInit {
 
-  buyProductList: Product[] = [];
-
   @Input()
   products: Product[];
 
@@ -30,8 +28,6 @@ export class ProductsViewComponent implements OnInit {
   }
 
   buyProduct(product: Product) {
-    this.buyProductList.push(product);
-    console.log(this.buyProductList);
     this.purchase.emit(product);
   }
 

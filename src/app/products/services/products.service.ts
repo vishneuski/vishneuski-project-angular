@@ -15,16 +15,16 @@ export class ProductsService {
     return this.http.get<Product[]>('/api/products');
   }
 
-  // purchaseProduct(id): Observable<Product[]> {
-  //
-  //   let purchaseProduct = this.products
-  //     .filter(val => val.id === id);
-  //   if (purchaseProduct && purchaseProduct.length === 1) {
-  //     return of(purchaseProduct[0]);
-  //   } else {
-  //     return of(null);
-  //   }
-  // }
+  purchaseProduct(id): Observable<Product[]> {
+
+    let purchaseProduct = this.products
+      .filter(val => val.id === id);
+    if (purchaseProduct && purchaseProduct.length === 1) {
+      return of(purchaseProduct[0]);
+    } else {
+      return of(null);
+    }
+  }
 
 
 }
