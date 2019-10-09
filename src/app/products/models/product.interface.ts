@@ -4,7 +4,7 @@ export interface Product {
   name: string,
   country: string,
   vintage: number;
-  available: number;
+  // available: number;
   // photo?: string;
 }
 

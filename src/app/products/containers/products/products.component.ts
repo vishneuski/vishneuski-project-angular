@@ -20,8 +20,9 @@ export class ProductsComponent implements OnInit {
 
   products: Product[];
   productMap: Map<number, Product>;
+  
 
-  // request: Subscription;
+  request: Subscription;
   // searchString: string;
   // filteredProducts: Product[] = this.products;
 
@@ -69,18 +70,19 @@ export class ProductsComponent implements OnInit {
 
   // this.filteredProducts = this.products;
 
-  // addPurchase(product: Product) {
-  //   this.request = this.productsService
-  //     .purchaseProduct(product.id)
-  //     .subscribe((value) => {
-  //       if (value) {
-  //         this.router.navigate(['basket']);
-  //         console.log('Product add to the basket!');
-  //       }
-  //     });
-  //   console.log('Smart - ',product.id);
-  // }
-  //
+  addPurchase(product: Product) {
+    console.log(product)
+    // this.request = this.productsService
+    //   .purchaseProduct(product.id)
+    //   .subscribe((value) => {
+    //     if (value) {
+    //       this.router.navigate(['basket']);
+    //       console.log('Product add to the basket!');
+    //     }
+    //   });
+    // console.log('Smart - ',product.id);
+  }
+
   // productFilter(producer: string): void{
   //   console.log(`Smart producer - ${producer}`);
   //   this.searchString = producer;
