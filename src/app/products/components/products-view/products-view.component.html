@@ -3,8 +3,13 @@
     <span>Input wine name: </span>
     <input type="text"
            [ngModelOptions]="{standalone: true}"
-           (change)="filterProduct(searchItem)"
            [(ngModel)]="searchItem">
+
+    <!--(change)="filterProduct(searchItem)"-->
+    <div>
+      <button (click)="filterProduct(searchItem)">Search</button>
+      <button (click)="update(searchItem)">Update</button>
+    </div>
   </form>
 </div>
 <div class="product-cart-layout">

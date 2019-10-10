@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.interface";
 
 @Component({
@@ -6,7 +6,7 @@ import {Product} from "../../models/product.interface";
   templateUrl: './products-view.component.html',
   styleUrls: ['./products-view.component.css'],
 })
-export class ProductsViewComponent implements OnInit {
+export class ProductsViewComponent {
 
   searchItem: string;
 
@@ -22,9 +22,8 @@ export class ProductsViewComponent implements OnInit {
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {}
-
-  ngOnInit() {}
+  @Output()
+  update: EventEmitter<any> = new EventEmitter<any>();
 
   addToBasket(product: Product) {
     this.basket.emit(product);
@@ -32,5 +31,9 @@ export class ProductsViewComponent implements OnInit {
 
   filterProduct(searchItem: string) {
     this.filter.emit(searchItem);
+  }
+
+  update(searchItem: string) {
+    this.update.emit(searchItem);
   }
 }
