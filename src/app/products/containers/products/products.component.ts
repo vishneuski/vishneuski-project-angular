@@ -1,11 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-// import {Product} from "../../model/product";
-import {Product, Item} from "../../models/product.interface";
+import {Component, OnInit} from '@angular/core';
+import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
 import {Router} from "@angular/router"
 import {Subscription} from "rxjs/internal/Subscription";
-import {Observable, of, forkJoin} from "rxjs";
-import {tap, map} from "rxjs/operators";
+import {forkJoin} from "rxjs";
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -67,31 +66,15 @@ export class ProductsComponent implements OnInit {
     );
   }
 
-  // this.filteredProducts = this.products;
-
   addToBasket(product: Product) {
     console.log('in products');
     this.productsService.addProduct(product);
   }
 
-
-  // this.request = this.productsService
-  //   .purchaseProduct(product.id)
-  //   .subscribe((value) => {
-  //     if (value) {
-  //       this.router.navigate(['basket']);
-  //       console.log('Product add to the basket!');
-  //     }
-  //   });
-
-
-
+  // this.filteredProducts = this.products;
 
   // productFilter(producer: string): void{
   //   console.log(`Smart producer - ${producer}`);
   //   this.searchString = producer;
   // }
 }
-
-
-import {products} from "../../../fake-back-end/data/products";

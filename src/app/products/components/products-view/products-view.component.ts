@@ -15,24 +15,14 @@ export class ProductsViewComponent implements OnInit {
   filteredProducts: Product[];
 
   @Output()
-  purchase: EventEmitter<Product> = new EventEmitter<Product>();
-
-  @Output()
   basket: EventEmitter<Product> = new EventEmitter<Product>();
 
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-
-  }
-
-  buyProduct(product: Product) {
-    this.purchase.emit(product);
-  }
+  ngOnInit() {}
 
   addToBasket(product: Product) {
     this.basket.emit(product);

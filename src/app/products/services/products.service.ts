@@ -1,12 +1,8 @@
 import {Injectable} from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-// import {Product} from "../model/product";
-import {Observable, of} from "rxjs";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from "rxjs";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
-import { map, catchError, tap } from 'rxjs/operators';
-import { Product, Item } from '../models/product.interface';
-import {Subject} from "rxjs/internal/Subject";
-
+import {Product} from '../models/product.interface';
 
 
 @Injectable()
@@ -45,6 +41,4 @@ export class ProductsService {
   //     return of(null);
   //   }
   // }
-
-
 }
