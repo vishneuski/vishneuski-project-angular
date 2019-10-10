@@ -4,9 +4,11 @@ import {Product} from "../../models/product.interface";
 @Component({
   selector: 'app-products-view',
   templateUrl: './products-view.component.html',
-  styleUrls: ['./products-view.component.css']
+  styleUrls: ['./products-view.component.css'],
 })
 export class ProductsViewComponent implements OnInit {
+
+  searchItem: string;
 
   @Input()
   products: Product[];

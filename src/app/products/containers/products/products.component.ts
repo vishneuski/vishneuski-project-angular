@@ -14,33 +14,31 @@ import {forkJoin} from "rxjs";
 export class ProductsComponent implements OnInit {
 
   products: Product[];
+  filteredProducts: Product[];
   productMap: Map<number, Product>;
-
-
   request: Subscription;
+
   message: string;
-  // searchString: string;
-  // filteredProducts: Product[] = this.products;
+  searchString: string;
 
-  // private _searchItem: string;
-  //
-  // set searchItem(item: string) {
-  //   this._searchItem = item;
-  //   this.filteredProducts = this.filterProducts(item);
-  // }
-  //
-  // get searchItem(): string {
-  //   return this._searchItem;
-  // }
+  private _searchTerm: string;
 
-  // filteredProducts = this.filterProducts(this.searchString);
-  //
-  // filterProducts(searchString: string) {
-  //   console.log('Filter Work!');
-  //   return this.products
-  //     .filter((product) =>
-  //       product.producer.indexOf(searchString) !== 1);
-  // }
+  set searchTerm(item: string) {
+    this._searchTerm = item;
+    console.log(item);
+    this.filteredProducts = this.filterProducts(item);
+  }
+
+  get searchTerm(): string {
+    return this._searchTerm;
+  }
+
+  filterProducts(searchString: string) {
+    console.log('Filter Work!', searchString);
+    return this.products
+      .filter((product) =>
+        product.name.indexOf(searchString) !== 1);
+  }
 
   constructor(
     private productsService: ProductsService,
@@ -48,8 +46,6 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.productsService.currentMessage.subscribe(message => this.message = message);
-
     const products = this.productsService.getProducts();
 
     forkJoin(products).subscribe(
@@ -61,6 +57,7 @@ export class ProductsComponent implements OnInit {
 
         this.productMap = new Map<number, Product>(myMap);
         this.products = products;
+        this.filteredProducts = this.products;
 
       }
     );
@@ -71,10 +68,8 @@ export class ProductsComponent implements OnInit {
     this.productsService.addProduct(product);
   }
 
-  // this.filteredProducts = this.products;
-
-  // productFilter(producer: string): void{
-  //   console.log(`Smart producer - ${producer}`);
-  //   this.searchString = producer;
-  // }
+  productFilter(name: string): void{
+    console.log(`Smart producer - ${name}`);
+    this.searchString = name;
+  }
 }

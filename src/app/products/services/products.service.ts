@@ -9,6 +9,7 @@ import {Product} from '../models/product.interface';
 export class ProductsService {
   constructor(private http: HttpClient) {}
   cartProducts: Product[] = [];
+  uniqueProductMessage: string =''; // add message if product already in cart
 
   private cartSubject = new BehaviorSubject<CartState>([]);
   CartState = this.cartSubject.asObservable();
@@ -16,6 +17,7 @@ export class ProductsService {
     addProduct(product: Product) {
       let tempProduct = this.cartProducts.find(item => item.id === product.id);
       if (tempProduct === undefined) {
+
         this.cartProducts.push(product);
       }
       console.log('in service');
@@ -26,19 +28,4 @@ export class ProductsService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('/api/products');
   }
-
-  // changeMessage(message: string) {
-  //   this.messageSource.next(message);
-  // }
-
-  // purchaseProduct(id): Observable<Product[]> {
-  //
-  //   let purchaseProduct = this.products
-  //     .filter(val => val.id === id);
-  //   if (purchaseProduct && purchaseProduct.length === 1) {
-  //     return of(purchaseProduct[0]);
-  //   } else {
-  //     return of(null);
-  //   }
-  // }
 }

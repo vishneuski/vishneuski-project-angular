@@ -1,15 +1,14 @@
-<!--<div>-->
-  <!--Search:-->
-  <!--<input type="text"-->
-         <!--[(ngModel)]="searchItem"-->
-         <!--(change)="filterProduct(searchItem)"-->
-         <!--placeholder="input wine">-->
-<!--</div>-->
-<!--<div>-->
-  <!--{{filteredProducts}}-->
-<!--</div>-->
+<div>
+  <form class="wineName">
+    <span>Input wine name: </span>
+    <input type="text"
+           [ngModelOptions]="{standalone: true}"
+           (change)="filterProduct(searchItem)"
+           [(ngModel)]="searchItem">
+  </form>
+</div>
 <div class="product-cart-layout">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of filteredProducts">
     <div class="product-cart-container">
       <div>
         <!--<img class="photo" [src]='product.photo'>-->
