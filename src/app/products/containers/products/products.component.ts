@@ -6,23 +6,21 @@ import {Router} from "@angular/router"
 import {Subscription} from "rxjs/internal/Subscription";
 import {Observable, of, forkJoin} from "rxjs";
 import {tap, map} from "rxjs/operators";
-import {products} from "../../../fake-back-end/data/products";
-
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  providers: [ProductsService]
-
 })
+
 export class ProductsComponent implements OnInit {
 
   products: Product[];
   productMap: Map<number, Product>;
   productsToPurchase: Product[] = [];
-
   request: Subscription;
+  message: string;
+
+
   // searchString: string;
   // filteredProducts: Product[] = this.products;
 
@@ -52,6 +50,8 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.productsService.currentMessage.subscribe(message => this.message = message);
+
     const products = this.productsService.getProducts();
 
     forkJoin(products).subscribe(
@@ -79,17 +79,21 @@ export class ProductsComponent implements OnInit {
     console.log(this.productsToPurchase);
     return this.productsToPurchase;
   }
-}
+
+  addToBasket(product: Product) {
+    console.log('in products');
+    this.productsService.addProduct(product);
+  }
 
 
-    this.request = this.productsService
-      .purchaseProduct(product.id)
-      .subscribe((value) => {
-        if (value) {
-          this.router.navigate(['basket']);
-          console.log('Product add to the basket!');
-        }
-      });
+  // this.request = this.productsService
+  //   .purchaseProduct(product.id)
+  //   .subscribe((value) => {
+  //     if (value) {
+  //       this.router.navigate(['basket']);
+  //       console.log('Product add to the basket!');
+  //     }
+  //   });
 
 
 
@@ -99,3 +103,6 @@ export class ProductsComponent implements OnInit {
   //   this.searchString = producer;
   // }
 }
+
+
+import {products} from "../../../fake-back-end/data/products";

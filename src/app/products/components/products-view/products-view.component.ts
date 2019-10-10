@@ -18,6 +18,9 @@ export class ProductsViewComponent implements OnInit {
   purchase: EventEmitter<Product> = new EventEmitter<Product>();
 
   @Output()
+  basket: EventEmitter<Product> = new EventEmitter<Product>();
+
+  @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
@@ -29,6 +32,10 @@ export class ProductsViewComponent implements OnInit {
 
   buyProduct(product: Product) {
     this.purchase.emit(product);
+  }
+
+  addToBasket(product: Product) {
+    this.basket.emit(product);
   }
 
   filterProduct(searchItem: string) {

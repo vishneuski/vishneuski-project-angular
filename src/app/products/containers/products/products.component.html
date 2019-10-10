@@ -2,5 +2,6 @@
   [products]="products"
   [filteredProducts]="filteredProducts"
   (filter)="productFilter($event)"
-  (purchase)="addPurchase($event)">
+  (purchase)="addPurchase($event)"
+  (basket)="addToBasket($event)">
 </app-products-view>

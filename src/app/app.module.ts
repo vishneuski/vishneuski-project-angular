@@ -22,8 +22,9 @@ import {LoginViewComponent} from './login/components/login-view/login-view.compo
 import {RegisterViewComponent} from './register/components/register-view/register-view.component';
 import {AccountComponent} from './account/account.component';
 import {ProductsViewComponent} from './products/components/products-view/products-view.component';
-import { BlogComponent } from './blog/blog.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BlogComponent } from './blog/blog.component';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ProductsService} from "./products/services/products.service";
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   bootstrap: [AppComponent],
   providers: [
+    ProductsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FakeBackendInterceptor,
