@@ -10,26 +10,26 @@ import {forkJoin} from "rxjs";
   styleUrls: ['./products.component.css'],
 })
 
-export class ProductsComponent{
+export class ProductsComponent {
 
   products: Product[];
   filteredProducts: Product[];
   productMap: Map<number, Product>;
 
-  filterProducts(searchString: string) {
-    console.log('Filter Work!', searchString);
-    this.filteredProducts = this.products
-      .filter((product) =>
-        product.name.indexOf(searchString) !== -1);
-    console.log(this.filteredProducts);
-    return this.filteredProducts;
+  filterProducts(searchString?: string) {
+    if (searchString === '' || searchString === undefined || searchString === null) {
+      return this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products
+        .filter((product) =>
+          product.name.indexOf(searchString) !== -1);
+      console.log(this.filteredProducts);
+      return this.filteredProducts;
+    }
   }
 
-  updateProducts(searchString: string) {
-    searchString ='';
-    this.filteredProducts = this.products
-      .filter((product) =>
-        product.name.indexOf(searchString) !== -1);
+  updateProducts() {
+    this.filterProducts();
   }
 
   constructor(

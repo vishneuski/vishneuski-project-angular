@@ -33,7 +33,7 @@ export class ProductsViewComponent {
     this.filter.emit(searchItem);
   }
 
-  update(searchItem: string) {
+  updateProduct(searchItem: string) {
     this.update.emit(searchItem);
   }
 }
