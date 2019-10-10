@@ -16,11 +16,10 @@ export class ProductsComponent implements OnInit {
 
   products: Product[];
   productMap: Map<number, Product>;
-  productsToPurchase: Product[] = [];
+
+
   request: Subscription;
   message: string;
-
-
   // searchString: string;
   // filteredProducts: Product[] = this.products;
 
@@ -69,16 +68,6 @@ export class ProductsComponent implements OnInit {
   }
 
   // this.filteredProducts = this.products;
-
-  addPurchase(product: Product) {
-
-    let tempProduct = this.productsToPurchase.find(item => item.id === product.id);
-    if (tempProduct === undefined) {
-      this.productsToPurchase.push(product);
-    }
-    console.log(this.productsToPurchase);
-    return this.productsToPurchase;
-  }
 
   addToBasket(product: Product) {
     console.log('in products');

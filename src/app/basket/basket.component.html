@@ -1,3 +1,23 @@
-<div>
-  {{products}}
+<div class="product-cart-layout">
+  <div *ngFor="let product of products">
+    <div class="product-cart-container">
+      <div>
+        <!--<img class="photo" [src]='product.photo'>-->
+      </div>
+      <div>
+        <div>
+          {{product?.name}}
+        </div>
+        <div>
+          {{product?.price | currency}}
+        </div>
+        <!--<button (click)="order(product)">-->
+          <!--Order-->
+        <!--</button>-->
+        <!--<button (click)="delete(product)">-->
+          <!--Delete from basket-->
+        <!--</button>-->
+      </div>
+    </div>
+  </div>
 </div>

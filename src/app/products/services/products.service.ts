@@ -18,8 +18,11 @@ export class ProductsService {
   CartState = this.cartSubject.asObservable();
 
     addProduct(product: Product) {
+      let tempProduct = this.cartProducts.find(item => item.id === product.id);
+      if (tempProduct === undefined) {
+        this.cartProducts.push(product);
+      }
       console.log('in service');
-      this.cartProducts.push(product);
       console.log('CartProducts - ', this.cartProducts);
       this.cartSubject.next(<CartState>{products: this.cartProducts});
     }
