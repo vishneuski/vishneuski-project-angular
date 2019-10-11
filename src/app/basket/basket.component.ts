@@ -16,7 +16,7 @@ export class BasketComponent implements OnInit, OnDestroy {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
-    this.subscription = this.productsService.CartState.subscribe((state: CartState) => {
+    this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
       console.log('in basket');
       console.log(this.products);
