@@ -1,0 +1,24 @@
+wrapper {
+  width: 100%;
+  max-width: 70em;
+}
+
+.main-image {
+  width: 100%;
+  height: 100vh;
+  background: lightcyan url("./../../assets/images/home.jpg") top center/cover no-repeat  ;
+}
+
+.image-above {
+  color: white;
+  font-size: 2.5em;
+  font-family: "Source Code Pro" sans-serif;
+  text-align: center;
+  line-height: 5em;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
