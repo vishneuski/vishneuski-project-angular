@@ -22,3 +22,46 @@ img {
   display: flex;
   flex-direction: row;
 }
+
+
+.form-message {
+  box-sizing: border-box;
+  padding: 2em;
+}
+
+
+.messageForm {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1em;
+  width: 50vw;
+  height: auto;
+
+}
+
+.error {
+  color: #da6969;
+  font-size: 0.75em;
+}
+
+input, textarea {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.75em 1.25em;
+  border: 1px solid gray;
+  border-redius: 0.5em;
+}
+
+textarea:focus {
+  background: lightcyan;
+}
+
+input:focus {
+  background: lightcyan;
+}
+
+.contactMessageFormItem {
+  margin-bottom: 1em;
+}
+

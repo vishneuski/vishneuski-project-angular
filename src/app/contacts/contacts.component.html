@@ -34,6 +34,60 @@
   </div>
   <div class="form-message">
     <h2>Contact</h2>
+    <div>
+      <form [formGroup]="contactMessageForm"
+            (ngSubmit)="onSubmit()"
+            class="messageForm">
+        <div class="contactMessageFormItem">
+          <label for="name">
+            First name:
+          </label>
+          <input type="text"
+                 id="name"
+                 placeholder="first name"
+                 name="name"
+                 formControlName="firstName">
+        </div>
+        <div
+          *ngIf="contactMessageForm.controls['firstName'].invalid && contactMessageForm.controls['firstName'].touched"
+          class="error">
+          Input your name!
+        </div>
+        <div class="contactMessageFormItem">
+          <label for="mail">
+            Email:
+          </label>
+          <input type="text"
+                 id="mail"
+                 placeholder="your email"
+                 name="mail"
+                 formControlName="email">
+        </div>
+        <div *ngIf="contactMessageForm.controls['email'].invalid && contactMessageForm.controls['email'].touched"
+             class="error">
+          Input your email!
+        </div>
+        <div class="message contactMessageFormItem">
+          <label for="message">Message:</label>
+          <textarea name="message"
+                    id="message"
+                    formControlName="message"
+                    cols="30" rows="10">
 
+          </textarea>
+          <div *ngIf="contactMessageForm.controls['message'].invalid && contactMessageForm.controls['message'].touched"
+               class="error">
+            Write something, please)
+          </div>
+        </div>
+        <div>
+          <button [disabled]="!contactMessageForm.valid">Register</button>
+        </div>
+
+        <div>
+          {{contactMessageForm.value | json}}
+        </div>
+      </form>
+    </div>
   </div>
 </div>
