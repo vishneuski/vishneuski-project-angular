@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {ContactsComponent} from "./contacts/contacts.component";
+import {ContactsComponent} from "./contacts/components/contacts-view/contacts.component";
 import {ServicesComponent} from "./services/services.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {ProductsComponent} from "./products/containers/products/products.component";
