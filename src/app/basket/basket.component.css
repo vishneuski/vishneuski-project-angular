@@ -18,3 +18,14 @@
   width: 5em;
   height: 5em;
 }
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

@@ -24,6 +24,7 @@ import {ProductsViewComponent} from './products/components/products-view/product
 import {BlogComponent } from './blog/blog.component';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ProductsService} from "./products/services/products.service";
+import { FiltrationComponent } from './filtration/filtration.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {ProductsService} from "./products/services/products.service";
     RegisterViewComponent,
     AccountComponent,
     ProductsViewComponent,
-    BlogComponent
+    BlogComponent,
+    FiltrationComponent
   ],
   imports: [
     BrowserModule,
