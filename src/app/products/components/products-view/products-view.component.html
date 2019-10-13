@@ -4,11 +4,9 @@
     <input type="text"
            [ngModelOptions]="{standalone: true}"
            [(ngModel)]="searchItem">
-
-    <!--(change)="filterProduct(searchItem)"-->
     <div>
       <button (click)="filterProduct(searchItem)">Search</button>
-      <button (click)="updateProduct(searchItem)">Update</button>
+      <button (click)="updateProduct()">Clean field</button>
     </div>
   </form>
 </div>

@@ -28,10 +28,6 @@ export class ProductsComponent {
     }
   }
 
-  updateProducts() {
-    this.filterProducts();
-  }
-
   constructor(
     private productsService: ProductsService) {
   }
@@ -45,7 +41,6 @@ export class ProductsComponent {
           product.id,
           product
         ]);
-
         this.productMap = new Map<number, Product>(myMap);
         this.products = products;
         this.filteredProducts = this.products;

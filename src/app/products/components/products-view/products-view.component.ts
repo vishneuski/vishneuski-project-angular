@@ -22,8 +22,8 @@ export class ProductsViewComponent {
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
-  @Output()
-  update: EventEmitter<any> = new EventEmitter<any>();
+  // @Output()
+  // update: EventEmitter<any> = new EventEmitter<any>();
 
   addToBasket(product: Product) {
     this.basket.emit(product);
@@ -33,7 +33,8 @@ export class ProductsViewComponent {
     this.filter.emit(searchItem);
   }
 
-  updateProduct(searchItem: string) {
-    this.update.emit(searchItem);
+  updateProduct() {
+     this.searchItem = '';
+     this.filterProduct(this.searchItem)
   }
 }
