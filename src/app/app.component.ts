@@ -19,11 +19,6 @@ export class AppComponent {
       exact: true
     },
     {
-      link: '/services',
-      name: 'Services',
-      exact: true
-    },
-    {
       link: '/about',
       name: 'About',
       exact: true

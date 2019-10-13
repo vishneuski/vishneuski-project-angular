@@ -11,7 +11,6 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {ContactsComponent} from './contacts/components/contacts-view/contacts.component';
 import {NotFoundComponent} from './not-found/not-found.component';
-import {ServicesComponent} from './services/services.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -34,7 +33,6 @@ import {ProductsService} from "./products/services/products.service";
     AboutComponent,
     ContactsComponent,
     NotFoundComponent,
-    ServicesComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
