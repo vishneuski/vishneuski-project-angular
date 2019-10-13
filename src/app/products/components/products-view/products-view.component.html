@@ -1,15 +1,15 @@
 <div>
   <form class="wineName">
-    <span>Input wine name: </span>
+    <label for="wineSearch">Input wine name: </label>
     <input type="text"
+           id="wineSearch"
            [ngModelOptions]="{standalone: true}"
            [(ngModel)]="searchItem">
-    <div>
       <button (click)="filterProduct(searchItem)">Search</button>
-      <button (click)="updateProduct()">Clean field</button>
-    </div>
+      <button (click)="updateProduct()">Clear field</button>
   </form>
 </div>
+<app-filtration></app-filtration>
 <div class="product-cart-layout">
   <div *ngFor="let product of filteredProducts">
     <div class="product-cart-container">

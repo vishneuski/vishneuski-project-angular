@@ -1,10 +1,12 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.interface";
+import {FiltrationComponent} from "../filtration/filtration.component";
 
 @Component({
   selector: 'app-products-view',
   templateUrl: './products-view.component.html',
   styleUrls: ['./products-view.component.css'],
+  providers: [FiltrationComponent]
 })
 export class ProductsViewComponent {
 
@@ -21,9 +23,6 @@ export class ProductsViewComponent {
 
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
-
-  // @Output()
-  // update: EventEmitter<any> = new EventEmitter<any>();
 
   addToBasket(product: Product) {
     this.basket.emit(product);
