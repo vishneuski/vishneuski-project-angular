@@ -4,19 +4,32 @@
       <div>
         <!--<img class="photo" [src]='product.photo'>-->
       </div>
-      <div>
+      <div class="cart-info">
         <div>
           {{product?.name}}
         </div>
         <div>
           {{product?.price | currency}}
         </div>
-        <!--<button (click)="order(product)">-->
-          <!--Order-->
-        <!--</button>-->
-        <!--<button (click)="delete(product)">-->
-          <!--Delete from basket-->
-        <!--</button>-->
+        <div>
+          <label for="quantity">Quantity</label>
+          <input type="number"
+                 name="productQuantity"
+                 step="1"
+                 [(ngModel)]=productQuantity
+                 id="quantity"
+                 max=1000
+                 min=0
+          >
+        </div>
+        <div class="cart-buttons">
+          <button (click)="order(product, productQuantity)">
+            Order
+          </button>
+          <button (click)="delete(product)">
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   </div>

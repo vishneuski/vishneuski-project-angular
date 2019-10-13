@@ -2,14 +2,11 @@
   <form class="wineName">
     <span>Input wine name: </span>
     <input type="text"
-           #searchInput
            [ngModelOptions]="{standalone: true}"
            [(ngModel)]="searchItem">
-
-    <!--(change)="filterProduct(searchItem)"-->
     <div>
       <button (click)="filterProduct(searchItem)">Search</button>
-      <button (click)="updateProduct(searchItem)">Reset</button>
+      <button (click)="updateProduct()">Clean field</button>
     </div>
   </form>
 </div>
