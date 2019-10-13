@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Product} from "../../models/product.interface";
 
 @Component({
@@ -7,6 +7,9 @@ import {Product} from "../../models/product.interface";
   styleUrls: ['./products-view.component.css'],
 })
 export class ProductsViewComponent {
+
+  @ViewChild("searchInput", {static: false})
+    input: ElementRef;
 
   searchItem: string;
 
@@ -30,6 +33,7 @@ export class ProductsViewComponent {
   }
 
   filterProduct(searchItem: string) {
+    console.log(this.input.nativeElement.textContent, 'ViewChild');
     this.filter.emit(searchItem);
   }
 

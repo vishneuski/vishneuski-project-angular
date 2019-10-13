@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
-import {Router} from "@angular/router"
 import {forkJoin} from "rxjs";
 
 @Component({

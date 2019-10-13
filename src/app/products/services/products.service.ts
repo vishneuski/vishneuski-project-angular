@@ -11,7 +11,7 @@ export class ProductsService {
   cartProducts: Product[] = [];
   uniqueProductMessage: string =''; // add message if product already in cart
 
-  private cartSubject = new BehaviorSubject<CartState>([]);
+  private cartSubject = new BehaviorSubject<any>([]);
   CartState = this.cartSubject.asObservable();
 
     addProduct(product: Product) {
@@ -22,7 +22,7 @@ export class ProductsService {
       }
       console.log('in service');
       console.log('CartProducts - ', this.cartProducts);
-      this.cartSubject.next(<CartState>{products: this.cartProducts});
+      this.cartSubject.next(<any>{products: this.cartProducts});
     }
 
   getProducts(): Observable<Product[]> {
