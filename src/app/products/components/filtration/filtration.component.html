@@ -1,6 +1,6 @@
 <div>
   <form [formGroup]="filtrationForm"
-        (ngSubmit)="onSubmit()"
+        (ngSubmit)="onFilter(filtrationForm)"
         class="filtrationForm">
     <input type="checkbox"
            id="hundred"
@@ -17,7 +17,14 @@
     <input type="checkbox"
            id="moreThouthand"
            formControlName="moreThouthand">
-    <label for="hundred">More than 1000</label>
+    <label for="moreThouthand">More than 1000</label>
+
+    <div>
+      <button
+        type="submit"
+        name="submit"
+        [disabled]="!filtrationForm.valid">Go!</button>
+    </div>
   </form>
   {{filtrationForm.value | json}}
 </div>

@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
-import {Router} from "@angular/router"
 import {forkJoin} from "rxjs";
 
 @Component({
@@ -51,5 +50,9 @@ export class ProductsComponent {
   addToBasket(product: Product) {
     console.log('in products');
     this.productsService.addProduct(product);
+  }
+  
+  priceFilter(form) {
+    console.log(form);
   }
 }
