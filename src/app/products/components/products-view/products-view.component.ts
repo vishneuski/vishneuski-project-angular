@@ -1,15 +1,14 @@
-import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.interface";
+import {FiltrationComponent} from "../filtration/filtration.component";
 
 @Component({
   selector: 'app-products-view',
   templateUrl: './products-view.component.html',
   styleUrls: ['./products-view.component.css'],
+  providers: [FiltrationComponent]
 })
 export class ProductsViewComponent {
-
-  @ViewChild("searchInput", {static: false})
-    input: ElementRef;
 
   searchItem: string;
 
@@ -25,6 +24,9 @@ export class ProductsViewComponent {
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output()
+  priceFilter: EventEmitter<any> = new EventEmitter<any>();
+
   addToBasket(product: Product) {
     this.basket.emit(product);
   }
@@ -36,5 +38,9 @@ export class ProductsViewComponent {
   updateProduct() {
      this.searchItem = '';
      this.filterProduct(this.searchItem)
+  }
+
+  filterPrise(form) {
+    this.priceFilter.emit(form)
   }
 }

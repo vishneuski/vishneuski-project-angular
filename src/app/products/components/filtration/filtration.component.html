@@ -1,0 +1,30 @@
+<div>
+  <form [formGroup]="filtrationForm"
+        (ngSubmit)="onFilter(filtrationForm)"
+        class="filtrationForm">
+    <input type="checkbox"
+           id="hundred"
+           formControlName="lessHundred">
+    <label for="hundred">Less than 100</label>
+    <input type="checkbox"
+           id="lessFiveHundred"
+           formControlName="lessFiveHundred">
+    <label for="lessFiveHundred">From 100 to 500</label>
+    <input type="checkbox"
+           id="lessThouthand"
+           formControlName="lessThouthand">
+    <label for="lessThouthand">From 500 to 1000</label>
+    <input type="checkbox"
+           id="moreThouthand"
+           formControlName="moreThouthand">
+    <label for="moreThouthand">More than 1000</label>
+
+    <div>
+      <button
+        type="submit"
+        name="submit"
+        [disabled]="!filtrationForm.valid">Go!</button>
+    </div>
+  </form>
+  {{filtrationForm.value | json}}
+</div>

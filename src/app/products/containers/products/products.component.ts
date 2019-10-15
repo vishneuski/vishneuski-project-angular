@@ -51,4 +51,8 @@ export class ProductsComponent {
     console.log('in products');
     this.productsService.addProduct(product);
   }
+  
+  priceFilter(form) {
+    console.log(form);
+  }
 }
