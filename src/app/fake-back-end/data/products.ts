@@ -48,5 +48,6 @@ export const products = [
   {'id': 47, 'price': 200, 'name': 'Chardonnay', 'country': 'Italy', 'vintage': 1970, 'available': 1  },
   {'id': 48, 'price': 300, 'name': 'Sauvignon blanc', 'country': 'Italy', 'vintage': 1987, 'available': 2  },
   {'id': 49, 'price': 400, 'name': 'Merlot', 'country': 'Spain', 'vintage': 1965, 'available': 3  },
-  {'id': 50, 'price': 500, 'name': 'Pinot noir', 'country': 'France', 'vintage': 1983, 'available': 7  }
+  {'id': 50, 'price': 500, 'name': 'Pinot noir', 'country': 'France', 'vintage': 1983, 'available': 7  },
+  {'id': 51, 'price': 500, 'name': 'Pinot noir', 'country': 'France', 'vintage': 1983, 'available': 7  }
 ];

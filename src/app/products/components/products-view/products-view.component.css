@@ -1,8 +1,10 @@
 .product-cart-layout {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 auto;
+  justify-content:flex-start;
 }
 
 .product-cart-container {
@@ -12,6 +14,8 @@
   width: 20em;
   height: 10em;
   border: 1px solid gray;
+  box-sizing: border-box;
+  padding-bottom: 1em;
 }
 
 .photo {

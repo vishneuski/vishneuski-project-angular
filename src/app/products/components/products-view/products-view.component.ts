@@ -25,15 +25,11 @@ export class ProductsViewComponent {
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
-  // @Output()
-  // update: EventEmitter<any> = new EventEmitter<any>();
-
   addToBasket(product: Product) {
     this.basket.emit(product);
   }
 
   filterProduct(searchItem: string) {
-    console.log(this.input.nativeElement.textContent, 'ViewChild');
     this.filter.emit(searchItem);
   }
 
