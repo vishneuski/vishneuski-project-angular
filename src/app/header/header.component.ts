@@ -10,7 +10,7 @@ import {ProductsService} from "../products/services/products.service";
 })
 export class HeaderComponent implements OnInit {
   products: Product[];
-  productQuantity: number;
+  productQuantity = 0;
   private subscription: Subscription;
 
   constructor(private productsService: ProductsService) {}
@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
-      // console.log(this.products?.length);
       if (this.products !== undefined) {
         this.productQuantity = this.products.length;
       }

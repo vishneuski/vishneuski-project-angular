@@ -30,4 +30,15 @@
   margin-left: 1em;
 }
 
+.shopping-cart-counter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  font-size: 0.75em;
+  background-color: seagreen;
+  color: white;
+}
 
