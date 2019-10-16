@@ -1,20 +1,23 @@
 .nav {
   margin: 0 auto;
-  padding: 0 0 20px;
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: #f6f0ed;
   border-bottom: 1px solid #dce5f2;
+  display: flex;
+  justify-content: center;
 }
 
 nav a {
-  background: #3a4250;
-  color: #fff;
+  color: #6D3023;
   padding: 0.25em 0.75em;
   margin: 0 0.075em;
-  border-radius: 0.25em;
+  text-decoration: none;
 }
 
 nav a.active {
-  color: #b690f1;
-  background: #363c48;
+  color: #6D6E70;
+  border-bottom: 1px solid #6D3023;
 }
 
 .wrapper {
