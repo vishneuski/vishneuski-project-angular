@@ -31,23 +31,16 @@ export class ProductsService {
     console.log(product.name);
     console.log(this.cartProducts);
     let tempProduct = this.cartProducts.find(item => item.id === product.id);
-    console.log(tempProduct);
 
-    console.log(this.cartProducts);
-
-    for (let i = 0; i< this.cartProducts.length; i++) {
-      if (this.cartProducts[i].id === product.id) {
-        this.cartProducts.splice(i, 1);
+    if (tempProduct !== undefined) {
+      for (let i = 0; i < this.cartProducts.length; i++) {
+        if (this.cartProducts[i].id === product.id) {
+          this.cartProducts.splice(i, 1);
+        }
       }
     }
-
-    console.log(this.cartProducts);
-
-    this.cartSubject.next(<any>{
-      products: this.cartProducts
-    });
+    this.cartSubject.next(<any>{products: this.cartProducts});
   }
-
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('/api/products');
