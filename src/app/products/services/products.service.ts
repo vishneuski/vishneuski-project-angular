@@ -11,7 +11,6 @@ export class ProductsService {
   }
 
   cartProducts: Product[] = [];
-  uniqueProductMessage: string = ''; // add message if product already in cart
 
   private cartSubject = new BehaviorSubject<any>([]);
   CartState = this.cartSubject.asObservable();
