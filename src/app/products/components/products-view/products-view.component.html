@@ -5,8 +5,8 @@
            id="wineSearch"
            [ngModelOptions]="{standalone: true}"
            [(ngModel)]="searchItem">
-      <button (click)="filterProduct(searchItem)">Search</button>
-      <button (click)="updateProduct()">Clear field</button>
+    <button (click)="filterProduct(searchItem)">Search</button>
+    <button (click)="updateProduct()">Clear field</button>
   </form>
 </div>
 <app-filtration>
@@ -16,7 +16,7 @@
   <div *ngFor="let product of filteredProducts">
     <div class="product-cart-container">
       <div>
-        <!--<img class="photo" [src]='product.photo'>-->
+        <img [src]="product?.photo" class="bottle-mini">
       </div>
       <div>
         <div>

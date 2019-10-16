@@ -10,7 +10,7 @@
 .product-cart-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 20em;
   height: 10em;
   border: 1px solid gray;
@@ -47,5 +47,10 @@ button {
   padding: 0.5em;
   background-color: lightgreen;
   border-radius: 0.25em;
+}
+
+.bottle-mini {
+  width: 10em;
+  height: 10em;
 }
 

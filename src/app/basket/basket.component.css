@@ -19,6 +19,22 @@
   height: 5em;
 }
 
+.shopping-cart-title {
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 2em;
+}
+
+.shopping-cart-title::before {
+  content: url("./../../assets/images/grapes.png");
+}
+
+.empty-basket {
+  text-align: center;
+  line-height: 8em;
+  margin: 4em auto;
+}
+
 .cart-buttons {
   display: flex;
   justify-content: space-between;

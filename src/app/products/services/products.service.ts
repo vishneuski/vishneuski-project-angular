@@ -7,23 +7,47 @@ import {Product} from '../models/product.interface';
 
 @Injectable()
 export class ProductsService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
+
   cartProducts: Product[] = [];
-  uniqueProductMessage: string =''; // add message if product already in cart
+  uniqueProductMessage: string = ''; // add message if product already in cart
 
   private cartSubject = new BehaviorSubject<any>([]);
   CartState = this.cartSubject.asObservable();
 
-    addProduct(product: Product) {
-      let tempProduct = this.cartProducts.find(item => item.id === product.id);
-      if (tempProduct === undefined) {
+  addProduct(product: Product) {
+    let tempProduct = this.cartProducts.find(item => item.id === product.id);
+    if (tempProduct === undefined) {
 
-        this.cartProducts.push(product);
-      }
-      console.log('in service');
-      console.log('CartProducts - ', this.cartProducts);
-      this.cartSubject.next(<any>{products: this.cartProducts});
+      this.cartProducts.push(product);
     }
+    console.log('in service');
+    console.log('CartProducts - ', this.cartProducts);
+    this.cartSubject.next(<any>{products: this.cartProducts});
+  }
+
+  deleteProduct(product: Product) {
+    console.log(product.name);
+    console.log(this.cartProducts);
+    let tempProduct = this.cartProducts.find(item => item.id === product.id);
+    console.log(tempProduct);
+
+    console.log(this.cartProducts);
+
+    for (let i = 0; i< this.cartProducts.length; i++) {
+      if (this.cartProducts[i].id === product.id) {
+        this.cartProducts.splice(i, 1);
+      }
+    }
+
+    console.log(this.cartProducts);
+
+    this.cartSubject.next(<any>{
+      products: this.cartProducts
+    });
+  }
+
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('/api/products');

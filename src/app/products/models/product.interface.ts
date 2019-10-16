@@ -5,7 +5,7 @@ export interface Product {
   country: string,
   vintage: number;
   // available: number;
-  // photo?: string;
+  photo?: string;
 }
 
 export interface Item {
