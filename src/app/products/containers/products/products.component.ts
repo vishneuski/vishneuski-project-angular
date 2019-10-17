@@ -2,11 +2,13 @@ import {Component} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
 import {forkJoin} from "rxjs";
+import {FiltrationComponent} from "../../components/filtration/filtration.component";
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
+  providers: [FiltrationComponent]
 })
 
 export class ProductsComponent {
@@ -51,8 +53,9 @@ export class ProductsComponent {
     console.log('in products');
     this.productsService.addProduct(product);
   }
-  
-  priceFilter(form) {
-    console.log(form);
+
+  priceFilter(value) {
+    this.productsService.filterForPrice(value);
+    console.log('Filter for prise form value', value);
   }
 }

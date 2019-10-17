@@ -23,8 +23,8 @@ export class FiltrationComponent implements OnInit {
   }
 
   onFilter(form) {
-    console.log(form.value);
-    this.priceFilter.emit(form);
+    console.log('filtr component');
+    this.priceFilter.emit(form.value);
   }
 
 }
