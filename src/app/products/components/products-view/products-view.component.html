@@ -35,8 +35,9 @@
     </div>
   </div>
 </div>
-<div class="card-footer pb-0 pt-3">
-  <jw-pagination [items]="filteredProducts" (changePage)="onChangePage($event)"></jw-pagination>
+<div>
+  <jw-pagination  class="pagination-wrapper" [items]="filteredProducts" (changePage)="onChangePage($event)">
+  </jw-pagination>
 </div>
 <!--<div class="product-cart-layout">-->
 <!--<div *ngFor="let product of filteredProducts">-->

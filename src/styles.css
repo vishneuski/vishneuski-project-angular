@@ -2,3 +2,28 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul.pagination {
+  list-style-type: none;
+}
+
+a.page-link {
+  margin-right: 0.25em;
+  box-sizing: border-box;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+  border-radius: 0.25em;
+  background-color: seagreen;
+  color: white;
+}
+
+a.page-link:hover {
+  background-color: #6D6E70;
+}
