@@ -6,9 +6,11 @@
 }
 
 .photo {
+  flex-basis: 40%;
 }
 
 .info {
   font-family: "Source Code Pro" Verdana sans-serif;
   line-height: 1.75em;
+  width: 70%;
 }

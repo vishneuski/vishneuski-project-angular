@@ -1,21 +1,21 @@
 export const products = [
   {
-    'id': 1,
-    'price': 100,
-    'name': 'Riesling',
-    'country': 'France',
-    'vintage': 1980,
-    'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
-  },
-  {
     'id': 2,
     'price': 200,
     'name': 'Chardonnay',
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-1.jpg'
+  },
+  {
+    'id': 1,
+    'price': 100,
+    'name': 'Riesling',
+    'country': 'France',
+    'vintage': 1980,
+    'available': 2,
+    'photo': './../../assets/images/wines/wine-2.jpg'
   },
   {
     'id': 3,
@@ -24,7 +24,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-3.jpg'
   },
   {
     'id': 4,
@@ -33,7 +33,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-4.jpg'
   },
   {
     'id': 5,
@@ -42,7 +42,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-5.jpg'
   },
   {
     'id': 6,
@@ -51,7 +51,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-6.jpg'
   },
   {
     'id': 7,
@@ -60,7 +60,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-7.jpg'
   },
   {
     'id': 8,
@@ -69,7 +69,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-8.jpg'
   },
   {
     'id': 9,
@@ -78,7 +78,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-9.jpg'
   },
   {
     'id': 10,
@@ -87,7 +87,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-10.jpg'
   },
   {
     'id': 11,
@@ -96,7 +96,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-11.jpg'
   },
   {
     'id': 12,
@@ -105,7 +105,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-12.jpg'
   },
   {
     'id': 13,
@@ -114,7 +114,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-13.jpg'
   },
   {
     'id': 14,
@@ -123,7 +123,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-14.jpg'
   },
   {
     'id': 15,
@@ -132,7 +132,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-15.jpg'
   },
   {
     'id': 16,
@@ -141,7 +141,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-16.jpg'
   },
   {
     'id': 17,
@@ -150,7 +150,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-17.jpg'
   },
   {
     'id': 18,
@@ -159,7 +159,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-18.jpg'
   },
   {
     'id': 19,
@@ -168,7 +168,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-19.jpg'
   },
   {
     'id': 20,
@@ -177,7 +177,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-20.jpg'
   },
   {
     'id': 21,
@@ -186,7 +186,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-21.jpg'
   },
   {
     'id': 22,
@@ -195,7 +195,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-22.jpg'
   },
   {
     'id': 23,
@@ -204,7 +204,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-23.jpg'
   },
   {
     'id': 24,
@@ -213,7 +213,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-24.jpg'
   },
   {
     'id': 25,
@@ -222,7 +222,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-25.jpg'
   },
   {
     'id': 26,
@@ -231,7 +231,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-26.jpg'
   },
   {
     'id': 27,
@@ -240,7 +240,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-27.jpg'
   },
   {
     'id': 28,
@@ -249,7 +249,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-28.jpg'
   },
   {
     'id': 29,
@@ -258,7 +258,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-29.jpg'
   },
   {
     'id': 30,
@@ -267,7 +267,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-30.jpg'
   },
   {
     'id': 31,
@@ -276,7 +276,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-31.jpg'
   },
   {
     'id': 32,
@@ -285,7 +285,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-32.jpg'
   },
   {
     'id': 33,
@@ -294,7 +294,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-33.jpg'
   },
   {
     'id': 34,
@@ -303,7 +303,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-34.jpg'
   },
   {
     'id': 35,
@@ -312,7 +312,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-35.jpg'
   },
   {
     'id': 36,
@@ -321,7 +321,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-36.jpg'
   },
   {
     'id': 37,
@@ -330,7 +330,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-37.jpg'
   },
   {
     'id': 38,
@@ -339,7 +339,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-38.jpg'
   },
   {
     'id': 39,
@@ -348,7 +348,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-39.jpg'
   },
   {
     'id': 40,
@@ -357,7 +357,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-40.jpg'
   },
   {
     'id': 41,
@@ -366,7 +366,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-41.jpg'
   },
   {
     'id': 42,
@@ -375,7 +375,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-42.jpg'
   },
   {
     'id': 43,
@@ -384,7 +384,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-43.jpg'
   },
   {
     'id': 44,
@@ -393,7 +393,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-44.jpg'
   },
   {
     'id': 45,
@@ -402,7 +402,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-45.jpg'
   },
   {
     'id': 46,
@@ -411,7 +411,7 @@ export const products = [
     'country': 'France',
     'vintage': 1980,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-46.jpg'
   },
   {
     'id': 47,
@@ -420,7 +420,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1970,
     'available': 1,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-47.jpg'
   },
   {
     'id': 48,
@@ -429,7 +429,7 @@ export const products = [
     'country': 'Italy',
     'vintage': 1987,
     'available': 2,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-48.jpg'
   },
   {
     'id': 49,
@@ -438,7 +438,7 @@ export const products = [
     'country': 'Spain',
     'vintage': 1965,
     'available': 3,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-49.jpg'
   },
   {
     'id': 50,
@@ -447,7 +447,7 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-50.jpg'
   },
   {
     'id': 51,
@@ -456,6 +456,6 @@ export const products = [
     'country': 'France',
     'vintage': 1983,
     'available': 7,
-    'photo': './../../assets/images/bottle.jpg'
+    'photo': './../../assets/images/wines/wine-51.jpg'
   }
 ];
