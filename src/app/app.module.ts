@@ -4,6 +4,7 @@ import {MaterialModule} from "./modules/material/material/material.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FakeBackendInterceptor} from "./fake-back-end/fake-back-end.interceptor";
+import { JwPaginationComponent } from 'jw-angular-pagination';
 
 import {AppComponent} from './app.component';
 import {ProductsComponent} from './products/containers/products/products.component';
@@ -29,6 +30,7 @@ import { FiltrationComponent } from './products/components/filtration/filtration
 @NgModule({
   declarations: [
     AppComponent,
+    JwPaginationComponent,
     ProductsComponent,
     HomeComponent,
     AboutComponent,
