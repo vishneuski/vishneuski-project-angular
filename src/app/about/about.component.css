@@ -1,16 +1,28 @@
 .about-container {
   display: flex;
-  width: 100vw;
-  height: 100%;
   flex-direction: row;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .photo {
-  flex-basis: 40%;
+  width: calc(40% - 2em);
+  background: #ffffff url("../../assets/images/about.jpg") right center/cover no-repeat;
+  margin: 2em auto;
 }
 
 .info {
-  font-family: "Source Code Pro" Verdana sans-serif;
+  font-family: "Source Code Pro",sans-serif;
   line-height: 1.75em;
-  width: 70%;
+  width: calc(60% - 2em);
+  margin: 2em auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+h3:before {
+  content: url("../../assets/images/grapes.png");
 }
