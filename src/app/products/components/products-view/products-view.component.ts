@@ -47,7 +47,7 @@ export class ProductsViewComponent {
      this.filterProduct(this.searchItem)
   }
 
-  filterPrise(form) {
+  filterPrice(form) {
     this.priceFilter.emit(form)
   }
 }

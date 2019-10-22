@@ -1,6 +1,7 @@
 <div>
   <form [formGroup]="filtrationForm"
-  (ngSubmit)="onFilter(filtrationForm)"
+        #myForm
+        (ngSubmit)="onFilter(filtrationForm)"
   class="filtrationForm">
   <input type="checkbox"
          id="hundred"

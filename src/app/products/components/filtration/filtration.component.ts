@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-filtration',
@@ -23,8 +23,7 @@ export class FiltrationComponent implements OnInit {
   }
 
   onFilter(form) {
-    console.log('filtr component');
+    console.log('filter component');
     this.priceFilter.emit(form.value);
   }
-
 }

@@ -1,7 +1,7 @@
 <app-products-view
   [products]="products"
   [filteredProducts]="filteredProducts"
-  (filter)="filterProducts($event)"
+  (basket)="addToBasket($event)"
   (priceFilter)="priceFilter($event)"
-  (basket)="addToBasket($event)">
+  (filter)="filterProducts($event)">
 </app-products-view>
