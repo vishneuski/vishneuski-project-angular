@@ -13,8 +13,11 @@ export class RegisterViewComponent implements OnInit {
   @Input()
   user: RegisterInfo;
 
+  @Input()
+  registerMessage;
+
   @Output()
-  registerTry: EventEmitter<RegisterInfo> = new EventEmitter<RegisterInfo>();
+  register: EventEmitter<RegisterInfo> = new EventEmitter<RegisterInfo>();
 
   constructor() { }
 
@@ -23,17 +26,14 @@ export class RegisterViewComponent implements OnInit {
     this.registerForm = new FormGroup({
       'firstName': new FormControl(null, Validators.required),
       'lastName': new FormControl(null, Validators.required),
-      'dateOfBirth': new FormControl(null, Validators.required),
-      'phone': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, Validators.required),
-      'repeatPassword': new FormControl(null, Validators.required),
     })
   }
 
   onSubmit(): void {
     console.log(this.registerForm.value);
-    this.registerTry.emit(this.registerForm.value);
+    this.register.emit(this.registerForm.value);
   }
 
 }

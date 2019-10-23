@@ -1,1 +1,5 @@
-<app-register-view [user]="user" (registerTry)="newRegister($event)"></app-register-view>
+<app-register-view
+  [user]='user'
+  (register)='register($event)'
+  [registerMessage]='registerMessage'>
+</app-register-view>
