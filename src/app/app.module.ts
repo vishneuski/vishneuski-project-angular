@@ -53,7 +53,7 @@ import {RegisterService} from "./register/services/register.service";
     AccountComponent,
     ProductsViewComponent,
     BlogComponent,
-    FiltrationComponent
+    FiltrationComponent,
   ],
   imports: [
     BrowserModule,
