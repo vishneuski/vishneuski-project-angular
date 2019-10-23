@@ -3,8 +3,15 @@
     <div class="logo">Great wines</div>
     <ul class="user-info">
       <li class="user-info-item">
-        <a routerLink='/login'>
+        <a *ngIf="!isLoggedIn" routerLink='/login'>
           Login
+        </a>
+      </li>
+      <li class="user-info-item">
+        <a *ngIf="isLoggedIn"
+           (click)="onLogoutClick()"
+           href='#'>
+          Logout
         </a>
       </li>
       <li class="user-info-item">|</li>

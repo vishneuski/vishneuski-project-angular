@@ -3,7 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { map } from 'rxjs/operators';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class AuthService {
 
   constructor(private afAuth: AngularFireAuth) {
@@ -16,5 +16,15 @@ export class AuthService {
         .then(userData => resolve(userData),
           err => reject(err));
     });
+  }
+
+  getAuth() {
+    return this.afAuth.authState.pipe(
+      map(auth => auth)
+    );
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 }

@@ -3,10 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 import {Product} from '../models/product.interface';
-import {RegisterService} from "../../register/services/register.service";
 
-
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class ProductsService {
   constructor(private http: HttpClient) {
   }
