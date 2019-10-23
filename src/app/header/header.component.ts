@@ -9,6 +9,9 @@ import {ProductsService} from "../products/services/products.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  isLoggedIn: boolean;
+
   products: Product[];
   productQuantity = 0;
   private subscription: Subscription;

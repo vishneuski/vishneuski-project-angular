@@ -71,8 +71,6 @@ import {AuthService} from "./services/auth.service";
   ],
   bootstrap: [AppComponent],
   providers: [
-    AuthService,
-    ProductsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FakeBackendInterceptor,

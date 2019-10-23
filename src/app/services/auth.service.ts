@@ -3,7 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { map } from 'rxjs/operators';
 
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AuthService {
 
   constructor(private afAuth: AngularFireAuth) {

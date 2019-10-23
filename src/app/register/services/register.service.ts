@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RegisterInfo } from "../model/register-info";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class RegisterService {
 
   user: RegisterInfo = {
