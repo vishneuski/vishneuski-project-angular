@@ -13,6 +13,7 @@ import {FiltrationComponent} from "../../components/filtration/filtration.compon
 
 export class ProductsComponent {
 
+  fbProducts: Product[];
   products: Product[];
   filteredProducts: Product[];
   productMap: Map<number, Product>;
@@ -30,11 +31,17 @@ export class ProductsComponent {
   }
 
   constructor(
-    private productsService: ProductsService) {
+    private productsService: ProductsService
+  ) {
   }
 
   ngOnInit() {
     const products = this.productsService.getProducts();
+    this.productsService.getfbProducts().subscribe(
+      products => {
+        
+      }
+    );
 
     forkJoin(products).subscribe(
       ([products]: [Product[]]) => {

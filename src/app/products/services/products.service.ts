@@ -4,9 +4,38 @@ import {Observable} from "rxjs";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 import {Product} from '../models/product.interface';
 
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import {map} from "rxjs/operators";
+
+
+
 @Injectable()
 export class ProductsService {
-  constructor(private http: HttpClient) {
+
+  fbProductsCollection: AngularFirestoreCollection<Product>;
+  fbProductDoc: AngularFirestoreDocument<Product>;
+  fbProducts: Observable<Product[]>;
+  fbProduct: Observable<Product>;
+
+  constructor(
+    private afs: AngularFirestore,
+    private http: HttpClient
+  ) {
+    this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
+  }
+
+  getfbProducts(): Observable<Product[]> {
+    this.fbProducts = this.fbProductsCollection.snapshotChanges().pipe(
+      map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as Product;
+          data.id = action.payload.doc.id;
+          return data;
+        });
+      })
+    );
+
+    return this.fbProducts;
   }
 
   cartProducts: Product[] = [];
