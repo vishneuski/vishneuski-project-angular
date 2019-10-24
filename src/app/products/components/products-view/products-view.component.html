@@ -36,6 +36,27 @@
     </div>
   </div>
 </div>
+<div *ngFor="let fbProduct of fbProducts">
+  <div class="product-cart-container">
+    <div>
+      <img [src]="fbProduct?.photo" class="bottle-mini">
+    </div>
+    <div>
+      <div>
+        {{fbProduct?.name}}
+      </div>
+      <div>
+        {{fbProduct?.country}}
+      </div>
+      <div>
+        {{fbProduct?.price | currency}}
+      </div>
+      <!--<button (click)="addToBasket(fbProduct)">-->
+        <!--Add to cart-->
+      <!--</button>-->
+    </div>
+  </div>
+</div>
 <div>
   <jw-pagination class="pagination-wrapper" [items]="filteredProducts" (changePage)="onChangePage($event)">
   </jw-pagination>

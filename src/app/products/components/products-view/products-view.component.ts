@@ -18,6 +18,9 @@ export class ProductsViewComponent {
   products: Product[];
 
   @Input()
+  fbProducts: Product[];
+
+  @Input()
   filteredProducts: Product[];
 
   @Output()

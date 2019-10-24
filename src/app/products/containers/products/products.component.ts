@@ -39,7 +39,8 @@ export class ProductsComponent {
     const products = this.productsService.getProducts();
     this.productsService.getfbProducts().subscribe(
       products => {
-        
+        this.fbProducts = products;
+
       }
     );
 
