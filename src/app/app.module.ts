@@ -32,7 +32,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ProductsService} from "./products/services/products.service";
 import {FiltrationComponent} from './products/components/filtration/filtration.component';
 import {AuthService} from "./services/auth.service";
-import {RegisterService} from "./register/services/register.service";
 
 @NgModule({
   declarations: [
@@ -74,7 +73,6 @@ import {RegisterService} from "./register/services/register.service";
   providers: [
     ProductsService,
     AuthService,
-    RegisterService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FakeBackendInterceptor,
