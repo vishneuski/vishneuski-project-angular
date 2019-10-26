@@ -57,10 +57,10 @@ export class ProductsComponent {
   //   );
   }
 
-  // addToBasket(product: Product) {
-  //   console.log('in products');
-  //   this.productsService.addProduct(product);
-  // }
+  addToBasket(product: Product) {
+    console.log('in products');
+    this.productsService.addProduct(product);
+  }
   //
   // priceFilter(value) {
   //   this.productsService.filterForPrice(value);

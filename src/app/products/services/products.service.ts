@@ -43,22 +43,22 @@ export class ProductsService {
   //Refactor
 
 
-  // cartProducts: Product[] = [];
+  cartProducts: Product[] = [];
   //
-  // private cartSubject = new BehaviorSubject<any>([]);
-  // CartState = this.cartSubject.asObservable();
+  private cartSubject = new BehaviorSubject<any>([]);
+  CartState = this.cartSubject.asObservable();
   //
-  // addProduct(product: Product) {
-  //   let tempProduct = this.cartProducts.find(item => item.id === product.id);
-  //   if (tempProduct === undefined) {
-  //
-  //     this.cartProducts.push(product);
-  //   }
-  //   console.log('in service');
-  //   console.log('CartProducts - ', this.cartProducts);
-  //   this.cartSubject.next(<any>{products: this.cartProducts});
-  // }
-  //
+  addProduct(product: Product) {
+    let tempProduct = this.cartProducts.find(item => item.id === product.id);
+    if (tempProduct === undefined) {
+
+      this.cartProducts.push(product);
+    }
+    console.log('in service');
+    console.log('CartProducts - ', this.cartProducts);
+    this.cartSubject.next(<any>{products: this.cartProducts});
+  }
+
   // filterForPrice(value) {
   //   console.log('in service', value);
   // }
