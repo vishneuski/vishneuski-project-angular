@@ -109,8 +109,7 @@ export class ProductsService {
   //   return this.http.get<Product[]>('/api/products');
   // }
 
-  orderProduct(products: Product, quantity) {
+  orderProduct(products: Product) {
     console.log(products, 'from basket when ordered');
-    console.log(quantity);
   }
 }

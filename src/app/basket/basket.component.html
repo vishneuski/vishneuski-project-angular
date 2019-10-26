@@ -28,9 +28,9 @@
           Total prise: {{(product?.price * productQuantity) | currency}}
         </div>
         <div class="cart-buttons">
-          <button (click)="order(product, productQuantity)">
-            Add to Order
-          </button>
+          <!--<button (click)="order(product, productQuantity)">-->
+            <!--Add to Order-->
+          <!--</button>-->
           <button (click)="delete(product)">
             Delete
           </button>
@@ -38,6 +38,9 @@
       </div>
     </div>
   </div>
+  <button (click)="order()">
+  Order Product
+  </button>
   <div *ngIf="!products" class="empty-basket">
     Your shopping cart is empty
   </div>

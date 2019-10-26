@@ -25,8 +25,11 @@ export class BasketComponent implements OnInit, OnDestroy {
     })
   }
 
-  order(product: Product, productQuantity) {
-    this.productsService.orderProduct(product, productQuantity);
+  order(product: Product[]) {
+    product = this.products;
+    this.productsService.orderProduct(product);
+    // this.productsService.orderProduct(product, productQuantity);
+
     // console.log(`Product ID - ${product.id}`);
     // console.log(`Product quantity - ${productQuantity}`);
     // console.log('in basket - ', this.products);
