@@ -2,8 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {MaterialModule} from "./modules/material/material/material.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {FakeBackendInterceptor} from "./fake-back-end/fake-back-end.interceptor";
+// import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+// import {FakeBackendInterceptor} from "./fake-back-end/fake-back-end.interceptor";
 import {JwPaginationComponent} from 'jw-angular-pagination';
 
 import {environment} from '../environments/environment';
@@ -61,7 +61,7 @@ import {AuthService} from "./services/auth.service";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule,
+    // HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule
@@ -73,11 +73,11 @@ import {AuthService} from "./services/auth.service";
   providers: [
     ProductsService,
     AuthService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: FakeBackendInterceptor,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: FakeBackendInterceptor,
+    //   multi: true
+    // }
   ]
 })
 export class AppModule {

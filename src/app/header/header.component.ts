@@ -40,12 +40,12 @@ export class HeaderComponent implements OnInit {
       }
     );
 
-    this.subscription = this.productsService.CartState.subscribe((state: any) => {
-      this.products = state.products;
-      if (this.products !== undefined) {
-        this.productQuantity = this.products.length;
-      }
-    })
+    // this.subscription = this.productsService.CartState.subscribe((state: any) => {
+    //   this.products = state.products;
+    //   if (this.products !== undefined) {
+    //     this.productQuantity = this.products.length;
+    //   }
+    // })
   }
 
   onLogoutClick() {

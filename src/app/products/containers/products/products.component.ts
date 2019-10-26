@@ -36,7 +36,7 @@ export class ProductsComponent {
   }
 
   ngOnInit() {
-    const products = this.productsService.getProducts();
+    const products = this.productsService.getfbProducts();
     this.productsService.getfbProducts().subscribe(
       products => {
         this.fbProducts = products;
@@ -44,26 +44,26 @@ export class ProductsComponent {
       }
     );
 
-    forkJoin(products).subscribe(
-      ([products]: [Product[]]) => {
-        const myMap = products.map<[number, Product]>(product => [
-          product.id,
-          product
-        ]);
-        this.productMap = new Map<number, Product>(myMap);
-        this.products = products;
-        this.filteredProducts = this.products;
-      }
-    );
+  //   forkJoin(products).subscribe(
+  //     ([products]: [Product[]]) => {
+  //       const myMap = products.map<[number, Product]>(product => [
+  //         product.id,
+  //         product
+  //       ]);
+  //       this.productMap = new Map<number, Product>(myMap);
+  //       this.products = products;
+  //       this.filteredProducts = this.products;
+  //     }
+  //   );
   }
 
-  addToBasket(product: Product) {
-    console.log('in products');
-    this.productsService.addProduct(product);
-  }
-
-  priceFilter(value) {
-    this.productsService.filterForPrice(value);
-    console.log('Filter for prise form value', value);
-  }
+  // addToBasket(product: Product) {
+  //   console.log('in products');
+  //   this.productsService.addProduct(product);
+  // }
+  //
+  // priceFilter(value) {
+  //   this.productsService.filterForPrice(value);
+  //   console.log('Filter for prise form value', value);
+  // }
 }

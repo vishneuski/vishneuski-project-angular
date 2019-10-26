@@ -39,7 +39,7 @@
 <div *ngFor="let fbProduct of fbProducts">
   <div class="product-cart-container">
     <div>
-      <img [src]="fbProduct?.photo" class="bottle-mini">
+      <!--<img [src]="fbProduct?.photo" class="bottle-mini">-->
     </div>
     <div>
       <div>
@@ -51,9 +51,9 @@
       <div>
         {{fbProduct?.price | currency}}
       </div>
-      <!--<button (click)="addToBasket(fbProduct)">-->
-        <!--Add to cart-->
-      <!--</button>-->
+      <button (click)="addToBasket(fbProduct)">
+        Add to cart
+      </button>
     </div>
   </div>
 </div>
