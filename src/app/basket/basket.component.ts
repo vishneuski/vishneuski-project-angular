@@ -18,32 +18,24 @@ export class BasketComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    this.subscription = this.productsService.CartState.subscribe((state: any) => {
+      this.products = state.products;
+    })
   }
+
+  order(product, productQuantity) {
+    console.log(`Product ID - ${product.id}`);
+    console.log(`Product quantity - ${productQuantity}`);
+    console.log('in basket - ', this.products);
+  };
+
+  delete(product) {
+    this.productsService.deleteProduct(product)
+  };
+
 
   ngOnDestroy() {
-
+    this.subscription.unsubscribe();
   }
-
-  // ngOnInit() {
-  //   this.subscription = this.productsService.CartState.subscribe((state: any) => {
-  //     this.products = state.products;
-  //   })
-  // }
-
-  // order(product, productQuantity) {
-  //   console.log(`Product ID - ${product.id}`);
-  //   console.log(`Product quantity - ${productQuantity}`);
-  //   console.log('in basket - ', this.products);
-  // };
-  //
-  // delete(product) {
-  //   this.productsService.deleteProduct(product)
-  // };
-  //
-  //
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
 
 }
