@@ -10,9 +10,11 @@ import {Subscription} from "rxjs/internal/Subscription";
 })
 export class BasketComponent implements OnInit, OnDestroy {
 
-  productQuantity = 1;
+  productQuantity;
   products: Product[];
   private subscription: Subscription;
+
+  orderProducts: Product[];
 
   constructor(private productsService: ProductsService) {
   }
@@ -23,10 +25,12 @@ export class BasketComponent implements OnInit, OnDestroy {
     })
   }
 
-  order(product, productQuantity) {
-    console.log(`Product ID - ${product.id}`);
-    console.log(`Product quantity - ${productQuantity}`);
-    console.log('in basket - ', this.products);
+  order(product: Product, productQuantity) {
+    this.productsService.orderProduct(product, productQuantity);
+    // console.log(`Product ID - ${product.id}`);
+    // console.log(`Product quantity - ${productQuantity}`);
+    // console.log('in basket - ', this.products);
+
   };
 
   delete(product) {

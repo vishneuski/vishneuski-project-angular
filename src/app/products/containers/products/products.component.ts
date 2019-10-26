@@ -14,15 +14,15 @@ import {FiltrationComponent} from "../../components/filtration/filtration.compon
 export class ProductsComponent {
 
   fbProducts: Product[];
-  products: Product[];
+  // products: Product[];
   filteredProducts: Product[];
   productMap: Map<number, Product>;
 
   filterProducts(searchString?: string) {
     if (searchString === '' || searchString === undefined || searchString === null) {
-      return this.filteredProducts = this.products;
+      return this.filteredProducts = this.fbProducts;
     } else {
-      this.filteredProducts = this.products
+      this.filteredProducts = this.fbProducts
         .filter((product) =>
           product.name.indexOf(searchString) !== -1);
       console.log(this.filteredProducts);
@@ -58,7 +58,7 @@ export class ProductsComponent {
   }
 
   addToBasket(product: Product) {
-    console.log('in products');
+    // console.log('in products');
     this.productsService.addProduct(product);
   }
   //

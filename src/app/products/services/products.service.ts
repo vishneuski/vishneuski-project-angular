@@ -16,8 +16,9 @@ export class ProductsService {
 
   fbProductsCollection: AngularFirestoreCollection<Product>;
   fbProductDoc: AngularFirestoreDocument<Product>;
-  fbOrdersCollection: AngularFirestoreCollection<Product>;
-  fbOrderDoc: AngularFirestoreDocument<Product>;
+
+  fbOrdersCollection: AngularFirestoreCollection<Order>;
+  fbOrderDoc: AngularFirestoreDocument<Order>;
 
   fbProducts: Observable<Product[]>;
   fbProduct: Observable<Product>;
@@ -78,7 +79,7 @@ export class ProductsService {
 
       this.cartProducts.push(product);
     }
-    console.log('in service');
+    // console.log('in service');
     console.log('CartProducts - ', this.cartProducts);
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
@@ -102,8 +103,14 @@ export class ProductsService {
     }
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
+
   //
   // getProducts(): Observable<Product[]> {
   //   return this.http.get<Product[]>('/api/products');
   // }
+
+  orderProduct(products: Product, quantity) {
+    console.log(products, 'from basket when ordered');
+    console.log(quantity);
+  }
 }

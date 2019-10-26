@@ -5,7 +5,7 @@
   <div *ngFor="let product of products">
     <div class="product-cart-container">
       <div>
-        <img class="photo" [src]='product?.photo'>
+        <!--<img class="photo" [src]='product?.photo'>-->
       </div>
       <div class="cart-info">
         <div>
@@ -21,7 +21,7 @@
                  step="1"
                  [ngModel]=productQuantity
                  id="quantity"
-                 max=10
+                 max={{product?.quantity}}
                  min=0>
         </div>
         <div>
@@ -29,7 +29,7 @@
         </div>
         <div class="cart-buttons">
           <button (click)="order(product, productQuantity)">
-            Order
+            Add to Order
           </button>
           <button (click)="delete(product)">
             Delete
@@ -38,8 +38,7 @@
       </div>
     </div>
   </div>
+  <div *ngIf="!products" class="empty-basket">
+    Your shopping cart is empty
+  </div>
 </div>
-<div *ngIf="!products" class="empty-basket">
-  Your shopping cart is empty
-</div>
-

@@ -4,11 +4,11 @@ export interface Product {
   name: string,
   country: string,
   vintage: number;
-  // available: number;
+  quantity?: number;
   photo?: string;
 }
 
-export interface Item {
-  product_id: number,
-  quantity: number
-}
+// export interface Item {
+//   product_id: number,
+//   quantity: number
+// }
