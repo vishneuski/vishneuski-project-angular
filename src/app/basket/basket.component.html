@@ -37,10 +37,10 @@
         </div>
       </div>
     </div>
+    <button (click)="order(product)">
+      Order Product
+    </button>
   </div>
-  <button (click)="order()">
-  Order Product
-  </button>
   <div *ngIf="!products" class="empty-basket">
     Your shopping cart is empty
   </div>
