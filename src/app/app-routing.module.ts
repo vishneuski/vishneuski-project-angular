@@ -20,9 +20,9 @@ const routes: Routes = [
   // {path: 'login', component: LoginComponent},
   // {path: 'register', component: RegisterComponent},
   {path: 'basket', component: BasketComponent, canActivate: [AuthGuard]},
-  {path: '**', component: NotFoundComponent},
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({

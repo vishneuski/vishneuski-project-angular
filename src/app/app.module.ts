@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {JwPaginationComponent} from 'jw-angular-pagination';
+// import {JwPaginationComponent} from 'jw-angular-pagination';
 
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
@@ -27,13 +27,14 @@ import {AccountComponent} from './account/account.component';
 import {BlogComponent} from './components/blog/blog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ProductsService} from "./products/services/products.service";
-import {FiltrationComponent} from './products/components/filtration/filtration.component';
+// import {FiltrationComponent} from './products/components/filtration/filtration.component';
 import {AuthService} from "./services/auth.service";
+import {ProductsModule} from "./products/products.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    JwPaginationComponent,
+
     // ProductsComponent,
     HomeComponent,
     AboutComponent,
@@ -49,9 +50,10 @@ import {AuthService} from "./services/auth.service";
     AccountComponent,
     // ProductsViewComponent,
     BlogComponent,
-    FiltrationComponent,
+    // FiltrationComponent,
   ],
   imports: [
+    ProductsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

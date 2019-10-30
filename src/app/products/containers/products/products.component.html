@@ -1,8 +1,8 @@
 <app-products-view
-  [products]="fbProducts"
   [fbProducts]="fbProducts"
   [filteredProducts]="filteredProducts"
   (basket)="addToBasket($event)"
   (priceFilter)="priceFilter($event)"
   (filter)="filterProducts($event)">
+  <!--[products]="fbProducts"-->
 </app-products-view>
