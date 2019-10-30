@@ -9,7 +9,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 
 import {AppComponent} from './app.component';
-import {ProductsComponent} from './products/containers/products/products.component';
+// import {ProductsComponent} from './products/containers/products/products.component';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
 import {ContactsComponent} from './contacts/components/contacts-view/contacts.component';
@@ -17,13 +17,13 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {LoginComponent} from './login/containers/login/login.component';
-import {RegisterComponent} from './register/containers/register/register.component';
+// import {LoginComponent} from './auth/login/containers/login/login.component';
+// import {RegisterComponent} from './auth/register/containers/register/register.component';
 import {BasketComponent} from "./basket/basket.component";
-import {LoginViewComponent} from './login/components/login-view/login-view.component';
-import {RegisterViewComponent} from './register/components/register-view/register-view.component';
+// import {LoginViewComponent} from './auth/login/components/login-view/login-view.component';
+// import {RegisterViewComponent} from './auth/register/components/register-view/register-view.component';
 import {AccountComponent} from './account/account.component';
-import {ProductsViewComponent} from './products/components/products-view/products-view.component';
+// import {ProductsViewComponent} from './products/components/products-view/products-view.component';
 import {BlogComponent} from './components/blog/blog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ProductsService} from "./products/services/products.service";
@@ -34,20 +34,20 @@ import {AuthService} from "./services/auth.service";
   declarations: [
     AppComponent,
     JwPaginationComponent,
-    ProductsComponent,
+    // ProductsComponent,
     HomeComponent,
     AboutComponent,
     ContactsComponent,
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
-    RegisterComponent,
+    // LoginComponent,
+    // RegisterComponent,
     BasketComponent,
-    LoginViewComponent,
-    RegisterViewComponent,
+    // LoginViewComponent,
+    // RegisterViewComponent,
     AccountComponent,
-    ProductsViewComponent,
+    // ProductsViewComponent,
     BlogComponent,
     FiltrationComponent,
   ],
