@@ -8,7 +8,7 @@
 
 .photo {
   width: calc(40% - 2em);
-  background: #ffffff url("../../assets/images/about.jpg") right center/cover no-repeat;
+  background: #ffffff url("../../../assets/images/about.jpg") right center/cover no-repeat;
   margin: 2em auto;
 }
 
@@ -24,5 +24,5 @@ h3 {
 }
 
 h3:before {
-  content: url("../../assets/images/grapes.png");
+  content: url("../../../assets/images/grapes.png");
 }

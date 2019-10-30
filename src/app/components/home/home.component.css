@@ -7,7 +7,7 @@
   max-width: 100em;
   margin: 0 auto;
   height: 100vh;
-  background: lightcyan url("../../assets/images/home.jpg") top center/cover no-repeat;
+  background: lightcyan url("../../../assets/images/home.jpg") top center/cover no-repeat;
 }
 
 .image-above {
@@ -49,14 +49,14 @@ img {
 }
 
 .photo-one {
-  background-image: url("./../../assets/images/mini-info-1.jpg");
+  background-image: url("../../../assets/images/mini-info-1.jpg");
 }
 
 .photo-two {
-  background-image: url("./../../assets/images/mini-info-2.jpg");
+  background-image: url("../../../assets/images/mini-info-2.jpg");
 }
 
 .photo-three {
-  background-image: url("./../../assets/images/mini-info-4.jpg");
+  background-image: url("../../../assets/images/mini-info-4.jpg");
 }
 
