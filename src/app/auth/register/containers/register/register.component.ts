@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(userInfo.email, userInfo.password)
       .then(res => {
         this.registerMessage = 'You are register successfully';
-        this.router.navigate(['/basket'])
+        this.router.navigate(['/shopping-list'])
       })
       .catch(err => {
         this.registerMessage = 'You are not register';

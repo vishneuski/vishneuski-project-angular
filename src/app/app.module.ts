@@ -13,7 +13,6 @@ import {ContactsComponent} from './contacts/components/contacts-view/contacts.co
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {BasketComponent} from "./basket/basket.component";
 import {AccountComponent} from './account/account.component';
 import {BlogComponent} from './components/blog/blog.component';
 
@@ -25,6 +24,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {ProductsModule} from "./products/products.module";
 import {AuthModule} from "./auth/auth.module";
+import {ShoppingListModule} from "./shopping-list/shopping-list.module";
+
 
 @NgModule({
   declarations: [
@@ -35,22 +36,24 @@ import {AuthModule} from "./auth/auth.module";
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    BasketComponent,
+    // ShoppingListComponent,
     AccountComponent,
-    BlogComponent,
+    BlogComponent
   ],
   imports: [
+    ProductsModule,
+    AuthModule,
+    ShoppingListModule,
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    ProductsModule,
-    AuthModule,
+    AppRoutingModule
   ],
+
   exports: [
     BrowserAnimationsModule
   ],

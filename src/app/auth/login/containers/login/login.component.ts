@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       .then(res => {
         console.log(res, 'success!!! ');
         this.loginError = null;
-        this.router.navigate(['basket']);
+        this.router.navigate(['shopping-list']);
       })
       .catch(err => {
         this.loginError = 'Wrong password or email!';

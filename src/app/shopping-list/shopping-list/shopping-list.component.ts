@@ -1,14 +1,14 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProductsService} from "../products/services/products.service";
-import {Product} from "../products/models/product.interface";
+import {ProductsService} from "../../products/services/products.service";
+import {Product} from "../../products/models/product.interface";
 import {Subscription} from "rxjs/internal/Subscription";
 
 @Component({
   selector: 'app-basket-component',
-  templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.css']
+  templateUrl: './shopping-list.component.html',
+  styleUrls: ['./shopping-list.component.css']
 })
-export class BasketComponent implements OnInit, OnDestroy {
+export class ShoppingListComponent implements OnInit, OnDestroy {
 
   productQuantity;
   products: Product[];
@@ -32,7 +32,7 @@ export class BasketComponent implements OnInit, OnDestroy {
 
     // console.log(`Product ID - ${product.id}`);
     // console.log(`Product quantity - ${productQuantity}`);
-    // console.log('in basket - ', this.products);
+    // console.log('in shopping-list - ', this.products);
 
   };
 
