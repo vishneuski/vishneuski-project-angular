@@ -4,7 +4,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { AuthRoutingModule } from './auth-routing.module';
 
-import { AuthComponent } from './auth.component';
+import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from "./login/containers/login/login.component";
 import { LoginViewComponent } from "./login/components/login-view/login-view.component";
 import { RegisterComponent } from "./register/containers/register/register.component";

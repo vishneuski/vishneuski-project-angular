@@ -1,6 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CoreModule} from "./core.module";
+
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
@@ -13,14 +15,7 @@ import {ContactsComponent} from './contacts/components/contacts-view/contacts.co
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {AccountComponent} from './account/account.component';
-import {BlogComponent} from './components/blog/blog.component';
 
-import {ProductsService} from "./products/services/products.service";
-import {AuthService} from "./services/auth.service";
-
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
@@ -32,28 +27,18 @@ import {AppRoutingModule} from './app-routing.module';
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    AccountComponent,
-    BlogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule
   ],
-
-  exports: [
-    BrowserAnimationsModule
-  ],
-  bootstrap: [AppComponent],
-  providers: [
-    ProductsService,
-    AuthService,
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
