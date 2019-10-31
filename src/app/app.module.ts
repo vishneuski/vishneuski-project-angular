@@ -36,7 +36,6 @@ import {ShoppingListModule} from "./shopping-list/shopping-list.module";
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    // ShoppingListComponent,
     AccountComponent,
     BlogComponent
   ],
