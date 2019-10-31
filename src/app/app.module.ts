@@ -11,16 +11,20 @@ import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
 import {ContactsComponent} from './contacts/components/contacts-view/contacts.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
-import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {BasketComponent} from "./basket/basket.component";
 import {AccountComponent} from './account/account.component';
 import {BlogComponent} from './components/blog/blog.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {ProductsService} from "./products/services/products.service";
 import {AuthService} from "./services/auth.service";
+
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
 import {ProductsModule} from "./products/products.module";
+import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -36,7 +40,6 @@ import {ProductsModule} from "./products/products.module";
     BlogComponent,
   ],
   imports: [
-    ProductsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -44,7 +47,9 @@ import {ProductsModule} from "./products/products.module";
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ProductsModule,
+    AuthModule,
   ],
   exports: [
     BrowserAnimationsModule

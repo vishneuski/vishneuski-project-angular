@@ -2,26 +2,23 @@
   <div class="header">
     <div class="logo">Great wines</div>
     <ul class="user-info">
-      <!--<li class="user-info-item">-->
-        <!--<a *ngIf="!isLoggedIn" routerLink='/auth/:login'>-->
-          <!--Login-->
-        <!--</a>-->
-      <!--</li>-->
-      <!--<li class="user-info-item">-->
-        <!--<a *ngIf="isLoggedIn"-->
-           <!--(click)="onLogoutClick()"-->
-           <!--href='#'>-->
-          <!--Logout-->
-        <!--</a>-->
-      <!--</li>-->
-      <!--<li class="user-info-item">|</li>-->
-      <!--<li class="user-info-item">-->
-        <!--<a routerLink='/auth/:register'>-->
-          <!--Register-->
-        <!--</a>-->
-      <!--</li>-->
       <li class="user-info-item">
-        <a routerLink='/auth'>Auth</a>
+        <a *ngIf="!isLoggedIn" routerLink='/auth/login'>
+          Login
+        </a>
+      </li>
+      <li class="user-info-item">
+        <a *ngIf="isLoggedIn"
+           (click)="onLogoutClick()"
+           href='#'>
+          Logout
+        </a>
+      </li>
+      <li class="user-info-item">|</li>
+      <li class="user-info-item">
+        <a routerLink='/auth/register'>
+          Register
+        </a>
       </li>
       <li class="user-info-item">
         <a routerLink='/basket'>
