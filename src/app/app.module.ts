@@ -22,10 +22,6 @@ import {AuthService} from "./services/auth.service";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
-import {ProductsModule} from "./products/products.module";
-import {AuthModule} from "./auth/auth.module";
-import {ShoppingListModule} from "./shopping-list/shopping-list.module";
-
 
 @NgModule({
   declarations: [
@@ -40,9 +36,6 @@ import {ShoppingListModule} from "./shopping-list/shopping-list.module";
     BlogComponent
   ],
   imports: [
-    ProductsModule,
-    AuthModule,
-    ShoppingListModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
