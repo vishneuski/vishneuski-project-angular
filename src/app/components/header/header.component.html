@@ -2,6 +2,7 @@
   <div class="header">
     <div class="logo">Great wines</div>
     <ul class="user-info">
+      <li class="user-info-item">{{loggedInUser}}</li>
       <li class="user-info-item">
         <a *ngIf="!isLoggedIn" routerLink='/auth/login'>
           Login

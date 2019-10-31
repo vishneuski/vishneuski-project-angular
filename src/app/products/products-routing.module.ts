@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductsComponent } from './containers/products/products.component';
 import {AuthGuard} from "../shared/guards/auth.guard";
 
-const routes: Routes = [{ path: '', component: ProductsComponent, canActivate: [AuthGuard] }];
+// const routes: Routes = [{ path: '', component: ProductsComponent, canActivate: [AuthGuard] }];
+const routes: Routes = [{ path: '', component: ProductsComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

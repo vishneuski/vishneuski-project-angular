@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 import {Product} from "../../models/product.interface";
 import {FiltrationComponent} from "../filtration/filtration.component";
 import {JwPaginationComponent} from "jw-angular-pagination";
+import {AuthService} from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-products-view',
@@ -9,7 +10,16 @@ import {JwPaginationComponent} from "jw-angular-pagination";
   styleUrls: ['./products-view.component.css'],
   providers: [FiltrationComponent, JwPaginationComponent]
 })
-export class ProductsViewComponent {
+export class ProductsViewComponent implements OnInit{
+
+  isLoggedIn;
+
+  constructor( private authService: AuthService) {
+  }
+
+  ngOnInit() {
+      this.authService.getAuth().subscribe(val => this.isLoggedIn = val);
+  }
 
   searchItem: string;
   pageOfItems: Array<any>;
