@@ -10,19 +10,24 @@ import {Subscription} from "rxjs/internal/Subscription";
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
-  productQuantity;
-  products: Product[];
+  public productQuantity;
+  public products: Product[];
   private subscription: Subscription;
 
-  orderProducts: Product[];
 
-  constructor(private productsService: ProductsService) {
+  public orderProducts: Product[];
+
+  constructor(
+    private productsService: ProductsService
+  ) {
   }
 
   ngOnInit() {
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
-    })
+    });
+
+
   }
 
   order(product: Product) {

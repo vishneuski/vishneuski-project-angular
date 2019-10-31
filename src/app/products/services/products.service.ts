@@ -6,9 +6,9 @@ import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 import {Product} from '../models/product.interface';
 import {Order} from "../../models/order";
 
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {map} from "rxjs/operators";
-
 
 
 @Injectable()
@@ -28,11 +28,25 @@ export class ProductsService {
 
   constructor(
     private afs: AngularFirestore,
-    // private http: HttpClient
+    private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
-    this.fbOrdersCollection = this.afs.collection('orders', ref => ref.orderBy('email','asc'))
+    this.fbOrdersCollection = this.afs.collection('orders', ref => ref.orderBy('email', 'asc'))
   }
+
+
+  isLoggedIn(): Observable<boolean> {
+    return this.afAuth.authState.pipe(
+      map(auth => {
+        if (!auth) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    );
+  }
+
 
   getfbProducts(): Observable<Product[]> {
     this.fbProducts = this.fbProductsCollection.snapshotChanges().pipe(
@@ -69,10 +83,10 @@ export class ProductsService {
 
 
   cartProducts: Product[] = [];
-  //
+
   private cartSubject = new BehaviorSubject<any>([]);
   CartState = this.cartSubject.asObservable();
-  //
+
   addProduct(product: Product) {
     let tempProduct = this.cartProducts.find(item => item.id === product.id);
     if (tempProduct === undefined) {

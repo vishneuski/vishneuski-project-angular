@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
+import {AuthService} from "../../../auth/services/auth.service";
 import {forkJoin} from "rxjs";
 import {FiltrationComponent} from "../../components/filtration/filtration.component";
 
@@ -11,12 +12,13 @@ import {FiltrationComponent} from "../../components/filtration/filtration.compon
   providers: [FiltrationComponent]
 })
 
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
 
   fbProducts: Product[];
   // products: Product[];
   filteredProducts: Product[];
   productMap: Map<number, Product>;
+  public isLoggedIn: boolean;
 
   filterProducts(searchString?: string) {
     if (searchString === '' || searchString === undefined || searchString === null) {
@@ -31,7 +33,7 @@ export class ProductsComponent {
   }
 
   constructor(
-    private productsService: ProductsService
+    private productsService: ProductsService,
   ) {
   }
 
@@ -40,27 +42,15 @@ export class ProductsComponent {
     this.productsService.getfbProducts().subscribe(
       products => {
         this.fbProducts = products;
-
       }
     );
-
-  //   forkJoin(products).subscribe(
-  //     ([products]: [Product[]]) => {
-  //       const myMap = products.map<[number, Product]>(product => [
-  //         product.id,
-  //         product
-  //       ]);
-  //       this.productMap = new Map<number, Product>(myMap);
-  //       this.products = products;
-  //       this.filteredProducts = this.products;
-  //     }
-  //   );
   }
 
   addToBasket(product: Product) {
-    // console.log('in products');
     this.productsService.addProduct(product);
   }
+
+
   //
   // priceFilter(value) {
   //   this.productsService.filterForPrice(value);
