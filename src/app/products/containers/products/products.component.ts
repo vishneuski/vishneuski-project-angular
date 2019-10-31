@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit{
   // products: Product[];
   filteredProducts: Product[];
   productMap: Map<number, Product>;
-  public isLoggedIn: boolean;
+  public isLoggedIn: any;
 
   filterProducts(searchString?: string) {
     if (searchString === '' || searchString === undefined || searchString === null) {
@@ -34,16 +34,22 @@ export class ProductsComponent implements OnInit{
 
   constructor(
     private productsService: ProductsService,
+    private authService: AuthService,
   ) {
   }
 
   ngOnInit() {
-    const products = this.productsService.getfbProducts();
     this.productsService.getfbProducts().subscribe(
       products => {
         this.fbProducts = products;
       }
     );
+
+    this.authService.getAuth().subscribe(
+      val => {
+        this.isLoggedIn = val;
+      }
+    )
   }
 
   addToBasket(product: Product) {

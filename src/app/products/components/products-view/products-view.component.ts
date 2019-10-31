@@ -10,16 +10,7 @@ import {AuthService} from "../../../auth/services/auth.service";
   styleUrls: ['./products-view.component.css'],
   providers: [FiltrationComponent, JwPaginationComponent]
 })
-export class ProductsViewComponent implements OnInit{
-
-  isLoggedIn;
-
-  constructor( private authService: AuthService) {
-  }
-
-  ngOnInit() {
-      this.authService.getAuth().subscribe(val => this.isLoggedIn = val);
-  }
+export class ProductsViewComponent {
 
   searchItem: string;
   pageOfItems: Array<any>;
@@ -32,6 +23,9 @@ export class ProductsViewComponent implements OnInit{
 
   @Input()
   filteredProducts: Product[];
+
+  @Input()
+  isLoggedIn: boolean;
 
   @Output()
   basket: EventEmitter<Product> = new EventEmitter<Product>();
