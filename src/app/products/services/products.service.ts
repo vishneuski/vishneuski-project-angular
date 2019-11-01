@@ -126,4 +126,12 @@ export class ProductsService {
   orderProduct(products: Product) {
     console.log(products, 'from basket when ordered');
   }
+
+  addWine(wine: Product) {
+    console.log(wine);
+    this.fbProductsCollection.add(wine);
+  }
+
 }
+
+

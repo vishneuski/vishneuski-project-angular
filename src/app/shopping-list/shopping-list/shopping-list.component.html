@@ -47,6 +47,14 @@
     Order Product
   </button>
 </div>
-<div *ngIf="!products" class="empty-basket">
+
+<div>
+  <button class="btn btn-primary" (click)="addWine()">
+    <a routerLink="/shopping-list/addWine"> Add collection wine</a>
+  </button>
+</div>
+
+<div [hidden]="!products" class="empty-basket">
   Your shopping cart is empty
 </div>
+

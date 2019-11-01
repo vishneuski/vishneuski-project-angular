@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
-import { ShoppingListRoutingModule } from './shopping-list-routing.module';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import {ShoppingListRoutingModule} from './shopping-list-routing.module';
+import {ShoppingListComponent} from './shopping-list/shopping-list.component';
+import {AddWineComponent} from './add-wine/add-wine.component';
 
 @NgModule({
-  declarations: [ShoppingListComponent],
+  declarations: [ShoppingListComponent, AddWineComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -14,4 +15,5 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     ShoppingListRoutingModule
   ]
 })
-export class ShoppingListModule { }
+export class ShoppingListModule {
+}
