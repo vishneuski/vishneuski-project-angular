@@ -26,8 +26,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
     });
-
-
   }
 
   order(product: Product) {
@@ -42,12 +40,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   };
 
   delete(product) {
-    this.productsService.deleteProduct(product)
+    this.productsService.deleteProduct(product);
   };
 
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }
