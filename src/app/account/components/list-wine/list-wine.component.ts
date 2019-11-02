@@ -11,7 +11,6 @@ import {filter, map} from "rxjs/operators";
 })
 export class ListWineComponent implements OnInit {
   products?: Product[];
-  mailProducts?: string[] = [];
   isLoggedIn: boolean;
   loggedInUser: string;
 

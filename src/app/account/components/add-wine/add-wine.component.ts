@@ -11,17 +11,30 @@ import {AuthService} from "../../../auth/services/auth.service";
 export class AddWineComponent implements OnInit {
 
   addWineForm: FormGroup;
+  isLoggedIn: boolean;
+  loggedInUser: string;
 
 
   constructor(
     private productService: ProductsService,
     private authService: AuthService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
+    this.authService.getAuth().subscribe(auth => {
+        if (auth) {
+          this.isLoggedIn = true;
+          this.loggedInUser = auth.email;
+        } else {
+          this.isLoggedIn = false;
+        }
+      }
+    );
+
     this.addWineForm = new FormGroup(
       {
-        'email': new FormControl(null, Validators.required),
+        'email': new FormControl(this.loggedInUser, Validators.required),
         'name': new FormControl(null, Validators.required),
         'price': new FormControl(null, Validators.required),
         'country': new FormControl(null, Validators.required),
@@ -29,12 +42,12 @@ export class AddWineComponent implements OnInit {
         'quantity': new FormControl(null, Validators.required),
         'photo': new FormControl(null, Validators.required),
       }
-    )
+    );
+
+
   }
 
   onSubmit(wine): void {
     this.productService.addWine(wine.value);
   }
-
-
 }

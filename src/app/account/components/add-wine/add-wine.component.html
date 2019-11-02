@@ -1,14 +1,15 @@
 <form [formGroup]="addWineForm"
       (ngSubmit)="onSubmit(addWineForm)"
       class="addWineForm">
-  <h3>Add new wine</h3>
   <div>
     Your email:
     <input type="text"
            placeholder="email"
            name="email"
+           [value]="loggedInUser"
            formControlName="email">
   </div>
+  <h3>Add new wine</h3>
   <div *ngIf="addWineForm.controls['email'].invalid && addWineForm.controls['email'].touched" class="error">
     Input your email!
   </div>
