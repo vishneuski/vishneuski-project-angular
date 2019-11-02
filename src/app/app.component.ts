@@ -27,6 +27,11 @@ export class AppComponent {
       link: '/contacts',
       name: 'Contacts',
       exact: true
+    },
+    {
+      link: '/account',
+      name: 'Account',
+      exact: true
     }
   ];
 }

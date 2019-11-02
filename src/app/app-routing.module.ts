@@ -26,7 +26,13 @@ const routes: Routes = [
     path: 'shopping-list',
     loadChildren: () => import('./shopping-list/shopping-list.module').then(m => m.ShoppingListModule)
   },
-  {path: '**', component: NotFoundComponent},
+  {
+    path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+  },
+  {
+    path: '**', component: NotFoundComponent
+  },
+
 
 ];
 

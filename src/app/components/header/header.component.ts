@@ -23,9 +23,7 @@ export class HeaderComponent implements OnInit {
     private productsService: ProductsService,
     private authService: AuthService,
     private router: Router
-) {
-
-  }
+) {}
 
   ngOnInit() {
 
