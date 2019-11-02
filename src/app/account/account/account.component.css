@@ -2,6 +2,11 @@
   margin-top: 2em;
 }
 
+.user-mail {
+  color: #6D3023;
+  border-bottom: 1px solid #6D3023;
+}
+
 .nav {
   margin: 0 auto;
   box-sizing: border-box;
@@ -9,7 +14,7 @@
   background-color: #f6f0ed;
   border-bottom: 1px solid #dce5f2;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 60%;
 }
 

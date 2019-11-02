@@ -3,6 +3,16 @@
       class="addWineForm">
   <h3>Add new wine</h3>
   <div>
+    Your email:
+    <input type="text"
+           placeholder="email"
+           name="email"
+           formControlName="email">
+  </div>
+  <div *ngIf="addWineForm.controls['email'].invalid && addWineForm.controls['email'].touched" class="error">
+    Input your email!
+  </div>
+  <div>
     Wine name:
     <input type="text"
            placeholder="name"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../products/models/product.interface";
 import {Subscription} from "rxjs/internal/Subscription";
 import {ProductsService} from "../../products/services/products.service";
@@ -23,18 +23,18 @@ export class HeaderComponent implements OnInit {
     private productsService: ProductsService,
     private authService: AuthService,
     private router: Router
-) {}
+  ) {
+  }
 
   ngOnInit() {
 
     this.authService.getAuth().subscribe(auth => {
-      if (auth) {
-        this.isLoggedIn = true;
-        this.loggedInUser = auth.email;
-      } else {
-        this.isLoggedIn = false;
-      }
-
+        if (auth) {
+          this.isLoggedIn = true;
+          this.loggedInUser = auth.email;
+        } else {
+          this.isLoggedIn = false;
+        }
       }
     );
 

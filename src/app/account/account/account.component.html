@@ -1,5 +1,6 @@
 <div class="nav-wrapper">
   <nav class="nav">
+    <p class="user-mail">{{loggedInUser}}</p>
     <a
       *ngFor="let item of nav"
       [routerLink]="item.link"

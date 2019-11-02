@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Nav} from "../../models/nav";
+import {AuthService} from "../../auth/services/auth.service";
 
 @Component({
   selector: 'app-account',
@@ -8,27 +9,41 @@ import {Nav} from "../../models/nav";
 })
 export class AccountComponent implements OnInit {
 
+  isLoggedIn: boolean;
+  loggedInUser: string;
+
   nav: Nav[] = [
     {
-      link: '/account',
-      name: 'Account Detail',
-      exact: true
-    },
-    {
-      link: '/account',
+      link: '/account/addWine',
       name: 'Add Wine',
       exact: true
     },
     {
-      link: '/account',
+      link: '/account/',
       name: 'Edit Wine',
+      exact: true
+    },
+    {
+      link: '/account/listWine',
+      name: 'Wine List',
       exact: true
     }
   ];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    private authService: AuthService,
+  ) {
   }
 
+  ngOnInit() {
+    this.authService.getAuth().subscribe(auth => {
+        if (auth) {
+          this.isLoggedIn = true;
+          this.loggedInUser = auth.email;
+        } else {
+          this.isLoggedIn = false;
+        }
+      }
+    );
+  }
 }

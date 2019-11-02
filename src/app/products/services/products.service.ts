@@ -115,7 +115,6 @@ export class ProductsService {
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
 
-
   // filterForPrice(value) {
   //   console.log('in service', value);
   // }

@@ -17,6 +17,7 @@ export class AddWineComponent implements OnInit {
   ngOnInit() {
     this.addWineForm = new FormGroup(
       {
+        'email': new FormControl(null, Validators.required),
         'name': new FormControl(null, Validators.required),
         'price': new FormControl(null, Validators.required),
         'country': new FormControl(null, Validators.required),
@@ -28,7 +29,6 @@ export class AddWineComponent implements OnInit {
   }
 
   onSubmit(wine): void {
-    // console.log(this.addWineForm.value);
     this.productService.addWine(wine.value);
 
   }
