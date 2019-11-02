@@ -1,9 +1,10 @@
 export interface Product {
   id?: string,
-  name: string,
-  price: number,
-  country: string,
-  vintage: number;
+  email?: string,
+  name?: string,
+  price?: number,
+  country?: string,
+  vintage?: number;
   quantity?: number;
   photo?: string;
 }

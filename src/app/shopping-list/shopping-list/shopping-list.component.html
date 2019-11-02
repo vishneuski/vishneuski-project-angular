@@ -12,6 +12,7 @@
       <th scope="col">You wish</th>
       <th scope="col">Total price</th>
       <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody *ngFor="let product of products; let i = index">
@@ -40,6 +41,9 @@
           Delete
         </button>
       </td>
+      <td>
+        <a routerLink="{{product.id}}">Detail</a>
+      </td>
     </tr>
     </tbody>
   </table>
@@ -48,13 +52,12 @@
   </button>
 </div>
 
-<div>
-  <button class="btn btn-primary" (click)="addWine()">
-    <a routerLink="/shopping-list/addWine"> Add collection wine</a>
-  </button>
-</div>
-
 <div [hidden]="!products" class="empty-basket">
   Your shopping cart is empty
+</div>
+
+<div>
+  <button (click)="addWine()"><a routerLink="/shopping-list/addWine"> Add collection wine</a>
+  </button>
 </div>
 

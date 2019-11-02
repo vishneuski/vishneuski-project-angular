@@ -35,17 +35,17 @@ export class ProductsService {
   }
 
 
-  isLoggedIn(): Observable<boolean> {
-    return this.afAuth.authState.pipe(
-      map(auth => {
-        if (!auth) {
-          return true;
-        } else {
-          return false;
-        }
-      })
-    );
-  }
+  // isLoggedIn(): Observable<boolean> {
+  //   return this.afAuth.authState.pipe(
+  //     map(auth => {
+  //       if (!auth) {
+  //         return true;
+  //       } else {
+  //         return false;
+  //       }
+  //     })
+  //   );
+  // }
 
 
   getfbProducts(): Observable<Product[]> {
@@ -53,7 +53,6 @@ export class ProductsService {
       map(changes => {
         return changes.map(action => {
           const data = action.payload.doc.data() as Product;
-          console.log(data, ' products data in FireBase');
           data.id = action.payload.doc.id;
           return data;
         });
@@ -61,6 +60,24 @@ export class ProductsService {
     );
 
     return this.fbProducts;
+  }
+
+
+  getfbProduct(id: string): Observable<Product> {
+    this.fbProductDoc = this.afs.doc<Product>(`products/${id}`);
+    this.fbProduct = this.fbProductDoc.snapshotChanges().pipe(
+      map(action => {
+        if (action.payload.exists === false) {
+          return null;
+        } else {
+          const data = action.payload.data() as Product;
+          data.id = action.payload.id;
+          return data;
+        }
+      })
+    );
+
+    return this.fbProduct;
   }
 
   getfbOrders(): Observable<Order[]> {
@@ -98,6 +115,7 @@ export class ProductsService {
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
 
+
   // filterForPrice(value) {
   //   console.log('in service', value);
   // }
@@ -118,11 +136,6 @@ export class ProductsService {
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
 
-  //
-  // getProducts(): Observable<Product[]> {
-  //   return this.http.get<Product[]>('/api/products');
-  // }
-
   orderProduct(products: Product) {
     console.log(products, 'from basket when ordered');
   }
@@ -131,7 +144,6 @@ export class ProductsService {
     console.log(wine);
     this.fbProductsCollection.add(wine);
   }
-
 }
 
 
