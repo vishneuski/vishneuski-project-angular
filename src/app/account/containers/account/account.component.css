@@ -15,7 +15,7 @@
   border-bottom: 1px solid #dce5f2;
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 100%;
 }
 
 nav a {

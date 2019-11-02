@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProductsService} from "../../products/services/products.service";
+import {ProductsService} from "../../../products/services/products.service";
+import {AuthService} from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-add-wine',
@@ -11,8 +12,11 @@ export class AddWineComponent implements OnInit {
 
   addWineForm: FormGroup;
 
+
   constructor(
-    private productService: ProductsService) {}
+    private productService: ProductsService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.addWineForm = new FormGroup(
@@ -30,6 +34,7 @@ export class AddWineComponent implements OnInit {
 
   onSubmit(wine): void {
     this.productService.addWine(wine.value);
-
   }
+
+
 }

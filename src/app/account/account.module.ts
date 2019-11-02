@@ -3,9 +3,9 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AccountRoutingModule} from './account-routing.module';
-import {AccountComponent} from './account/account.component';
-import {AddWineComponent} from "./add-wine/add-wine.component";
-import {ListWineComponent} from './list-wine/list-wine.component';
+import {AccountComponent} from './containers/account/account.component';
+import {AddWineComponent} from "./components/add-wine/add-wine.component";
+import {ListWineComponent} from './components/list-wine/list-wine.component';
 
 
 @NgModule({

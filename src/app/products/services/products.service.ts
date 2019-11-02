@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-// import {HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 
@@ -17,7 +16,7 @@ export class ProductsService {
   fbProductsCollection: AngularFirestoreCollection<Product>;
   fbProductDoc: AngularFirestoreDocument<Product>;
 
-  fbProductsOfMailCollection: AngularFirestoreCollection<Order>;
+  fbProductsOfMailCollection: AngularFirestoreCollection<Product>;
   fbOrderDoc: AngularFirestoreDocument<Order>;
 
   fbProducts: Observable<Product[]>;
@@ -27,28 +26,15 @@ export class ProductsService {
   fbOrders: Observable<Order[]>;
   fbOrder: Observable<Order>;
 
+
   constructor(
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
 
-    this.fbProductsOfMailCollection = this.afs.collection('products', ref => ref.orderBy('email', 'asc'))
+    this.fbProductsOfMailCollection = this.afs.collection('products', ref => ref.orderBy('email', 'asc'));
   }
-
-
-  // isLoggedIn(): Observable<boolean> {
-  //   return this.afAuth.authState.pipe(
-  //     map(auth => {
-  //       if (!auth) {
-  //         return true;
-  //       } else {
-  //         return false;
-  //       }
-  //     })
-  //   );
-  // }
-
 
   getfbProducts(): Observable<Product[]> {
     this.fbProducts = this.fbProductsCollection.snapshotChanges().pipe(
@@ -64,8 +50,7 @@ export class ProductsService {
     return this.fbProducts;
   }
 
-
-  getfbProductsOfEmail(): Observable<Product[]> {
+  getfbProductsOfMail(): Observable<Product[]> {
     this.fbProductsOfMail = this.fbProductsOfMailCollection.snapshotChanges().pipe(
       map(changes => {
         return changes.map(action => {
@@ -95,7 +80,6 @@ export class ProductsService {
 
     return this.fbProduct;
   }
-
 
 
   // getfbOrders(): Observable<Order[]> {
@@ -128,7 +112,6 @@ export class ProductsService {
 
       this.cartProducts.push(product);
     }
-    // console.log('in service');
     console.log('CartProducts - ', this.cartProducts);
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
@@ -139,8 +122,6 @@ export class ProductsService {
   //
 
   deleteProduct(product: Product) {
-    console.log(product.name);
-    console.log(this.cartProducts);
     let tempProduct = this.cartProducts.find(item => item.id === product.id);
 
     if (tempProduct !== undefined) {
@@ -162,5 +143,3 @@ export class ProductsService {
     this.fbProductsCollection.add(wine);
   }
 }
-
-

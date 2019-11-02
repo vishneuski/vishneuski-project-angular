@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AccountComponent } from './account/account.component';
-import { AddWineComponent} from "./add-wine/add-wine.component";
+import { AccountComponent } from './containers/account/account.component';
+import { AddWineComponent} from "./components/add-wine/add-wine.component";
 import {AuthGuard} from "../shared/guards/auth.guard";
-import {ListWineComponent} from "./list-wine/list-wine.component";
+import {ListWineComponent} from "./components/list-wine/list-wine.component";
 
 const routes: Routes = [
   {path: '', component: AccountComponent, canActivate: [AuthGuard]},

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Nav} from "../../models/nav";
-import {AuthService} from "../../auth/services/auth.service";
+import {Nav} from "../../../models/nav";
+import {AuthService} from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-account',
