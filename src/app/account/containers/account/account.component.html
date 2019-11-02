@@ -1,12 +1,18 @@
 <div class="nav-wrapper">
   <nav class="nav">
-    <p class="user-mail">{{loggedInUser}}</p>
-    <a
-      *ngFor="let item of nav"
-      [routerLink]="item.link"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: item.exact }">
-      {{ item.name }}
+    <!--<a-->
+      <!--*ngFor="let item of nav"-->
+      <!--[routerLink]="item.link"-->
+      <!--routerLinkActive="active"-->
+      <!--[routerLinkActiveOptions]="{ exact: item.exact }">-->
+      <!--{{ item.name }}-->
+    <!--</a>-->
+
+    <a [routerLink]="['/account/addWine']">
+      Add Wine
+    </a>
+    <a [routerLink]="['/account/listWine']">
+      List Wine
     </a>
   </nav>
   <router-outlet></router-outlet>

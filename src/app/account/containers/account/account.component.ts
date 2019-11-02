@@ -12,23 +12,23 @@ export class AccountComponent implements OnInit {
   isLoggedIn: boolean;
   loggedInUser: string;
 
-  nav: Nav[] = [
-    {
-      link: '/account/addWine',
-      name: 'Add Wine',
-      exact: true
-    },
-    {
-      link: '/account/',
-      name: 'Edit Wine',
-      exact: true
-    },
-    {
-      link: '/account/listWine',
-      name: 'Wine List',
-      exact: true
-    }
-  ];
+  // nav: Nav[] = [
+  //   {
+  //     link: '/account/addWine',
+  //     name: 'Add Wine',
+  //     exact: true
+  //   },
+  //   {
+  //     link: '/account/',
+  //     name: 'Edit Wine',
+  //     exact: true
+  //   },
+  //   {
+  //     link: '/account/listWine',
+  //     name: 'Wine List',
+  //     exact: true
+  //   }
+  // ];
 
   constructor(
     private authService: AuthService,
