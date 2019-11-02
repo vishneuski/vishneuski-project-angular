@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AccountComponent } from './account.component';
+import { AccountComponent } from './account/account.component';
+import { AddWineComponent} from "./add-wine/add-wine.component";
 import {AuthGuard} from "../shared/guards/auth.guard";
 
 const routes: Routes = [
   {path: '', component: AccountComponent, canActivate: [AuthGuard]},
+  {path: 'addWine', component: AddWineComponent, canActivate: [AuthGuard]},
 
   ];
 

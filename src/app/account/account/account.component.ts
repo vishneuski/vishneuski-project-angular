@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Nav} from "../models/nav";
+import {Nav} from "../../models/nav";
 
 @Component({
   selector: 'app-account',

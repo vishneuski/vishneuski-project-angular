@@ -28,9 +28,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     });
   }
 
-  addWine(wine) {
-    this.productsService.addWine(wine);
-  }
+
 
   // updateWine(wine) {
   //

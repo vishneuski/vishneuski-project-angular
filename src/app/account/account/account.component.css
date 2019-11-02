@@ -1,3 +1,7 @@
+.nav-wrapper {
+  margin-top: 2em;
+}
+
 .nav {
   margin: 0 auto;
   box-sizing: border-box;
@@ -6,6 +10,7 @@
   border-bottom: 1px solid #dce5f2;
   display: flex;
   justify-content: center;
+  width: 60%;
 }
 
 nav a {
@@ -20,11 +25,11 @@ nav a.active {
   border-bottom: 1px solid #6D3023;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+/*.wrapper {*/
+/*display: flex;*/
+/*flex-direction: column;*/
+/*min-height: 100vh;*/
+/*}*/
 
 app-footer {
   flex-shrink: 0;
