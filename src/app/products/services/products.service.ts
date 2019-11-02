@@ -17,10 +17,11 @@ export class ProductsService {
   fbProductsCollection: AngularFirestoreCollection<Product>;
   fbProductDoc: AngularFirestoreDocument<Product>;
 
-  fbOrdersCollection: AngularFirestoreCollection<Order>;
+  fbProductsOfMailCollection: AngularFirestoreCollection<Order>;
   fbOrderDoc: AngularFirestoreDocument<Order>;
 
   fbProducts: Observable<Product[]>;
+  fbProductsOfMail: Observable<Product[]>;
   fbProduct: Observable<Product>;
 
   fbOrders: Observable<Order[]>;
@@ -31,7 +32,8 @@ export class ProductsService {
     private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
-    this.fbOrdersCollection = this.afs.collection('orders', ref => ref.orderBy('email', 'asc'))
+
+    this.fbProductsOfMailCollection = this.afs.collection('products', ref => ref.orderBy('email', 'asc'))
   }
 
 
@@ -63,6 +65,20 @@ export class ProductsService {
   }
 
 
+  getfbProductsOfEmail(): Observable<Product[]> {
+    this.fbProductsOfMail = this.fbProductsOfMailCollection.snapshotChanges().pipe(
+      map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as Product;
+          data.id = action.payload.doc.id;
+          return data;
+        });
+      })
+    );
+
+    return this.fbProductsOfMail;
+  }
+
   getfbProduct(id: string): Observable<Product> {
     this.fbProductDoc = this.afs.doc<Product>(`products/${id}`);
     this.fbProduct = this.fbProductDoc.snapshotChanges().pipe(
@@ -80,20 +96,22 @@ export class ProductsService {
     return this.fbProduct;
   }
 
-  getfbOrders(): Observable<Order[]> {
-    this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(action => {
-          const data = action.payload.doc.data() as Order;
-          console.log(data, ' orders data in FireBase');
-          data.id = action.payload.doc.id;
-          return data;
-        });
-      })
-    );
 
-    return this.fbOrders;
-  }
+
+  // getfbOrders(): Observable<Order[]> {
+  //   this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
+  //     map(changes => {
+  //       return changes.map(action => {
+  //         const data = action.payload.doc.data() as Order;
+  //         console.log(data, ' orders data in FireBase');
+  //         data.id = action.payload.doc.id;
+  //         return data;
+  //       });
+  //     })
+  //   );
+  //
+  //   return this.fbOrders;
+  // }
 
 
   //Refactor
