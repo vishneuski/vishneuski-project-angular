@@ -1,8 +1,7 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {FiltrationComponent} from "../filtration/filtration.component";
 import {JwPaginationComponent} from "jw-angular-pagination";
-import {AuthService} from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-products-view',

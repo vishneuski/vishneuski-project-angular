@@ -6,7 +6,7 @@
      [hidden]="filter(product?.email | lowercase)">
   <div class="card-wrapper">
     <div class="card">
-      <!--<img class="card-img-top" [src]="product?.photo" alt="Card image cap">-->
+      <img class="card-img-top bottle-mini" [src]="product?.photo" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{product?.name}}</h5>
         <p class="card-text">
@@ -18,7 +18,7 @@
              (click)="editWine(product)">
             Edit
           </a>
-          <a class="btn btn-primary"
+          <a class="btn btn-danger"
              (click)="deleteWine(product)">
             Delete
           </a>

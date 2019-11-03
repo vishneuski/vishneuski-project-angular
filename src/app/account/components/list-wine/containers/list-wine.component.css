@@ -11,5 +11,15 @@
 .card-buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around ;
+  justify-content: space-around;
 }
+
+a {
+  cursor: pointer;
+}
+
+.bottle-mini {
+  width: 5em;
+  height: 8em;
+}
+
