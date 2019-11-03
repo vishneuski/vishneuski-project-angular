@@ -32,7 +32,7 @@ export class ListWineComponent implements OnInit {
       }
     );
 
-    this.productService.getfbProductsOfMail().subscribe
+    this.productService.getfbProducts().subscribe
     (products =>
       this.products = products)
   }

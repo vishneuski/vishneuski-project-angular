@@ -16,7 +16,7 @@ export class ProductsService {
   fbProductsCollection: AngularFirestoreCollection<Product>;
   fbProductDoc: AngularFirestoreDocument<Product>;
 
-  fbProductsOfMailCollection: AngularFirestoreCollection<Product>;
+
   fbOrderDoc: AngularFirestoreDocument<Order>;
 
   fbProducts: Observable<Product[]>;
@@ -32,8 +32,6 @@ export class ProductsService {
     private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
-
-    this.fbProductsOfMailCollection = this.afs.collection('products', ref => ref.orderBy('email', 'asc'));
   }
 
   getfbProducts(): Observable<Product[]> {
@@ -48,20 +46,6 @@ export class ProductsService {
     );
 
     return this.fbProducts;
-  }
-
-  getfbProductsOfMail(): Observable<Product[]> {
-    this.fbProductsOfMail = this.fbProductsOfMailCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(action => {
-          const data = action.payload.doc.data() as Product;
-          data.id = action.payload.doc.id;
-          return data;
-        });
-      })
-    );
-
-    return this.fbProductsOfMail;
   }
 
   getfbProduct(id: string): Observable<Product> {

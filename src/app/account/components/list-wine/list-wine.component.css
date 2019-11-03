@@ -1,8 +1,15 @@
 .card {
   width: 15em;
+
 }
 
 .card-wrapper {
   width: 60%;
   margin: 0 auto;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around ;
 }
