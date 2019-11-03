@@ -1,0 +1,41 @@
+.nav {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: #f6f0ed;
+  border-bottom: 1px solid #dce5f2;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  color: #6D3023;
+  padding: 0.25em 0.75em;
+  margin: 0 0.075em;
+  text-decoration: none;
+}
+
+nav a.active {
+  color: #6D6E70;
+  border-bottom: 1px solid #6D3023;
+}
+
+.fa-1x {
+  font-size: 1.5rem;
+}
+.navbar-toggler.toggler-example {
+  cursor: pointer;
+}
+.dark-blue-text {
+  color: #0A38F5;
+}
+
+.dark-pink-text {
+  color: #AC003A;
+}
+.dark-amber-text {
+  color: #ff6f00;
+}
+.dark-teal-text {
+  color: #004d40;
+}

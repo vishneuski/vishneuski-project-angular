@@ -7,31 +7,5 @@ import {Nav} from "./models/nav";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nav: Nav[] = [
-    {
-      link: '/',
-      name: 'Home',
-      exact: true
-    },
-    {
-      link: '/products',
-      name: 'Products',
-      exact: true
-    },
-    {
-      link: '/about',
-      name: 'About',
-      exact: true
-    },
-    {
-      link: '/contacts',
-      name: 'Contacts',
-      exact: true
-    },
-    {
-      link: '/account',
-      name: 'Account',
-      exact: true
-    }
-  ];
+
 }

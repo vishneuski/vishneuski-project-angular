@@ -66,15 +66,10 @@ export class EditWineComponent implements OnInit {
     console.log(this.id, ' - id in edit wine');
   }
 
-  // onSubmit({wine} : {wine:Product}): void {
-  //   console.log(wine);
-  // }
-
   onSubmit({value, valid}: { value: Product, valid: boolean }) {
     if (!valid) {
       console.log('Not valid!')
     } else {
-      console.log(value);
       value.id = this.id;
       this.productService.editWine(value);
       this.router.navigate(['/account/' + this.id])

@@ -15,12 +15,15 @@ import {ContactsComponent} from './contacts/components/contacts-view/contacts.co
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
+import {NavbarComponent} from "./components/navbar/navbar.component";
 
 import {AppRoutingModule} from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     HomeComponent,
     AboutComponent,
     ContactsComponent,

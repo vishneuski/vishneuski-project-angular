@@ -1,20 +1,7 @@
 <div class="wrapper">
   <app-header></app-header>
+  <app-navbar></app-navbar>
   <div class="app">
-    <nav class="nav">
-      <a
-        *ngFor="let item of nav"
-        [routerLink]="item.link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: item.exact }">
-        {{ item.name }}
-      </a>
-      <!--<a-->
-        <!--[routerLink]="['/account']"-->
-        <!--routerLinkActive="active">-->
-        <!--Account-->
-      <!--</a>-->
-    </nav>
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
