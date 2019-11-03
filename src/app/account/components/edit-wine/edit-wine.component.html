@@ -1,1 +1,74 @@
-<p>edit-wine works!</p>
+<form [formGroup]="editWineForm"
+      (ngSubmit)="onSubmit(editWineForm)"
+      class="editWineForm">
+  <div [hidden]="true">
+    <input type="text"
+           placeholder="email"
+           name="email"
+           [(ngModel)]="loggedInUser"
+           formControlName="email">
+  </div>
+  <div>
+    Wine name:
+    <input type="text"
+           placeholder="name"
+           name="name"
+           formControlName="name">
+  </div>
+  <div *ngIf="editWineForm.controls['name'].invalid && editWineForm.controls['name'].touched" class="error">
+    Input wine name!
+  </div>
+  <div>
+    Wine prise:
+    <input type="number"
+           placeholder="price"
+           name="price"
+           formControlName="price">
+  </div>
+  <div *ngIf="editWineForm.controls['price'].invalid && editWineForm.controls['price'].touched" class="error">
+    Input wine price!
+  </div>
+  <div>
+    Country:
+    <input type="text"
+           placeholder="country"
+           name="country"
+           formControlName="country">
+  </div>
+  <div *ngIf="editWineForm.controls['country'].invalid && editWineForm.controls['country'].touched" class="error">
+    Input wine country!
+  </div>
+  <div>
+    Wine vintage:
+    <input type="number"
+           placeholder="vintage"
+           name="vintage"
+           formControlName="vintage">
+  </div>
+  <div *ngIf="editWineForm.controls['vintage'].invalid && editWineForm.controls['vintage'].touched" class="error">
+    Input wine vintage!
+  </div>
+  <div>
+    Quantity:
+    <input type="number"
+           placeholder="quantity"
+           name="quantity"
+           formControlName="quantity">
+  </div>
+  <div *ngIf="editWineForm.controls['quantity'].invalid && editWineForm.controls['quantity'].touched" class="error">
+    Input wine quantity!
+  </div>
+  <div>
+    Wine photo:
+    <input type="text"
+           placeholder="photo"
+           name="photo"
+           formControlName="photo">
+  </div>
+  <div *ngIf="editWineForm.controls['photo'].invalid && editWineForm.controls['photo'].touched" class="error">
+    Input wine photo!
+  </div>
+  <div>
+    <button [disabled]="!editWineForm.valid">Edit Wine</button>
+  </div>
+</form>

@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../products/models/product.interface";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {ProductsService} from "../../../products/services/products.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-edit-wine',
@@ -10,6 +12,9 @@ import {ProductsService} from "../../../products/services/products.service";
 })
 export class EditWineComponent implements OnInit {
 
+  editWineForm: FormGroup;
+  isLoggedIn: boolean;
+  loggedInUser: string;
   id: string;
   product: Product = {
     email: '',
@@ -20,18 +25,45 @@ export class EditWineComponent implements OnInit {
     quantity: 0,
     photo: ''
   };
-  // @Input()
-  // product: Product;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private productService: ProductsService
+    private productService: ProductsService,
+    private authService: AuthService
   ) {
   }
 
   ngOnInit() {
+
     this.id = this.route.snapshot.params.id;
-    this.productService.getfbProduct(this.id).subscribe(product => console.log(product));
+    this.productService.getfbProduct(this.id).subscribe(product => this.product = product);
+
+    this.authService.getAuth().subscribe(auth => {
+        if (auth) {
+          this.isLoggedIn = true;
+          this.loggedInUser = auth.email;
+        } else {
+          this.isLoggedIn = false;
+        }
+      }
+    );
+
+    this.editWineForm = new FormGroup(
+      {
+        'email': new FormControl(null, Validators.required),
+        'name': new FormControl(null, Validators.required),
+        'price': new FormControl(null, Validators.required),
+        'country': new FormControl(null, Validators.required),
+        'vintage': new FormControl(null, Validators.required),
+        'quantity': new FormControl(null, Validators.required),
+        'photo': new FormControl(null, Validators.required),
+      }
+    );
+
+  }
+
+  onSubmit(wine): void {
+    this.productService.editWine(wine.value);
   }
 }
