@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ProductsService} from "../../../products/services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
+import {Router} from "@angular/router";
 import {Product} from "../../../products/models/product.interface";
 
 @Component({
@@ -18,7 +19,8 @@ export class AddWineComponent implements OnInit {
 
   constructor(
     private productService: ProductsService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
   }
 
@@ -48,5 +50,6 @@ export class AddWineComponent implements OnInit {
 
   onSubmit(wine): void {
     this.productService.addWine(wine.value);
+    this.router.navigate(['/account'])
   }
 }

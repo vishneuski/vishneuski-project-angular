@@ -1,3 +1,4 @@
+<h3>Edit wine</h3>
 <form [formGroup]="editWineForm"
       (ngSubmit)="onSubmit(editWineForm)"
       class="editWineForm">
@@ -5,7 +6,7 @@
     <input type="text"
            placeholder="email"
            name="email"
-           [(ngModel)]="loggedInUser"
+           [(ngModel)]="product.email"
            formControlName="email">
   </div>
   <div>
@@ -13,6 +14,7 @@
     <input type="text"
            placeholder="name"
            name="name"
+           [(ngModel)]="product.name"
            formControlName="name">
   </div>
   <div *ngIf="editWineForm.controls['name'].invalid && editWineForm.controls['name'].touched" class="error">
@@ -23,6 +25,7 @@
     <input type="number"
            placeholder="price"
            name="price"
+           [(ngModel)]="product.price"
            formControlName="price">
   </div>
   <div *ngIf="editWineForm.controls['price'].invalid && editWineForm.controls['price'].touched" class="error">
@@ -33,6 +36,7 @@
     <input type="text"
            placeholder="country"
            name="country"
+           [(ngModel)]="product.country"
            formControlName="country">
   </div>
   <div *ngIf="editWineForm.controls['country'].invalid && editWineForm.controls['country'].touched" class="error">
@@ -43,6 +47,7 @@
     <input type="number"
            placeholder="vintage"
            name="vintage"
+           [(ngModel)]="product.vintage"
            formControlName="vintage">
   </div>
   <div *ngIf="editWineForm.controls['vintage'].invalid && editWineForm.controls['vintage'].touched" class="error">
@@ -53,6 +58,7 @@
     <input type="number"
            placeholder="quantity"
            name="quantity"
+           [(ngModel)]="product.quantity"
            formControlName="quantity">
   </div>
   <div *ngIf="editWineForm.controls['quantity'].invalid && editWineForm.controls['quantity'].touched" class="error">
@@ -63,12 +69,18 @@
     <input type="text"
            placeholder="photo"
            name="photo"
+           [(ngModel)]="product.photo"
            formControlName="photo">
   </div>
   <div *ngIf="editWineForm.controls['photo'].invalid && editWineForm.controls['photo'].touched" class="error">
     Input wine photo!
   </div>
   <div>
-    <button [disabled]="!editWineForm.valid">Edit Wine</button>
+    <button
+      type="submit"
+      role="button"
+      [disabled]="!editWineForm.valid">
+      Edit Wine
+    </button>
   </div>
 </form>
