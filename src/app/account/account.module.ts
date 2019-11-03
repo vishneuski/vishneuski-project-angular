@@ -5,7 +5,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AccountRoutingModule} from './account-routing.module';
 import {AccountComponent} from './containers/account/account.component';
 import {AddWineComponent} from "./components/add-wine/add-wine.component";
-import {ListWineComponent} from './components/list-wine/list-wine.component';
+import {ListWineComponent} from './components/list-wine/containers/list-wine.component';
+import { EditWineComponent } from './components/edit-wine/edit-wine.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {ListWineComponent} from './components/list-wine/list-wine.component';
     AccountComponent,
     AddWineComponent,
     ListWineComponent,
+    EditWineComponent,
   ],
   imports: [
     CommonModule,

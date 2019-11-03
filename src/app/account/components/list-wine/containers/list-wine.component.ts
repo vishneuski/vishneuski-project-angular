@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
-import {ProductsService} from "../../../products/services/products.service";
-import {AuthService} from "../../../auth/services/auth.service";
-import {Product} from "../../../products/models/product.interface";
+import {ProductsService} from "../../../../products/services/products.service";
+import {AuthService} from "../../../../auth/services/auth.service";
+import {Product} from "../../../../products/models/product.interface";
 import {filter, map} from "rxjs/operators";
 
 @Component({
@@ -11,6 +11,11 @@ import {filter, map} from "rxjs/operators";
   styleUrls: ['./list-wine.component.css']
 })
 export class ListWineComponent implements OnInit {
+
+  @Output()
+  editProduct: EventEmitter<Product> = new EventEmitter<Product>();
+
+  product?: Product;
   products?: Product[];
   isLoggedIn: boolean;
   loggedInUser: string;
@@ -36,7 +41,7 @@ export class ListWineComponent implements OnInit {
 
     this.productService.getfbProducts().subscribe
     (products =>
-      this.products = products)
+      this.products = products);
   }
 
   filter(val): boolean {
@@ -47,7 +52,11 @@ export class ListWineComponent implements OnInit {
     }
   }
 
-  editWine() {
+  editWine(product) {
+    // this.router.navigate(['/account/{{id}}']);
+    this.product = product;
+    console.log(this.product);
+    // this.editProduct.emit(product);
 
   }
 
@@ -55,6 +64,6 @@ export class ListWineComponent implements OnInit {
     if (confirm('Are you sure?')) {
       this.productService.deleteWine(product)
     }
-    this.router.navigate(['/']);
+    this.router.navigate(['/account/listWine']);
   }
 }

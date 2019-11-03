@@ -61,7 +61,6 @@ export class ProductsService {
         }
       })
     );
-
     return this.fbProduct;
   }
 

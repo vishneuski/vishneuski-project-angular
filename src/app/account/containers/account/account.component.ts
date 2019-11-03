@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Nav} from "../../../models/nav";
 import {AuthService} from "../../../auth/services/auth.service";
+import {ListWineComponent} from "../../components/list-wine/containers/list-wine.component";
+import {Product} from "../../../products/models/product.interface";
 
 @Component({
   selector: 'app-account',
@@ -11,6 +13,7 @@ export class AccountComponent implements OnInit {
 
   isLoggedIn: boolean;
   loggedInUser: string;
+  product?: Product;
 
   nav: Nav[] = [
     {
@@ -25,9 +28,7 @@ export class AccountComponent implements OnInit {
     }
   ];
 
-  constructor(
-    private authService: AuthService,
-  ) {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {

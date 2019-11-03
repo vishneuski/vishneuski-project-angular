@@ -1,3 +1,6 @@
+<!--<div *ngIf="products?.length > 0; else noProducts">-->
+
+
 <div class="container"
      *ngFor="let product of products"
      [hidden]="filter(product?.email | lowercase)">
@@ -10,13 +13,12 @@
           {{product?.country}}
         </p>
         <div class="card-buttons">
-          <a href="#"
-             class="btn btn-primary"
+          <a class="btn btn-primary"
+             routerLink="/account/{{product?.id}}"
              (click)="editWine(product)">
             Edit
           </a>
-          <a href="#"
-             class="btn btn-primary"
+          <a class="btn btn-primary"
              (click)="deleteWine(product)">
             Delete
           </a>
@@ -25,6 +27,14 @@
     </div>
   </div>
 </div>
-<div>
-</div>
+
+<!--<div [hidden]="products">-->
+<!--No wines!-->
+<!--</div>-->
+
+<!--</div>-->
+<!--<ng-template #noProducts>-->
+<!--<hr>-->
+<!--<h5>There are no wines in your list</h5>-->
+<!--</ng-template>-->
 
