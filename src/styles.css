@@ -7,6 +7,7 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+
 .pagination {
   display: flex;
   flex-direction: row;
@@ -23,10 +24,15 @@ a.page-link {
   padding: 0.5em 0.75em;
   cursor: pointer;
   border-radius: 0.25em;
-  background-color: seagreen;
+  background-color: white;
   color: white;
 }
 
 a.page-link:hover {
-  background-color: #6D6E70;
+  background-color: #da6969;
 }
+
+.pagination-wrapper {
+  margin: 0 auto;
+}
+

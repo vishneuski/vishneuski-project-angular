@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 .product-cart-container {
@@ -54,4 +54,5 @@ button {
   width: 5em;
   height: 8em;
 }
+
 
