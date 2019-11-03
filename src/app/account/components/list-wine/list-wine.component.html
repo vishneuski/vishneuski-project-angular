@@ -6,12 +6,20 @@
       <!--<img class="card-img-top" [src]="product?.photo" alt="Card image cap">-->
       <div class="card-body">
         <h5 class="card-title">{{product?.name}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
+        <p class="card-text">
+          {{product?.country}}
         </p>
         <div class="card-buttons">
-          <a href="#" class="btn btn-primary">Edit</a>
-          <a href="#" class="btn btn-primary">Delete</a>
+          <a href="#"
+             class="btn btn-primary"
+             (click)="editWine(product)">
+            Edit
+          </a>
+          <a href="#"
+             class="btn btn-primary"
+             (click)="deleteWine(product)">
+            Delete
+          </a>
         </div>
       </div>
     </div>

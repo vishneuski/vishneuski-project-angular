@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {ProductsService} from "../../../products/services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
 import {Product} from "../../../products/models/product.interface";
@@ -15,6 +16,7 @@ export class ListWineComponent implements OnInit {
   loggedInUser: string;
 
   constructor(
+    private router: Router,
     private productService: ProductsService,
     private authService: AuthService
   ) {
@@ -43,5 +45,16 @@ export class ListWineComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  editWine() {
+
+  }
+
+  deleteWine(product) {
+    if (confirm('Are you sure?')) {
+      this.productService.deleteWine(product)
+    }
+    this.router.navigate(['/']);
   }
 }

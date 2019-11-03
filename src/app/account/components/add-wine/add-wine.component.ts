@@ -43,8 +43,6 @@ export class AddWineComponent implements OnInit {
         'photo': new FormControl(null, Validators.required),
       }
     );
-
-
   }
 
   onSubmit(wine): void {

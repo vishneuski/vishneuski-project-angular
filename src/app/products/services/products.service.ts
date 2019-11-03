@@ -66,6 +66,9 @@ export class ProductsService {
   }
 
 
+
+
+
   // getfbOrders(): Observable<Order[]> {
   //   this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
   //     map(changes => {
@@ -125,5 +128,15 @@ export class ProductsService {
   addWine(wine: Product) {
     console.log(wine);
     this.fbProductsCollection.add(wine);
+  }
+
+  editWine(product: Product) {
+    this.fbProductDoc = this.afs.doc(`products/${product.id}`);
+    this.fbProductDoc.update(product);
+  }
+
+  deleteWine(product: Product) {
+    this.fbProductDoc = this.afs.doc(`products/${product.id}`);
+    this.fbProductDoc.delete();
   }
 }
