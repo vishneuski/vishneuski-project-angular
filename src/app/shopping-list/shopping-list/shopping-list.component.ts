@@ -23,11 +23,16 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+    this.productsService.getfbProducts().subscribe(
+      value => console.log(value))
+    ;
+
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
     });
-  }
 
+  }
 
 
   // updateWine(wine) {

@@ -9,6 +9,7 @@ import {ProductsViewComponent} from "./components/products-view/products-view.co
 import {FiltrationComponent} from "./components/filtration/filtration.component";
 import {JwPaginationComponent} from 'jw-angular-pagination';
 
+
 @NgModule({
   declarations: [
     ProductsComponent,

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
-import {forkJoin} from "rxjs";
 import {FiltrationComponent} from "../../components/filtration/filtration.component";
 
 @Component({
@@ -12,12 +11,10 @@ import {FiltrationComponent} from "../../components/filtration/filtration.compon
   providers: [FiltrationComponent]
 })
 
-export class ProductsComponent implements OnInit{
+export class ProductsComponent implements OnInit {
 
   fbProducts: Product[];
-  // products: Product[];
   filteredProducts: Product[];
-  productMap: Map<number, Product>;
   public isLoggedIn: any;
 
   filterProducts(searchString?: string) {
@@ -42,6 +39,7 @@ export class ProductsComponent implements OnInit{
     this.productsService.getfbProducts().subscribe(
       products => {
         this.fbProducts = products;
+        this.filteredProducts = this.fbProducts;
       }
     );
 

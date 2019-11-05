@@ -125,7 +125,7 @@ export class ProductsService {
   }
 
   addWine(wine: Product) {
-    console.log(wine);
+    // console.log(wine);
     this.fbProductsCollection.add(wine);
   }
 
