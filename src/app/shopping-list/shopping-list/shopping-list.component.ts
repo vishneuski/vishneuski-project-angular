@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductsService} from "../../products/services/products.service";
 import {Product} from "../../products/models/product.interface";
 import {Subscription} from "rxjs/internal/Subscription";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-basket-component',
@@ -16,7 +17,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   public orderProducts: Product[];
 
-  constructor(private productsService: ProductsService) {
+  constructor(
+    private productsService: ProductsService,
+    private flashMessage: FlashMessagesService) {
   }
 
   ngOnInit() {
@@ -38,6 +41,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   delete(product) {
     this.productsService.deleteProduct(product);
+    this.flashMessage.show(`Product ${product.name} deleted`, {
+      cssClass: 'alert-success', timeout: 4000
+    });
   };
 
   ngOnDestroy() {
