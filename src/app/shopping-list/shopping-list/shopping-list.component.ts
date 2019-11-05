@@ -14,30 +14,16 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   public products: Product[];
   private subscription: Subscription;
 
-
   public orderProducts: Product[];
 
-  constructor(
-    private productsService: ProductsService
-  ) {
+  constructor(private productsService: ProductsService) {
   }
 
   ngOnInit() {
-
-    this.productsService.getfbProducts().subscribe(
-      value => console.log(value))
-    ;
-
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
     });
-
   }
-
-
-  // updateWine(wine) {
-  //
-  // }
 
   order(product: Product) {
     // product = this.products;
@@ -53,7 +39,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   delete(product) {
     this.productsService.deleteProduct(product);
   };
-
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

@@ -1,4 +1,4 @@
 export class SignIn {
-  userName: string;
+  email: string;
   password: string;
 }

@@ -1,39 +1,35 @@
-<form #myForm="ngForm" (ngSubmit)="submitData(myForm.value, myForm.valid)" class="signInForm">
+<form [formGroup]="loginForm" (ngSubmit)="submitData(loginForm.value)" class="signInForm">
   <h3>Log In</h3>
   <div>
-    Name
+    Email
     <input type="text"
-           name="userName"
-           [ngModel]="user?.userName"
-           required
-           #userNameControl="ngModel">
-    <div *ngIf="userNameControl.invalid && userNameControl.touched" class="error">
-      User name is required
+           name="email"
+           placeholder="Email"
+           formControlName="email">
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
+      Email is required!
     </div>
   </div>
   <div>
     Password
     <input type="text"
            name="password"
-           required
-           #userPasswordControl="ngModel"
-           [ngModel]="user?.password">
-    <div *ngIf="userPasswordControl.invalid && userPasswordControl.touched" class="error">
-      User name is required
+           placeholder="Password"
+           formControlName="password"
+    >
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error">
+      Password is required!
     </div>
   </div>
   <div *ngIf="loginError && loginError.length > 0"
-       class="error" >
+       class="error">
     {{loginError}}
   </div>
   <div>
     <button type="submit"
             name="submit"
-            [disabled]="!myForm.valid">
+            [disabled]="!loginForm.valid">
       Log in
     </button>
   </div>
-  <!--<div>-->
-    <!--{{myForm.value | json}}-->
-  <!--</div>-->
 </form>

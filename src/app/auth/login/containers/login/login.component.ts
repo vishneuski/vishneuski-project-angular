@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
   }
 
   logIn(user: SignIn) {
-    this.authService.login(user.userName, user.password)
+    console.log(user);
+    this.authService.login(user.email, user.password)
       .then(res => {
         console.log(res, 'success!!! ');
         this.loginError = null;
