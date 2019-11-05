@@ -1,0 +1,23 @@
+<button routerLink="/products">
+  Back to products
+</button>
+<div *ngIf="product">
+  <div>
+    Name:
+    {{product?.name}}
+  </div>
+  <div>
+    Product price:
+    {{product?.price}}
+  </div>
+  <div>
+    Product quantity:
+    {{product?.quantity}}
+  </div>
+  <div>
+    Product country:
+    {{product?.country}}
+  </div>
+
+
+</div>

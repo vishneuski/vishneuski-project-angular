@@ -6,6 +6,8 @@ import {ProductsRoutingModule} from './products-routing.module';
 
 import {ProductsComponent} from './containers/products/products.component';
 import {ProductsViewComponent} from "./components/products-view/products-view.component";
+import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
+
 import {FiltrationComponent} from "./components/filtration/filtration.component";
 import {JwPaginationComponent} from 'jw-angular-pagination';
 
@@ -14,6 +16,7 @@ import {JwPaginationComponent} from 'jw-angular-pagination';
   declarations: [
     ProductsComponent,
     ProductsViewComponent,
+    ProductDetailComponent,
     FiltrationComponent,
     JwPaginationComponent,
   ],

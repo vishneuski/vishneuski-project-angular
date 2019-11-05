@@ -13,7 +13,6 @@
       <th scope="col">You wish</th>
       <th scope="col">Total price</th>
       <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
     </thead>
     <tbody *ngFor="let product of products; let i = index">
@@ -44,9 +43,6 @@
         <button (click)="delete(product)">
           Delete
         </button>
-      </td>
-      <td>
-        <a routerLink="{{product.id}}">Detail</a>
       </td>
     </tr>
     </tbody>

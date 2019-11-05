@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {Product} from "../../products/models/product.interface";
-import {ProductsService} from "../../products/services/products.service";
+import {Product} from "../../models/product.interface";
+import {ProductsService} from "../../services/products.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-detail-wine',
-  templateUrl: './detail-wine.component.html',
-  styleUrls: ['./detail-wine.component.css']
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.css']
 })
-export class DetailWineComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
+
   id: string;
   product: Product;
 
@@ -23,7 +24,7 @@ export class DetailWineComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.productsService.getfbProduct(this.id).subscribe(product => {
       this.product = product;
-      console.log(this.product, '  -detail-wine component');
+      console.log(this.product, '  -product-detail component');
     });
   }
 }
