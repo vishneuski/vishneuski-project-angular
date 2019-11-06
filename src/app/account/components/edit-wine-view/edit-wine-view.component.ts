@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Product} from "../../../products/models/product.interface";
+import {Router} from "@angular/router";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-edit-wine-view',
@@ -20,7 +22,10 @@ export class EditWineViewComponent implements OnInit {
   @Output()
   editWine: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private flashMessageService: FlashMessagesService
+  ) {
   }
 
   ngOnInit() {
@@ -39,5 +44,9 @@ export class EditWineViewComponent implements OnInit {
 
   onSubmit(form) {
     this.editWine.emit(form);
+    this.router.navigate(['/account/listWine']);
+    this.flashMessageService.show(`${form.value.name} was edited! `, {
+      cssClass: 'alert-success', timeout: 3000
+    });
   }
 }

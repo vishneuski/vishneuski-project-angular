@@ -48,7 +48,6 @@ export class ListWineComponent implements OnInit {
   editWine(product) {
     this.product = product;
     this.productService.editWine(product);
-
   }
 
   deleteWine(product) {

@@ -69,9 +69,6 @@ export class ProductsService {
   }
 
 
-
-
-
   // getfbOrders(): Observable<Order[]> {
   //   this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
   //     map(changes => {
@@ -129,24 +126,20 @@ export class ProductsService {
   }
 
   addWine(wine: Product) {
-    // console.log(wine);
     this.fbProductsCollection.add(wine);
+    this.router.navigate(['/account/listWine']);
   }
 
   editWine(product: Product) {
     this.fbProductDoc = this.afs.doc(`products/${product.id}`);
     this.fbProductDoc.update(product);
-    this.flashMessageService.show(`${product.name} was changed successfully! `, {
-      cssClass: 'alert-success', timeout: 1000
-    });
-    this.router.navigate(['/account/listWine']);
   }
 
-  deleteWine(product: Product) {
+  deleteWine(product :Product) {
     this.fbProductDoc = this.afs.doc(`products/${product.id}`);
     this.fbProductDoc.delete();
     this.flashMessageService.show(`${product.name} was deleted! `, {
-      cssClass: 'alert-danger', timeout: 4000
+      cssClass: 'alert-danger', timeout: 3000
     });
   }
 }

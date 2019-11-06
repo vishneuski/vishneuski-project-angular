@@ -28,8 +28,6 @@ export class ListWineViewComponent implements OnInit {
 
 
   filter(val): boolean {
-    console.log(this.loggedInUser);
-    console.log(this.loggedInUser);
     if (val !== this.loggedInUser.toLowerCase()) {
       return true;
     } else {
