@@ -1,6 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Product} from "../../../products/models/product.interface";
 import {Message} from "../../models/message";
 
 @Component({
@@ -12,16 +11,20 @@ export class ContactsViewComponent implements OnInit {
 
   contactMessageForm: FormGroup;
 
+  @Input()
+  userEmail: string;
+
   @Output()
   newMessage: EventEmitter<Message> = new EventEmitter<Message>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.contactMessageForm = new FormGroup({
       'firstName': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'message': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email, Validators.minLength(3)]),
+      'message': new FormControl(null, [Validators.required, Validators.minLength(5)]),
     })
   }
 

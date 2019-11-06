@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ContactsService} from "../../services/contacts.service";
+import {AuthService} from "../../../auth/services/auth.service";
+import {Message} from "../../models/message";
 
 @Component({
   selector: 'app-contacts',
@@ -9,22 +11,30 @@ import {ContactsService} from "../../services/contacts.service";
 })
 export class ContactsComponent implements OnInit {
 
-  // contactMessageForm: FormGroup;
+  isLoggedIn: boolean;
+  loggedInUser: string;
 
   constructor(
     private contactsService: ContactsService,
+    private authService: AuthService
   ) {
 
   }
 
   ngOnInit() {
-    // this.contactMessageForm = new FormGroup({
-    //   'firstName': new FormControl(null, Validators.required),
-    //   'email': new FormControl(null, [Validators.required, Validators.email]),
-    //   'message': new FormControl(null, Validators.required),
-    // })
+    this.authService.getAuth().subscribe(auth => {
+        if (auth) {
+          this.isLoggedIn = true;
+          this.loggedInUser = auth.email;
+        } else {
+          this.isLoggedIn = false;
+        }
+      }
+    );
   }
 
-
+  addNewMessage(message: Message) {
+    this.contactsService.addMessage(message);
+  }
 }
 
