@@ -13,7 +13,6 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
-import {ContactsComponent} from './contacts/components/contacts-view/contacts.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
@@ -28,7 +27,6 @@ import {AppRoutingModule} from './app-routing.module';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ContactsComponent,
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
