@@ -2,10 +2,10 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {AccountComponent} from './containers/account/account.component';
-import {AddWineComponent} from "./components/add-wine/add-wine.component";
+import {AddWineComponent} from "./containers/add-wine/add-wine.component";
 import {AuthGuard} from "../shared/guards/auth.guard";
-import {ListWineComponent} from "./components/list-wine/containers/list-wine.component";
-import {EditWineComponent} from "./components/edit-wine/edit-wine.component";
+import {ListWineComponent} from "./containers/list-wine/list-wine.component";
+import {EditWineComponent} from "./containers/edit-wine/edit-wine.component";
 
 const routes: Routes = [
   {

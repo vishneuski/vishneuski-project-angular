@@ -6,7 +6,9 @@ import {Product} from '../models/product.interface';
 import {Order} from "../../models/order";
 
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
+import {FlashMessagesService} from "angular2-flash-messages";
 // import {AngularFireAuth} from 'angularfire2/auth';
+import {Router} from "@angular/router";
 import {map} from "rxjs/operators";
 
 
@@ -28,7 +30,9 @@ export class ProductsService {
 
 
   constructor(
+    private router: Router,
     private afs: AngularFirestore,
+    private flashMessageService: FlashMessagesService
     // private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
@@ -132,10 +136,17 @@ export class ProductsService {
   editWine(product: Product) {
     this.fbProductDoc = this.afs.doc(`products/${product.id}`);
     this.fbProductDoc.update(product);
+    this.flashMessageService.show(`${product.name} was changed successfully! `, {
+      cssClass: 'alert-success', timeout: 1000
+    });
+    this.router.navigate(['/account/listWine']);
   }
 
   deleteWine(product: Product) {
     this.fbProductDoc = this.afs.doc(`products/${product.id}`);
     this.fbProductDoc.delete();
+    this.flashMessageService.show(`${product.name} was deleted! `, {
+      cssClass: 'alert-danger', timeout: 4000
+    });
   }
 }

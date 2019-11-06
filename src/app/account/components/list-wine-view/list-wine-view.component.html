@@ -1,6 +1,4 @@
 <!--<div *ngIf="products?.length > 0; else noProducts">-->
-
-
 <div class="container"
      *ngFor="let product of products"
      [hidden]="filter(product?.email | lowercase)">
@@ -37,4 +35,3 @@
 <!--<hr>-->
 <!--<h5>There are no wines in your list</h5>-->
 <!--</ng-template>-->
-

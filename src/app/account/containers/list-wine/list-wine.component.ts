@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
-import {ProductsService} from "../../../../products/services/products.service";
-import {AuthService} from "../../../../auth/services/auth.service";
-import {Product} from "../../../../products/models/product.interface";
+import {ProductsService} from "../../../products/services/products.service";
+import {AuthService} from "../../../auth/services/auth.service";
+import {Product} from "../../../products/models/product.interface";
 import {filter, map} from "rxjs/operators";
 
 @Component({
@@ -12,8 +12,8 @@ import {filter, map} from "rxjs/operators";
 })
 export class ListWineComponent implements OnInit {
 
-  @Output()
-  editProduct: EventEmitter<Product> = new EventEmitter<Product>();
+  // @Output()
+  // editProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
   product?: Product;
   products?: Product[];
@@ -44,19 +44,10 @@ export class ListWineComponent implements OnInit {
       this.products = products);
   }
 
-  filter(val): boolean {
-    if (val !== this.loggedInUser.toLowerCase()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   editWine(product) {
-    // this.router.navigate(['/account/{{id}}']);
     this.product = product;
-    console.log(this.product);
-    // this.editProduct.emit(product);
+    this.productService.editWine(product);
 
   }
 

@@ -12,7 +12,7 @@ import {Product} from "../../../products/models/product.interface";
 })
 export class AddWineComponent implements OnInit {
 
-  addWineForm: FormGroup;
+
   isLoggedIn: boolean;
   loggedInUser: string;
 
@@ -34,22 +34,10 @@ export class AddWineComponent implements OnInit {
         }
       }
     );
-
-    this.addWineForm = new FormGroup(
-      {
-        'email': new FormControl(null, Validators.required),
-        'name': new FormControl(null, Validators.required),
-        'price': new FormControl(null, Validators.required),
-        'country': new FormControl(null, Validators.required),
-        'vintage': new FormControl(null, Validators.required),
-        'quantity': new FormControl(null, Validators.required),
-        'photo': new FormControl(null, Validators.required),
-      }
-    );
   }
 
-  onSubmit(wine): void {
-    this.productService.addWine(wine.value);
+  addWine(wine) {
+    this.productService.addWine(wine);
     this.router.navigate(['/account'])
   }
 }

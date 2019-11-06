@@ -4,9 +4,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import {AccountRoutingModule} from './account-routing.module';
 import {AccountComponent} from './containers/account/account.component';
-import {AddWineComponent} from "./components/add-wine/add-wine.component";
-import {ListWineComponent} from './components/list-wine/containers/list-wine.component';
-import { EditWineComponent } from './components/edit-wine/edit-wine.component';
+import {AddWineComponent} from "./containers/add-wine/add-wine.component";
+import {ListWineComponent} from './containers/list-wine/list-wine.component';
+import { EditWineComponent } from './containers/edit-wine/edit-wine.component';
+import { AddWineViewComponent } from './components/add-wine-view/add-wine-view.component';
+import { EditWineViewComponent } from './components/edit-wine-view/edit-wine-view.component';
+import { ListWineViewComponent } from './components/list-wine-view/list-wine-view.component';
 
 
 @NgModule({
@@ -15,6 +18,9 @@ import { EditWineComponent } from './components/edit-wine/edit-wine.component';
     AddWineComponent,
     ListWineComponent,
     EditWineComponent,
+    AddWineViewComponent,
+    EditWineViewComponent,
+    ListWineViewComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Nav} from "../../../models/nav";
 import {AuthService} from "../../../auth/services/auth.service";
-import {ListWineComponent} from "../../components/list-wine/containers/list-wine.component";
+import {ListWineComponent} from "../list-wine/list-wine.component";
 import {Product} from "../../../products/models/product.interface";
 
 @Component({
