@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AuthService} from "./auth/services/auth.service";
 import {ProductsService} from "./products/services/products.service";
+import {ContactsService} from "./contacts/services/contacts.service";
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import {ProductsService} from "./products/services/products.service";
   providers: [
     AuthService,
     ProductsService,
+    ContactsService
   ]
 })
 export class CoreModule {

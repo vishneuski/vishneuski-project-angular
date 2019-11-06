@@ -42,7 +42,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   delete(product) {
     this.productsService.deleteProduct(product);
     this.flashMessage.show(`Product ${product.name} deleted`, {
-      cssClass: 'alert-success', timeout: 4000
+      cssClass: 'alert-success', timeout: 3000
     });
   };
 

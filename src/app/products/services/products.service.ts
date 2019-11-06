@@ -6,7 +6,7 @@ import {Product} from '../models/product.interface';
 import {Order} from "../../models/order";
 
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {AngularFireAuth} from 'angularfire2/auth';
+// import {AngularFireAuth} from 'angularfire2/auth';
 import {map} from "rxjs/operators";
 
 
@@ -29,7 +29,7 @@ export class ProductsService {
 
   constructor(
     private afs: AngularFirestore,
-    private afAuth: AngularFireAuth
+    // private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
   }

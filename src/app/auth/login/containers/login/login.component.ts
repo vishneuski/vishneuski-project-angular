@@ -12,7 +12,6 @@ import {FlashMessagesService} from "angular2-flash-messages";
 export class LoginComponent implements OnInit {
 
   loginError: string;
-  users: SignIn[];
 
   constructor(
     private authService: AuthService,
@@ -39,7 +38,7 @@ export class LoginComponent implements OnInit {
       .catch(err => {
         this.loginError = 'Wrong password or email!';
         this.flashMessage.show(`You are not logged in`, {
-          cssClass: 'alert-danger', timeout: 4000
+          cssClass: 'alert-danger', timeout: 3000
         });
         console.log(err)
       })
