@@ -1,14 +1,18 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../../../products/models/product.interface";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-shopping-list-view',
   templateUrl: './shopping-list-view.component.html',
   styleUrls: ['./shopping-list-view.component.css']
 })
-export class ShoppingListViewComponent implements OnInit {
-  // public productQuantity;
+export class ShoppingListViewComponent {
 
+  constructor(
+    private flashMessage: FlashMessagesService
+  ) {
+  }
 
   @Input()
   products: Product[];
@@ -19,18 +23,14 @@ export class ShoppingListViewComponent implements OnInit {
   @Output()
   orderProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
   delete(product: Product) {
+    this.flashMessage.show(`${product.name} was deleted from shopping list! `, {
+      cssClass: 'alert-success', timeout: 3000
+    });
     this.deleteFromBasket.emit(product);
   }
 
   order(product: Product) {
     this.orderProduct.emit(product);
   }
-
 }

@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {of} from "rxjs/internal/observable/of";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-order-list-view',
@@ -14,9 +16,17 @@ export class OrderListViewComponent implements OnInit {
   @Input()
   loggedInUser: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  filter(val): boolean {
+    if (val !== this.loggedInUser.toLowerCase()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

@@ -35,7 +35,6 @@
           id="quantity"
           max={{product?.quantity}}
           min=1>
-        <!--[(ngModel)]=productQuantity-->
       </td>
       <td>
         {{quantity.value * product?.price | currency}}
@@ -55,12 +54,6 @@
     </tbody>
   </table>
 </div>
-
-<div *ngIf="!products">
+<div *ngIf="!products || products === undefined || products === null">
   Your shopping cart is empty
 </div>
-
-
-<!--<div [hidden]="!products" class="empty-basket">-->
-<!--Your shopping cart is empty-->
-<!--</div>-->

@@ -16,6 +16,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
+  public basketIsEmpty: boolean = false;
   public loggedInUser: any;
   public products: Product[];
   private subscription: Subscription;
@@ -45,7 +46,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
-      this.products !== undefined ? console.log(this.products) : 'no products in basket';
+      this.products !== undefined ? console.log(this.products) : this.basketIsEmpty = true;
+
     });
 
     this.authService.getAuth().subscribe(
@@ -75,7 +77,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       cssClass: 'alert-success', timeout: 3000
     });
   };
-
 
   deleteFromBasket(product) {
     this.productsService.deleteProduct(product);
