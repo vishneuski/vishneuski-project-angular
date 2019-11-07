@@ -8,6 +8,12 @@ import {Nav} from "../../models/nav";
 })
 export class NavbarComponent implements OnInit {
 
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
   vis = true;
 
   nav: Nav[] = [
