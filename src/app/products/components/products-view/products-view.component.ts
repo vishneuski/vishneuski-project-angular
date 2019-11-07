@@ -1,13 +1,12 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.interface";
-import {FiltrationComponent} from "../filtration/filtration.component";
 import {JwPaginationComponent} from "jw-angular-pagination";
 
 @Component({
   selector: 'app-products-view',
   templateUrl: './products-view.component.html',
   styleUrls: ['./products-view.component.css'],
-  providers: [FiltrationComponent, JwPaginationComponent]
+  providers: [JwPaginationComponent]
 })
 export class ProductsViewComponent {
 
@@ -36,7 +35,6 @@ export class ProductsViewComponent {
   priceFilter: EventEmitter<any> = new EventEmitter<any>();
 
   onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
     this.pageOfItems = pageOfItems;
   }
 
@@ -49,11 +47,7 @@ export class ProductsViewComponent {
   }
 
   updateProduct() {
-     this.searchItem = '';
-     this.filterProduct(this.searchItem)
-  }
-
-  filterPrice(form) {
-    this.priceFilter.emit(form)
+    this.searchItem = '';
+    this.filterProduct(this.searchItem)
   }
 }

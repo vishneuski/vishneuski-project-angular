@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Nav} from "../../models/nav";
 
 @Component({
@@ -6,15 +6,9 @@ import {Nav} from "../../models/nav";
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   navbarOpen = false;
-
-  toggleNavbar() {
-    this.navbarOpen = !this.navbarOpen;
-  }
-
-  vis = true;
 
   nav: Nav[] = [
     {
@@ -44,10 +38,7 @@ export class NavbarComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
-
-  ngOnInit() {
-  }
-
 }

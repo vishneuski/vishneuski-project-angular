@@ -2,13 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
-import {FiltrationComponent} from "../../components/filtration/filtration.component";
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  providers: [FiltrationComponent]
 })
 
 export class ProductsComponent implements OnInit {

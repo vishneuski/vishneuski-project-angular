@@ -1,11 +1,8 @@
-<app-filtration>
-  (priceFilter)="filterPrice($event)"
-</app-filtration>
 <app-products-view
   [fbProducts]="fbProducts"
   [filteredProducts]="filteredProducts"
   [isLoggedIn]="isLoggedIn"
   (basket)="addToBasket($event)"
   (filter)="filterProducts($event)">
-  <!--(priceFilter)="priceFilter($event)"-->
 </app-products-view>
+
