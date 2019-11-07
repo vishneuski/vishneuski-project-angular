@@ -1,5 +1,6 @@
 export interface Order {
   email?: string,
+  id?: string,
   order: {
     id?: string,
     email?: string,

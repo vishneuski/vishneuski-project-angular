@@ -16,8 +16,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
-  public productQuantity;
-  public loggedInUser: string;
+  public loggedInUser: any;
   public products: Product[];
   private subscription: Subscription;
 
@@ -53,7 +52,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       user => this.loggedInUser = user);
   }
 
-  order(product: Product) {
+  orderProduct(product: Product) {
+    console.log(product);
     this.orderPr = {
       email: this.loggedInUser.email,
       order: {
@@ -68,7 +68,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       }
     };
     console.log(product);
-    this.delete(product);
+    this.deleteFromBasket(product);
     this.orderService.addOrder(this.orderPr);
     this.productsService.deleteWine(product);
     this.flashMessage.show(`Product ${product.name} was ordered`, {
@@ -77,7 +77,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   };
 
 
-  delete(product) {
+  deleteFromBasket(product) {
     this.productsService.deleteProduct(product);
   };
 
