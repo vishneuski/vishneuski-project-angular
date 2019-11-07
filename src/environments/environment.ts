@@ -3,16 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
-    apiKey: "AIzaSyCy7zYOb2vK9urfB6C2nkBS92TdXoUEYX4",
-    authDomain: "log-trainee.firebaseapp.com",
-    databaseURL: "https://log-trainee.firebaseio.com",
-    projectId: "log-trainee",
-    storageBucket: "log-trainee.appspot.com",
-    messagingSenderId: "516141566016",
-    appId: "1:516141566016:web:46b46132a13d0e3281b7a5",
-    measurementId: "G-DQZRLT70H4"
+    apiKey: "AIzaSyB1fAqJXoxsTVSDjHsL-tSCFJwuTCWn22k",
+    authDomain: "great-wine-shop.firebaseapp.com",
+    databaseURL: "https://great-wine-shop.firebaseio.com",
+    projectId: "great-wine-shop",
+    storageBucket: "great-wine-shop.appspot.com",
+    messagingSenderId: "795842910022",
+    appId: "1:795842910022:web:caac3d73956e35c5b17747",
+    measurementId: "G-ZPFNB86SWV"
   }
 };
 

@@ -1,13 +1,12 @@
 .card {
-  width: 16em;
+  width: 100%;
 }
 
 .card-wrapper {
-  width: 25%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  flex-direction: row;
 }
 
 .card-buttons {

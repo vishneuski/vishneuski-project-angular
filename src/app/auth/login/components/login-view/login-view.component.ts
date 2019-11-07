@@ -11,9 +11,6 @@ export class LoginViewComponent implements OnInit {
   loginForm: FormGroup;
 
   @Input()
-  user: SignIn;
-
-  @Input()
   loginError: string;
 
   @Output()
