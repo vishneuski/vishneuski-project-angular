@@ -12,14 +12,16 @@ export class AdminViewComponent implements OnInit {
   messages: Message[];
 
   @Output()
-  deleteMessage: EventEmitter<Message> = new EventEmitter<Message>();
+  delete: EventEmitter<Message> = new EventEmitter<Message>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   deleteMessage(message) {
-    this.deleteMessage.emit(message)
+    console.log(message);
+    this.delete.emit(message)
   }
 }

@@ -1,7 +1,13 @@
 export interface Order {
-  id?: string,
   email?: string,
-  name?: string,
-  quantity?: number,
-  totalPrice?: number
+  order: {
+    id?: string,
+    email?: string,
+    name?: string,
+    price?: number,
+    country?: string
+    vintage?: number,
+    quantity?: number,
+    photo?: string
+  }
 }

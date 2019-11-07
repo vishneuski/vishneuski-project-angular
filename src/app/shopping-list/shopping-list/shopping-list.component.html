@@ -13,6 +13,7 @@
       <th scope="col">You wish</th>
       <th scope="col">Total price</th>
       <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody *ngFor="let product of products; let i = index">
@@ -30,11 +31,11 @@
           type="number"
           name="productQuantity"
           step="1"
-          placeholder="0"
+          placeholder="1"
           [ngModel]=productQuantity
           id="quantity"
           max={{product?.quantity}}
-          min=0>
+          min=1>
       </td>
       <td>
         {{quantity.value * product?.price | currency}}
@@ -44,17 +45,27 @@
           Delete
         </button>
       </td>
+      <td>
+        <button
+          [disabled]="!quantity.value"
+          (click)="order(product)"
+        >
+          Order Product
+        </button>
+      </td>
     </tr>
     </tbody>
   </table>
-  <button (click)="order(product)">
-    Order Product
-  </button>
+
 </div>
 
-<div [hidden]="!products" class="empty-basket">
+<div *ngIf="!products">
   Your shopping cart is empty
 </div>
+
+<!--<div [hidden]="!products" class="empty-basket">-->
+<!--Your shopping cart is empty-->
+<!--</div>-->
 
 
 

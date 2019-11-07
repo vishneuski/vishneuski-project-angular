@@ -4,6 +4,7 @@ import {ProductsService} from "../../../products/services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
 import {Product} from "../../../products/models/product.interface";
 import {filter, map} from "rxjs/operators";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-list-wine',
@@ -21,6 +22,7 @@ export class ListWineComponent implements OnInit {
   loggedInUser: string;
 
   constructor(
+    private flashMessage: FlashMessagesService,
     private router: Router,
     private productService: ProductsService,
     private authService: AuthService
@@ -52,6 +54,10 @@ export class ListWineComponent implements OnInit {
 
   deleteWine(product) {
     if (confirm('Are you sure?')) {
+      this.flashMessage.show(`${product.name} was deleted! `, {
+        cssClass: 'alert-danger', timeout: 3000
+      });
+
       this.productService.deleteWine(product)
     }
     this.router.navigate(['/account/listWine']);

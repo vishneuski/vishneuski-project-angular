@@ -21,4 +21,8 @@ export class AdminComponent implements OnInit {
       .subscribe(messages => this.messages = messages);
   }
 
+  deleteMessage(message: Message) {
+    console.log(message);
+    this.contactsService.deleteMessage(message);
+  }
 }
