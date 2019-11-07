@@ -10,6 +10,8 @@ import { EditWineComponent } from './containers/edit-wine/edit-wine.component';
 import { AddWineViewComponent } from './components/add-wine-view/add-wine-view.component';
 import { EditWineViewComponent } from './components/edit-wine-view/edit-wine-view.component';
 import { ListWineViewComponent } from './components/list-wine-view/list-wine-view.component';
+import { AdminComponent } from './containers/admin/admin.component';
+import { AdminViewComponent } from './components/admin-view/admin-view.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { ListWineViewComponent } from './components/list-wine-view/list-wine-vie
     AddWineViewComponent,
     EditWineViewComponent,
     ListWineViewComponent,
+    AdminComponent,
+    AdminViewComponent,
   ],
   imports: [
     CommonModule,

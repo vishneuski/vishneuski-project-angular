@@ -1,7 +1,6 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Nav} from "../../../models/nav";
 import {AuthService} from "../../../auth/services/auth.service";
-import {ListWineComponent} from "../list-wine/list-wine.component";
 import {Product} from "../../../products/models/product.interface";
 
 @Component({
@@ -14,6 +13,7 @@ export class AccountComponent implements OnInit {
   isLoggedIn: boolean;
   loggedInUser: string;
   product?: Product;
+  isAdmin: boolean = false;
 
   nav: Nav[] = [
     {
@@ -36,6 +36,9 @@ export class AccountComponent implements OnInit {
         if (auth) {
           this.isLoggedIn = true;
           this.loggedInUser = auth.email;
+          if (this.loggedInUser === 'vishneuski87@gmail.com') {
+            this.isAdmin = true;
+          }
         } else {
           this.isLoggedIn = false;
         }

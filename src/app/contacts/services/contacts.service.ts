@@ -20,7 +20,7 @@ export class ContactsService {
   constructor(
     private afs: AngularFirestore,
   ) {
-    this.fbMessagesCollection = this.afs.collection('messages', ref => ref.orderBy('name', 'asc'));
+    this.fbMessagesCollection = this.afs.collection('messages', ref => ref.orderBy('email', 'asc'));
   }
 
   getfbMessages(): Observable<Message[]> {
