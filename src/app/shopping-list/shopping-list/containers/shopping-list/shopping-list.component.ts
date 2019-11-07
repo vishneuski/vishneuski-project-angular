@@ -1,8 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ProductsService} from "../../products/services/products.service";
-import {Product} from "../../products/models/product.interface";
+
+import {Product} from "../../../../products/models/product.interface";
 import {Subscription} from "rxjs/internal/Subscription";
-import {AuthService} from "../../auth/services/auth.service";
+
+import {AuthService} from "../../../../auth/services/auth.service";
+import {ProductsService} from "../../../../products/services/products.service";
+import {OrderService} from "../../../services/order.service";
+
 import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
@@ -16,8 +20,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   public loggedInUser: string;
   public products: Product[];
   private subscription: Subscription;
-
-  public orderProducts: Product[];
 
   public orderPr = {
     email: '',
@@ -34,9 +36,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   };
 
   constructor(
+    private orderService: OrderService,
     private authService: AuthService,
     private productsService: ProductsService,
-    private flashMessage: FlashMessagesService) {
+    private flashMessage: FlashMessagesService
+  ) {
   }
 
   ngOnInit() {
@@ -65,20 +69,12 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     };
     console.log(product);
     this.delete(product);
-    this.productsService.addOrder(this.orderPr);
+    this.orderService.addOrder(this.orderPr);
     this.productsService.deleteWine(product);
     this.flashMessage.show(`Product ${product.name} was ordered`, {
       cssClass: 'alert-success', timeout: 3000
     });
-    // product = this.products;
-    // this.productsService.orderProduct(product);
-    // this.productsService.orderProduct(product, productQuantity);
-    // console.log(`Product ID - ${product.id}`);
-    // console.log(`Product quantity - ${productQuantity}`);
-    // console.log('in shopping-list - ', this.products);
-
   };
-
 
 
   delete(product) {

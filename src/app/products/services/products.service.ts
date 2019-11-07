@@ -17,27 +17,24 @@ export class ProductsService {
 
   fbProductsCollection: AngularFirestoreCollection<Product>;
   fbProductDoc: AngularFirestoreDocument<Product>;
-
-  fbOrdersCollection: AngularFirestoreCollection<Order>;
-  fbOrderDoc: AngularFirestoreDocument<Order>;
-
   fbProducts: Observable<Product[]>;
-  fbProductsOfMail: Observable<Product[]>;
   fbProduct: Observable<Product>;
 
-  fbOrders: Observable<Order[]>;
-  fbOrder: Observable<Order>;
+  // fbOrdersCollection: AngularFirestoreCollection<Order>;
+  // fbOrderDoc: AngularFirestoreDocument<Order>;
+  // fbOrders: Observable<Order[]>;
+  // fbOrder: Observable<Order>;
 
 
   constructor(
     private router: Router,
     private afs: AngularFirestore,
-    private flashMessageService: FlashMessagesService
+    private flashMessage: FlashMessagesService
     // private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
 
-    this.fbOrdersCollection = this.afs.collection('orders', ref => ref.orderBy('email', 'asc'));
+    // this.fbOrdersCollection = this.afs.collection('orders', ref => ref.orderBy('email', 'asc'));
   }
 
   getfbProducts(): Observable<Product[]> {
@@ -70,21 +67,23 @@ export class ProductsService {
     return this.fbProduct;
   }
 
+//in order service
+  // getfbOrders(): Observable<Order[]> {
+  //   this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
+  //     map(changes => {
+  //       return changes.map(action => {
+  //         const data = action.payload.doc.data() as Order;
+  //         console.log(data, ' orders data in FireBase');
+  //         data.id = action.payload.doc.id;
+  //         return data;
+  //       });
+  //     })
+  //   );
+  //
+  //   return this.fbOrders;
+  // }
 
-  getfbOrders(): Observable<Order[]> {
-    this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(action => {
-          const data = action.payload.doc.data() as Order;
-          console.log(data, ' orders data in FireBase');
-          data.id = action.payload.doc.id;
-          return data;
-        });
-      })
-    );
 
-    return this.fbOrders;
-  }
 
   // getfbProduct(id: string): Observable<Product> {
   //   this.fbProductDoc = this.afs.doc<Product>(`products/${id}`);
@@ -135,15 +134,6 @@ export class ProductsService {
       }
     }
     this.cartSubject.next(<any>{products: this.cartProducts});
-  }
-
-  // orderProduct(products: Product) {
-  //   console.log(products, 'from basket when ordered');
-  // }
-
-  addOrder(order: Order) {
-    console.log(order);
-    this.fbOrdersCollection.add(order);
   }
 
   addWine(wine: Product) {

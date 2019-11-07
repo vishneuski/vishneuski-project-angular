@@ -34,7 +34,7 @@
 }
 
 .shopping-cart-title::before {
-  content: url("../../../assets/images/grapes.png");
+  content: url("../../../../../assets/images/grapes.png");
 }
 
 .empty-basket {

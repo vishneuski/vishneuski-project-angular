@@ -1,9 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductsService} from "../../../products/services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
 import {Product} from "../../../products/models/product.interface";
-import {filter, map} from "rxjs/operators";
 import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
@@ -12,9 +11,6 @@ import {FlashMessagesService} from "angular2-flash-messages";
   styleUrls: ['./list-wine.component.css']
 })
 export class ListWineComponent implements OnInit {
-
-  // @Output()
-  // editProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
   product?: Product;
   products?: Product[];
@@ -43,7 +39,8 @@ export class ListWineComponent implements OnInit {
 
     this.productService.getfbProducts().subscribe
     (products =>
-      this.products = products);
+      this.products = products
+    );
   }
 
 
