@@ -51,11 +51,4 @@ export class ProductsComponent implements OnInit {
   addToBasket(product: Product) {
     this.productsService.addProduct(product);
   }
-
-
-  //
-  // priceFilter(value) {
-  //   this.productsService.filterForPrice(value);
-  //   console.log('Filter for prise form value', value);
-  // }
 }
