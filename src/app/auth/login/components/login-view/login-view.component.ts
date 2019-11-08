@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {SignIn} from "../../model/signIn";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 
@@ -7,8 +7,10 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
   templateUrl: './login-view.component.html',
   styleUrls: ['./login-view.component.css']
 })
-export class LoginViewComponent implements OnInit {
+export class LoginViewComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
+
+  @ViewChild('email', {static: false}) emailElementRef: ElementRef;
 
   @Input()
   loginError: string;
@@ -21,10 +23,14 @@ export class LoginViewComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      'email': new FormControl(null, Validators.required),
-      'password': new FormControl(null, Validators.required)
+        'email': new FormControl(null, Validators.required),
+        'password': new FormControl(null, Validators.required)
       }
     )
+  }
+
+  ngAfterViewInit() {
+    this.emailElementRef.nativeElement.focus();
   }
 
   submitData(user: SignIn) {

@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegisterInfo} from "../../model/register-info";
 
@@ -7,8 +7,10 @@ import {RegisterInfo} from "../../model/register-info";
   templateUrl: './register-view.component.html',
   styleUrls: ['./register-view.component.css']
 })
-export class RegisterViewComponent implements OnInit {
+export class RegisterViewComponent implements OnInit, AfterViewInit {
   registerForm: FormGroup;
+
+  @ViewChild('name', {static: false}) emailElementRef: ElementRef;
 
   @Input()
   user: RegisterInfo;
@@ -22,13 +24,16 @@ export class RegisterViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
     this.registerForm = new FormGroup({
       'firstName': new FormControl(null, Validators.required),
       'lastName': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, Validators.required),
     })
+  }
+
+  ngAfterViewInit() {
+    this.emailElementRef.nativeElement.focus();
   }
 
   onSubmit(): void {
