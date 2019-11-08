@@ -21,7 +21,7 @@ export class ProductsComponent implements OnInit {
     } else {
       this.filteredProducts = this.fbProducts
         .filter((product) =>
-          product.name.indexOf(searchString) !== -1);
+          product.name.toLowerCase().indexOf(searchString) !== -1);
       console.log(this.filteredProducts);
       return this.filteredProducts;
     }

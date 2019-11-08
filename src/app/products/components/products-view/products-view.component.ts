@@ -43,7 +43,7 @@ export class ProductsViewComponent {
   }
 
   filterProduct(searchItem: string) {
-    this.filter.emit(searchItem);
+    this.filter.emit(searchItem.toLowerCase());
   }
 
   updateProduct() {
