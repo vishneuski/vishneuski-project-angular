@@ -1,13 +1,12 @@
 <form [formGroup]="loginForm" (ngSubmit)="submitData(loginForm.value)" class="signInForm">
-  <h3>Log In</h3>
+  <h3 #header></h3>
   <div>
     Email
     <input type="text"
-           #email
            name="email"
            placeholder="Email"
            formControlName="email">
-    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
+      <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
       Email is required!
     </div>
   </div>

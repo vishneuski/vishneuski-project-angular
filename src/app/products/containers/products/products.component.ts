@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -30,16 +31,22 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
     private authService: AuthService,
+    private activatedRoute: ActivatedRoute
   ) {
   }
 
   ngOnInit() {
-    this.productsService.getfbProducts().subscribe(
-      products => {
-        this.fbProducts = products;
-        this.filteredProducts = this.fbProducts;
-      }
-    );
+
+    this.fbProducts = this.activatedRoute.snapshot.data['resolvedProducts'];
+    this.filteredProducts = this.fbProducts;
+
+
+    // this.productsService.getfbProducts().subscribe(
+    //   products => {
+    //     this.fbProducts = products;
+    //     this.filteredProducts = this.fbProducts;
+    //   }
+    // );
 
     this.authService.getAuth().subscribe(
       val => {

@@ -10,7 +10,7 @@ import {RegisterInfo} from "../../model/register-info";
 export class RegisterViewComponent implements OnInit, AfterViewInit {
   registerForm: FormGroup;
 
-  @ViewChild('name', {static: false}) emailElementRef: ElementRef;
+  @ViewChild('header', {static: false}) headerElementRef: ElementRef;
 
   @Input()
   user: RegisterInfo;
@@ -33,7 +33,7 @@ export class RegisterViewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.emailElementRef.nativeElement.focus();
+    this.headerElementRef.nativeElement.textContent = 'Create New Account';
   }
 
   onSubmit(): void {

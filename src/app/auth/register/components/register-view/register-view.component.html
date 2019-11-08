@@ -1,12 +1,11 @@
 <form [formGroup]="registerForm"
       (ngSubmit)="onSubmit()"
       class="registerForm">
-  <h3>Create New Account</h3>
+  <h3 #header></h3>
   <div>
     First name:
     <input type="text"
-           #name
-           placeholder="first name"
+           placeholder="First name"
            name="name"
            formControlName="firstName">
   </div>
@@ -16,7 +15,7 @@
   <div>
     Last name:
     <input type="text"
-           placeholder="last name"
+           placeholder="Last name"
            name="surName"
            formControlName="lastName">
   </div>
@@ -26,7 +25,7 @@
   <div>
     Email:
     <input type="text"
-           placeholder="your email"
+           placeholder="Your email"
            name="mail"
            formControlName="email">
   </div>
@@ -36,7 +35,7 @@
   <div>
     Password:
     <input type="text"
-           placeholder="password"
+           placeholder="Password"
            name="passOne"
            formControlName="password">
   </div>

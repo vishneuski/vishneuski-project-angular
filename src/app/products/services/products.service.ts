@@ -3,7 +3,6 @@ import {Observable} from "rxjs";
 import {BehaviorSubject} from "rxjs/internal/BehaviorSubject";
 
 import {Product} from '../models/product.interface';
-import {Order} from "../../models/order";
 
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {FlashMessagesService} from "angular2-flash-messages";
@@ -20,21 +19,12 @@ export class ProductsService {
   fbProducts: Observable<Product[]>;
   fbProduct: Observable<Product>;
 
-  // fbOrdersCollection: AngularFirestoreCollection<Order>;
-  // fbOrderDoc: AngularFirestoreDocument<Order>;
-  // fbOrders: Observable<Order[]>;
-  // fbOrder: Observable<Order>;
-
-
   constructor(
     private router: Router,
     private afs: AngularFirestore,
     private flashMessage: FlashMessagesService
-    // private afAuth: AngularFireAuth
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
-
-    // this.fbOrdersCollection = this.afs.collection('orders', ref => ref.orderBy('email', 'asc'));
   }
 
   getfbProducts(): Observable<Product[]> {
@@ -67,42 +57,6 @@ export class ProductsService {
     return this.fbProduct;
   }
 
-//in order service
-  // getfbOrders(): Observable<Order[]> {
-  //   this.fbOrders = this.fbOrdersCollection.snapshotChanges().pipe(
-  //     map(changes => {
-  //       return changes.map(action => {
-  //         const data = action.payload.doc.data() as Order;
-  //         console.log(data, ' orders data in FireBase');
-  //         data.id = action.payload.doc.id;
-  //         return data;
-  //       });
-  //     })
-  //   );
-  //
-  //   return this.fbOrders;
-  // }
-
-
-
-  // getfbProduct(id: string): Observable<Product> {
-  //   this.fbProductDoc = this.afs.doc<Product>(`products/${id}`);
-  //   this.fbProduct = this.fbProductDoc.snapshotChanges().pipe(
-  //     map(action => {
-  //       if (action.payload.exists === false) {
-  //         return null;
-  //       } else {
-  //         const data = action.payload.data() as Product;
-  //         data.id = action.payload.id;
-  //         return data;
-  //       }
-  //     })
-  //   );
-  //   return this.fbProduct;
-  // }
-  //Refactor
-
-
   cartProducts: Product[] = [];
 
   private cartSubject = new BehaviorSubject<any>([]);
@@ -117,11 +71,6 @@ export class ProductsService {
     console.log('CartProducts - ', this.cartProducts);
     this.cartSubject.next(<any>{products: this.cartProducts});
   }
-
-  // filterForPrice(value) {
-  //   console.log('in service', value);
-  // }
-  //
 
   deleteProduct(product: Product) {
     let tempProduct = this.cartProducts.find(item => item.id === product.id);

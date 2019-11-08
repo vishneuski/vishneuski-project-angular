@@ -10,7 +10,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 export class LoginViewComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
 
-  @ViewChild('email', {static: false}) emailElementRef: ElementRef;
+  @ViewChild('header', {static: false}) headerElementRef: ElementRef;
 
   @Input()
   loginError: string;
@@ -30,7 +30,7 @@ export class LoginViewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.emailElementRef.nativeElement.focus();
+    this.headerElementRef.nativeElement.textContent = 'Log In';
   }
 
   submitData(user: SignIn) {
