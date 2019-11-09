@@ -59,8 +59,18 @@ img {
 }
 
 @media (max-width: 40em) {
-  .info-mini-photo {
+
+  .info-mini-wrapper {
+    flex-direction: column;
+  }
+
+  .info-mini-text-one, .photo-three {
     display: none;
+  }
+
+  .info-mini-photo {
+    height: 15em;
+    width: 100%;
   }
 
   .info-mini-text {
