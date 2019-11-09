@@ -1,33 +1,32 @@
-<div>
-  <form class="wineName">
-    <div class="search-wrapper">
-      <label for="wineSearch"
-             class="search-input-label"
-      >Input wine name: </label>
+<form class="wineName">
+  <div class="search-wrapper">
+    <label for="wineSearch"
+           class="search-input-label"
+    >Input wine name: </label>
 
-      <input type="text"
-             class="search-input"
-             id="wineSearch"
-             [ngModelOptions]="{standalone: true}"
-             [(ngModel)]="searchItem">
-      <div class="search-buttons">
-        <button class="app-button"
-                (click)="filterProduct(searchItem)">
-          Search
-        </button>
-        <button class="app-button"
-                (click)="updateProduct()">
-          Clear field
-        </button>
-      </div>
+    <input type="text"
+           class="search-input"
+           id="wineSearch"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="searchItem">
+    <div class="search-buttons">
+      <button class="app-button"
+              (click)="filterProduct(searchItem)">
+        Search
+      </button>
+      <button class="app-button"
+              (click)="updateProduct()">
+        Clear field
+      </button>
     </div>
-  </form>
-</div>
+  </div>
+</form>
 <div class="product-cart-layout">
   <div *ngFor="let item of pageOfItems">
     <div class="product-cart-container">
       <div>
-        <img [src]="item?.photo" class="bottle-mini">
+        <img [src]="item?.photo"
+             class="bottle-mini">
       </div>
       <div>
         <div>
