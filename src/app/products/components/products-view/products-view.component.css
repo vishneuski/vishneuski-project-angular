@@ -51,6 +51,20 @@
   border-radius: 0.25em;
 }
 
+.wine-detail {
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 0.25em 0.4em;
+  border-radius: 0.25em;
+  text-align: center;
+  line-height: 1.5em;
+  color: #6D3023;
+}
+
+.products-buttons {
+  display: flex;
+}
+
 .wineName {
   box-sizing: border-box;;
   padding: 2em;

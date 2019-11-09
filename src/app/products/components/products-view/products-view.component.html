@@ -38,12 +38,13 @@
         <div>
           {{item?.price | currency}}
         </div>
-        <button class="app-button"
-                [disabled]="!isLoggedIn"
-                (click)="addToBasket(item)">
-          Add to cart
-        </button>
-        <a routerLink="{{item.id}}">Detail</a>
+        <div class="products-buttons">
+          <button class="app-button"
+                  [disabled]="!isLoggedIn"
+                  (click)="addToBasket(item)">
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   </div>
