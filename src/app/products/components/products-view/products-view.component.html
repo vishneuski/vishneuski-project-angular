@@ -1,12 +1,26 @@
 <div>
   <form class="wineName">
-    <label for="wineSearch">Input wine name: </label>
-    <input type="text"
-           id="wineSearch"
-           [ngModelOptions]="{standalone: true}"
-           [(ngModel)]="searchItem">
-    <button (click)="filterProduct(searchItem)">Search</button>
-    <button (click)="updateProduct()">Clear field</button>
+    <div class="search-wrapper">
+      <label for="wineSearch"
+             class="search-input-label"
+      >Input wine name: </label>
+
+      <input type="text"
+             class="search-input"
+             id="wineSearch"
+             [ngModelOptions]="{standalone: true}"
+             [(ngModel)]="searchItem">
+      <div class="search-buttons">
+        <button class="app-button"
+                (click)="filterProduct(searchItem)">
+          Search
+        </button>
+        <button class="app-button"
+                (click)="updateProduct()">
+          Clear field
+        </button>
+      </div>
+    </div>
   </form>
 </div>
 <div class="product-cart-layout">
@@ -25,9 +39,9 @@
         <div>
           {{item?.price | currency}}
         </div>
-        <button
-          [disabled]="!isLoggedIn"
-          (click)="addToBasket(item)">
+        <button class="app-button"
+                [disabled]="!isLoggedIn"
+                (click)="addToBasket(item)">
           Add to cart
         </button>
         <a routerLink="{{item.id}}">Detail</a>

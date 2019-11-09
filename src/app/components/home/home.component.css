@@ -26,6 +26,8 @@ img {
 .info-mini-wrapper {
   display: flex;
   justify-content: flex-start;
+  margin: 2em;
+
 }
 
 .info-mini-photo {
@@ -38,10 +40,6 @@ img {
   width: 50%;
   line-height: 1.75em;
   font-family: "Source Code Pro", sans-serif;
-}
-
-.info-mini-wrapper {
-  margin: 2em;
 }
 
 .info-mini-photo {
@@ -59,4 +57,15 @@ img {
 .photo-three {
   background-image: url("../../../assets/images/mini-info-4.jpg");
 }
+
+@media (max-width: 40em) {
+  .info-mini-photo {
+    display: none;
+  }
+
+  .info-mini-text {
+    width: 100%;
+  }
+}
+
 

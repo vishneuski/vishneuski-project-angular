@@ -4,24 +4,52 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .product-cart-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 20em;
+  width: 15em;
   height: 10em;
-  /*border: 1px solid gray;*/
   box-sizing: border-box;
   padding-bottom: 1em;
 }
 
-/*.photo {*/
-  /*width: 5em;*/
-  /*height: 5em;*/
-/*}*/
+.search-wrapper {
+  display: flex;
+  height: 2em;
+  max-height: 2em;
+}
+
+.search-input {
+  min-width: 5em;
+  height: 2em;
+  max-height: 2em;
+  padding: 0;
+  border-radius: 0.25em;
+}
+
+.search-input-label {
+  box-sizing: border-box;
+  padding-right: 1em;
+}
+
+.search-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-button {
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 4em;
+  padding: 0.25em 0.4em;
+  background-color: seagreen;
+  color: white;
+  border-radius: 0.25em;
+}
 
 .wineName {
   box-sizing: border-box;;
@@ -55,4 +83,9 @@ button {
   height: 8em;
 }
 
+@media (max-width: 40em) {
+  .search-input-label {
+    display: none;
+  }
+}
 
