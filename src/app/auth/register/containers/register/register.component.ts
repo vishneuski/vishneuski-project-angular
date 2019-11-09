@@ -1,17 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {RegisterInfo} from "../../model/register-info";
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
+import {RegisterViewComponent} from "../../components/register-view/register-view.component";
 
 @Component({
   selector: 'app-register-component',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, AfterViewInit {
 
   registerMessage: string;
 
+  @ViewChild(RegisterViewComponent, {static: false})
+  regView: RegisterViewComponent;
 
   constructor(
     private router: Router,
@@ -20,6 +23,16 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    console.log(this.regView.registerForm.dirty);
+
+    this.unsavedData();
+  }
+
+  unsavedData(): boolean {
+    return this.regView.registerForm.dirty;
   }
 
   register(userInfo: RegisterInfo) {

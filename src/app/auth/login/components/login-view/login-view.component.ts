@@ -18,9 +18,6 @@ export class LoginViewComponent implements OnInit, AfterViewInit {
   @Output()
   sighInTry: EventEmitter<SignIn> = new EventEmitter<SignIn>();
 
-  constructor() {
-  }
-
   ngOnInit() {
     this.loginForm = new FormGroup({
         'email': new FormControl(null, Validators.required),

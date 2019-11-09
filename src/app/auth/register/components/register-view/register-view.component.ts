@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RegisterInfo} from "../../model/register-info";
 
@@ -9,6 +9,9 @@ import {RegisterInfo} from "../../model/register-info";
 })
 export class RegisterViewComponent implements OnInit, AfterViewInit {
   registerForm: FormGroup;
+
+  // @ViewChild('input', {static: false})
+  // input: ElementRef;
 
   @ViewChild('header', {static: false}) headerElementRef: ElementRef;
 
@@ -21,8 +24,6 @@ export class RegisterViewComponent implements OnInit, AfterViewInit {
   @Output()
   register: EventEmitter<RegisterInfo> = new EventEmitter<RegisterInfo>();
 
-  constructor() { }
-
   ngOnInit() {
     this.registerForm = new FormGroup({
       'firstName': new FormControl(null, Validators.required),
@@ -34,7 +35,12 @@ export class RegisterViewComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.headerElementRef.nativeElement.textContent = 'Create New Account';
+
+    // console.log(this.input);
+    // console.log(this.unsavedData());
   }
+
+
 
   onSubmit(): void {
     console.log(this.registerForm.value);
