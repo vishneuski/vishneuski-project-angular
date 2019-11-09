@@ -69,12 +69,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         photo: product.photo
       }
     };
-    console.log(product);
     this.deleteFromBasket(product);
     this.orderService.addOrder(this.orderPr);
     this.productsService.deleteWine(product);
     this.flashMessage.show(`Product ${product.name} was ordered`, {
-      cssClass: 'alert-success', timeout: 3000
+      cssClass: 'flashMessClass', timeout: 3000
     });
   };
 
