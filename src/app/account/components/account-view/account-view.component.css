@@ -30,12 +30,6 @@ nav a.active {
   border-bottom: 1px solid #6D3023;
 }
 
-/*.wrapper {*/
-/*display: flex;*/
-/*flex-direction: column;*/
-/*min-height: 100vh;*/
-/*}*/
-
 app-footer {
   flex-shrink: 0;
 }

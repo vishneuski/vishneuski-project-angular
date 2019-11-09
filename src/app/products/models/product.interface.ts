@@ -8,8 +8,3 @@ export interface Product {
   quantity: number;
   photo?: string;
 }
-
-// export interface Item {
-//   product_id: number,
-//   quantity: number
-// }

@@ -6,7 +6,7 @@ import {Nav} from "../../../models/nav";
   templateUrl: './account-view.component.html',
   styleUrls: ['./account-view.component.css']
 })
-export class AccountViewComponent implements OnInit {
+export class AccountViewComponent {
 
   @Input()
   isAdmin: string;
@@ -28,10 +28,4 @@ export class AccountViewComponent implements OnInit {
       exact: true
     }
   ];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

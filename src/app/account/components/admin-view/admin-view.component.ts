@@ -6,19 +6,13 @@ import {Message} from "../../../contacts/models/message";
   templateUrl: './admin-view.component.html',
   styleUrls: ['./admin-view.component.css']
 })
-export class AdminViewComponent implements OnInit {
+export class AdminViewComponent {
 
   @Input()
   messages: Message[];
 
   @Output()
   delete: EventEmitter<Message> = new EventEmitter<Message>();
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   deleteMessage(message) {
     console.log(message);

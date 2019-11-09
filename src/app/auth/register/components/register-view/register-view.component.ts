@@ -10,9 +10,6 @@ import {RegisterInfo} from "../../model/register-info";
 export class RegisterViewComponent implements OnInit, AfterViewInit {
   registerForm: FormGroup;
 
-  // @ViewChild('input', {static: false})
-  // input: ElementRef;
-
   @ViewChild('header', {static: false}) headerElementRef: ElementRef;
 
   @Input()
@@ -35,16 +32,10 @@ export class RegisterViewComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.headerElementRef.nativeElement.textContent = 'Create New Account';
-
-    // console.log(this.input);
-    // console.log(this.unsavedData());
   }
-
-
 
   onSubmit(): void {
     console.log(this.registerForm.value);
     this.register.emit(this.registerForm.value);
   }
-
 }

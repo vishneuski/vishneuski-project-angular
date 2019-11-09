@@ -41,7 +41,6 @@ button {
   margin: 0 0 1.25em;
 }
 
-
 @media (max-width: 40em) {
   .addWineForm {
     width: 100%;

@@ -16,9 +16,6 @@ export class AddWineViewComponent implements OnInit {
   @Output()
   addWine: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() {
-  }
-
   ngOnInit() {
     this.addWineForm = new FormGroup(
       {

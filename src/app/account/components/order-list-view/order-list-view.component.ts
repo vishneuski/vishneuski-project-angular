@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Order} from "../../../models/order";
 
 @Component({
   selector: 'app-order-list-view',
@@ -14,11 +15,18 @@ export class OrderListViewComponent {
   @Input()
   loggedInUser: string;
 
+  @Output()
+  deleteOrd: EventEmitter<Order> = new EventEmitter<Order>();
+
   filter(val): boolean {
     if (val !== this.loggedInUser.toLowerCase()) {
       return true;
     } else {
       return false;
     }
+  }
+
+  deleteOrder(order) {
+    this.deleteOrd.emit(order)
   }
 }

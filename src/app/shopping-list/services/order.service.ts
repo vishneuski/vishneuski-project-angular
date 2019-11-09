@@ -4,6 +4,7 @@ import {FlashMessagesService} from "angular2-flash-messages";
 import {Order} from "../../models/order";
 import {Observable} from "rxjs/index";
 import {map} from "rxjs/operators";
+import {Product} from "../../products/models/product.interface";
 
 @Injectable()
 export class OrderService {
@@ -39,5 +40,10 @@ export class OrderService {
   addOrder(order: Order) {
     console.log(order);
     this.fbOrdersCollection.add(order);
+  }
+
+  deleteOrder(order: Product) {
+    this.fbOrderDoc = this.afs.doc(`orders/${order.id}`);
+    this.fbOrderDoc.delete();
   }
 }

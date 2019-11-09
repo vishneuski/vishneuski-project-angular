@@ -5,8 +5,6 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 
 import {map} from "rxjs/operators";
 import {Observable} from "rxjs/internal/Observable";
-import {Product} from "../../products/models/product.interface";
-
 
 @Injectable()
 export class ContactsService {
@@ -53,14 +51,9 @@ export class ContactsService {
   }
 
   addMessage(message: Message) {
-    // console.log(wine);
+    console.log('!!!!');
     this.fbMessagesCollection.add(message);
   }
-
-  // editMessage(message: Message) {
-  //   this.fbMessageDoc = this.afs.doc(`messages/${message.id}`);
-  //   this.fbMessageDoc.update(message);
-  // }
 
   deleteMessage(message: Message) {
     this.fbMessageDoc = this.afs.doc(`messages/${message.id}`);

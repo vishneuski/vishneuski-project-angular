@@ -6,7 +6,6 @@ import {Product} from '../models/product.interface';
 
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {FlashMessagesService} from "angular2-flash-messages";
-// import {AngularFireAuth} from 'angularfire2/auth';
 import {Router} from "@angular/router";
 import {map} from "rxjs/operators";
 
@@ -22,7 +21,6 @@ export class ProductsService {
   constructor(
     private router: Router,
     private afs: AngularFirestore,
-    private flashMessage: FlashMessagesService
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
   }

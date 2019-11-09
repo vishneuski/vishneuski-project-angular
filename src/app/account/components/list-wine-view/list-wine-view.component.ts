@@ -6,7 +6,7 @@ import {Product} from "../../../products/models/product.interface";
   templateUrl: './list-wine-view.component.html',
   styleUrls: ['./list-wine-view.component.css']
 })
-export class ListWineViewComponent implements OnInit {
+export class ListWineViewComponent {
 
   @Input()
   loggedInUser: string;
@@ -19,12 +19,6 @@ export class ListWineViewComponent implements OnInit {
 
   @Output()
   delete: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
 
   filter(val): boolean {
@@ -42,6 +36,4 @@ export class ListWineViewComponent implements OnInit {
   deleteWine(product) {
     this.delete.emit(product)
   }
-
-
 }
