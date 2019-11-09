@@ -1,0 +1,37 @@
+<header>
+  <div class="header">
+    <div class="logo">
+      GW
+    </div>
+    <ul class="user-info">
+      <li class="user-info-item user-mail">{{loggedInUser}}</li>
+      <li class="user-info-item">
+        <a *ngIf="!isLoggedIn" routerLink='/auth/login'>
+          Login
+        </a>
+      </li>
+      <li class="user-info-item">
+        <a *ngIf="isLoggedIn"
+           (click)="onLogoutClick()"
+           href='#'>
+          Logout
+        </a>
+      </li>
+      <li class="user-info-item">|</li>
+      <li class="user-info-item">
+        <a routerLink='/auth/register'>
+          Register
+        </a>
+      </li>
+      <li class="user-info-item basket-wrapper">
+        <a title="Shopping cart"
+           routerLink='/shopping-list'>
+          <img class="basket" src="../../../assets/images/shopping-basket.png" alt="basket">
+        </a>
+        <div class="shopping-cart-counter">
+          <span>{{productQuantity}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>

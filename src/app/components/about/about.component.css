@@ -1,0 +1,45 @@
+.about-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.photo {
+  width: calc(40% - 2em);
+  background: #ffffff url("../../../assets/images/about.jpg") right center/cover no-repeat;
+  margin: 2em auto;
+}
+
+.info {
+  font-family: "Source Code Pro", sans-serif;
+  line-height: 1.75em;
+  width: calc(60% - 2em);
+  margin: 2em auto;
+}
+
+h3 {
+  box-sizing: border-box;
+  padding-top: 2em;
+  text-align: center;
+}
+
+h3:before {
+  content: url("../../../assets/images/grapes.png");
+}
+
+@media (max-width: 40em) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .photo {
+    height: 15em;
+    width: 100%;
+  }
+
+  .info {
+    width: 100%;
+  }
+}

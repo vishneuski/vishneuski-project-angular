@@ -1,0 +1,35 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitData(loginForm.value)" class="signInForm">
+  <h3 #header></h3>
+  <div>
+    Email
+    <input type="text"
+           name="email"
+           placeholder="Email"
+           formControlName="email">
+      <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">
+      Email is required!
+    </div>
+  </div>
+  <div>
+    Password
+    <input type="text"
+           name="password"
+           placeholder="Password"
+           formControlName="password"
+    >
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error">
+      Password is required!
+    </div>
+  </div>
+  <div *ngIf="loginError && loginError.length > 0"
+       class="error">
+    <ng-content></ng-content>
+  </div>
+  <div>
+    <button type="submit"
+            name="submit"
+            [disabled]="!loginForm.valid">
+      Log in
+    </button>
+  </div>
+</form>

@@ -1,0 +1,50 @@
+<form [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="registerForm">
+  <h3 #header></h3>
+  <div>
+    First name:
+    <input type="text"
+           #input
+           placeholder="First name"
+           name="name"
+           formControlName="firstName">
+  </div>
+  <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched" class="error">
+    Input your name!
+  </div>
+  <div>
+    Last name:
+    <input type="text"
+           placeholder="Last name"
+           name="surName"
+           formControlName="lastName">
+  </div>
+  <div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched" class="error">
+    Input your last name!
+  </div>
+  <div>
+    Email:
+    <input type="text"
+           placeholder="Your email"
+           name="mail"
+           formControlName="email">
+  </div>
+  <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error">
+    Input your email!
+  </div>
+  <div>
+    Password:
+    <input type="text"
+           placeholder="Password"
+           name="passOne"
+           formControlName="password">
+  </div>
+  <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error">
+    Input your password!
+  </div>
+  <div>
+    <button [disabled]="!registerForm.valid">Register</button>
+  </div>
+  {{registerMessage}}
+</form>

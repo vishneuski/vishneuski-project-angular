@@ -1,0 +1,23 @@
+<div class="card-wrapper"
+     *ngFor="let order of orders"
+     [hidden]="filter(order?.email | lowercase)">
+  <div class="card">
+    <img class="card-img-top bottle-mini" [src]="order?.order.photo" alt="wine photo">
+    <div class="card-body">
+      <h5 class="card-title">{{order?.order.name}}</h5>
+      <p class="card-text">
+        {{order?.order.country}}
+      </p>
+      <p class="card-text">
+        {{order?.order.price}}
+      </p>
+      <div class="card-buttons">
+        <a class="btn btn-danger"
+           (click)="deleteOrder(order)">
+          Delete
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

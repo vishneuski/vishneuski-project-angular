@@ -1,0 +1,4 @@
+<app-contacts-view
+  [userEmail]="isLoggedIn ? loggedInUser : '' "
+  (newMessage)=addNewMessage($event)>
+</app-contacts-view>

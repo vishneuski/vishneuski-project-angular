@@ -1,0 +1,56 @@
+<div>
+  <h2 class="shopping-cart-title">Shopping Cart</h2>
+</div>
+<div *ngIf="products !== undefined && products.length !== 0">
+  <div class="shopping-list-desktop">
+    <table class="table">
+      <thead>
+      <tr>
+        <th class='hidden' scope="col"></th>
+        <th scope="col">Wine</th>
+        <th scope="col">Price</th>
+        <th class='hidden' scope="col">You wish</th>
+        <th class='hidden' scope="col">Total price</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let product of products">
+      <tr>
+        <td class='hidden'>
+          <img [src]=product?.photo>
+        </td>
+        <td>{{product?.name}}</td>
+        <td>{{product?.price | currency}}</td>
+        <td class='hidden'><label for="quantity"></label>
+          <input
+            #quantity
+            type="number"
+            name="productQuantity"
+            step="1"
+            value="1"
+            id="quantity"
+            max={{product?.quantity}}
+            min=1>
+        </td>
+        <td class='hidden'>
+          {{quantity.value * product?.price | currency}}
+        </td>
+        <td>
+          <button class="app-button"
+                  (click)="delete(product)">
+            Delete
+          </button>
+        </td>
+        <td>
+          <button class="app-button"
+                  (click)="order(product)">
+            Order
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-content></ng-content>

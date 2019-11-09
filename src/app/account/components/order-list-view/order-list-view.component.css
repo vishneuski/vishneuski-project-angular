@@ -1,0 +1,25 @@
+.card {
+  width: 100%;
+}
+
+.card-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+a {
+  cursor: pointer;
+}
+
+.bottle-mini {
+  width: 5em;
+  height: 8em;
+}

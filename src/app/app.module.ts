@@ -1,16 +1,49 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CoreModule} from "./core.module";
 
-import { AppComponent } from './app.component';
+import {environment} from '../environments/environment.prod';
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+
+import {FlashMessagesModule} from 'angular2-flash-messages';
+
+import {AppComponent} from './app.component';
+import {HomeComponent} from './components/home/home.component';
+import {AboutComponent} from './components/about/about.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {NavbarComponent} from "./components/navbar/navbar.component";
+
+import {AppRoutingModule} from './app-routing.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CoreModule,
+    FlashMessagesModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,57 @@
+<form class="wineName">
+  <div class="search-wrapper">
+    <label for="wineSearch"
+           class="search-input-label"
+    >Input wine name: </label>
+
+    <input type="text"
+           class="search-input"
+           id="wineSearch"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="searchItem">
+    <div class="search-buttons">
+      <button class="app-button"
+              (click)="filterProduct(searchItem)">
+        Search
+      </button>
+      <button class="app-button"
+              (click)="updateProduct()">
+        Clear field
+      </button>
+    </div>
+  </div>
+</form>
+<div class="product-cart-layout">
+  <div *ngFor="let item of pageOfItems">
+    <div class="product-cart-container">
+      <div>
+        <img [src]="item?.photo"
+             class="bottle-mini">
+      </div>
+      <div>
+        <div>
+          {{item?.name}}
+        </div>
+        <div>
+          {{item?.country}}
+        </div>
+        <div>
+          {{item?.price | currency}}
+        </div>
+        <div class="products-buttons">
+          <button class="app-button"
+                  [disabled]="!isLoggedIn"
+                  (click)="addToBasket(item)">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-content></ng-content>
+<div class="pagination-wrapper">
+  <jw-pagination [items]="filteredProducts"
+                 (changePage)="onChangePage($event)">
+  </jw-pagination>
+</div>

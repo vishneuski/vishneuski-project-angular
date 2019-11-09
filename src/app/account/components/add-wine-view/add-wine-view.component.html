@@ -1,0 +1,77 @@
+<h3>Add Wine</h3>
+<form [formGroup]="addWineForm"
+      (ngSubmit)="onSubmit(addWineForm)"
+      class="addWineForm">
+  <div [hidden]="true">
+    <input type="text"
+           placeholder="email"
+           name="email"
+           [(ngModel)]="loggedInUser"
+           formControlName="email">
+  </div>
+  <div>
+    Wine name:
+    <input type="text"
+           placeholder="name"
+           name="name"
+           formControlName="name">
+  </div>
+  <div *ngIf="addWineForm.controls['name'].invalid && addWineForm.controls['name'].touched" class="error">
+    Input wine name!
+  </div>
+  <div>
+    Wine price:
+    <input type="number"
+           placeholder="price"
+           name="price"
+           formControlName="price">
+  </div>
+  <div *ngIf="addWineForm.controls['price'].invalid && addWineForm.controls['price'].touched" class="error">
+    Input wine price!
+  </div>
+  <div>
+    Country:
+    <input type="text"
+           placeholder="country"
+           name="country"
+           formControlName="country">
+  </div>
+  <div *ngIf="addWineForm.controls['country'].invalid && addWineForm.controls['country'].touched" class="error">
+    Input wine country!
+  </div>
+  <div>
+    Wine vintage:
+    <input type="number"
+           placeholder="vintage"
+           name="vintage"
+           formControlName="vintage">
+  </div>
+  <div *ngIf="addWineForm.controls['vintage'].invalid && addWineForm.controls['vintage'].touched" class="error">
+    Input wine vintage!
+  </div>
+  <div>
+    Quantity:
+    <input type="number"
+           placeholder="quantity"
+           name="quantity"
+           min=1
+           max=1
+           formControlName="quantity">
+  </div>
+  <div *ngIf="addWineForm.controls['quantity'].invalid && addWineForm.controls['quantity'].touched" class="error">
+    Input wine quantity!
+  </div>
+  <div>
+    Wine photo:
+    <input type="text"
+           placeholder="photo"
+           name="photo"
+           formControlName="photo">
+  </div>
+  <div *ngIf="addWineForm.controls['photo'].invalid && addWineForm.controls['photo'].touched" class="error">
+    Input wine photo!
+  </div>
+  <div>
+    <button [disabled]="!addWineForm.valid">Add Wine</button>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<div *ngFor="let message of messages">
+  <div class="card">
+    <h5 class="card-header">Message from {{message.email}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Message</h5>
+      <p class="card-text">{{message.message}}</p>
+      <a (click)="deleteMessage(message)"
+         class="btn btn-primary">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

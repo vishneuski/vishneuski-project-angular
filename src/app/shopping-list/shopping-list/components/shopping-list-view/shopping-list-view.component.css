@@ -1,0 +1,29 @@
+.shopping-list-mobile {
+  display: none;
+}
+
+.shopping-cart-title {
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 1em;
+}
+
+.shopping-cart-title::before {
+  content: url("../../../../../assets/images/grapes.png");
+}
+
+.app-button {
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 4em;
+  padding: 0.25em 0.4em;
+  background-color: seagreen;
+  color: white;
+  border-radius: 0.25em;
+}
+
+@media (max-width: 40em) {
+  .hidden {
+    display: none;
+  }
+}
