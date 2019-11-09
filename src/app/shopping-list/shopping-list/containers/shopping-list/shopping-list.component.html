@@ -1,10 +1,8 @@
 <app-shopping-list-view
   [products]="products"
   (deleteFromBasket)="deleteFromBasket($event)"
-  (orderProduct)="orderProduct($event)"
-
->
-
+  (orderProduct)="orderProduct($event)">
+  <div class="noProducts" #noProducts *ngIf="!products ||  products.length === 0 || products === undefined || products === null">No products in your shopping list</div>
 </app-shopping-list-view>
 
 

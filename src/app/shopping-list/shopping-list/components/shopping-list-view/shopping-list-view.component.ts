@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../../../products/models/product.interface";
 import {FlashMessagesService} from "angular2-flash-messages";
 
@@ -8,6 +8,9 @@ import {FlashMessagesService} from "angular2-flash-messages";
   styleUrls: ['./shopping-list-view.component.css']
 })
 export class ShoppingListViewComponent {
+
+  @ContentChild('noProducts', {static: false})
+  divNoProd: ElementRef;
 
   constructor(
     private flashMessage: FlashMessagesService
