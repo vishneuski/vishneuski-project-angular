@@ -9,7 +9,7 @@ import {RegisterViewComponent} from "../../components/register-view/register-vie
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit, AfterViewInit {
+export class RegisterComponent implements OnInit {
 
   registerMessage: string;
 
@@ -25,11 +25,11 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
-    console.log(this.regView.registerForm.dirty);
-
-    this.unsavedData();
-  }
+  // ngAfterViewInit() {
+  //   console.log(this.regView.registerForm.dirty);
+  //
+  //   this.unsavedData();
+  // }
 
   unsavedData(): boolean {
     return this.regView.registerForm.dirty;

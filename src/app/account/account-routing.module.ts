@@ -8,11 +8,12 @@ import {ListWineComponent} from "./containers/list-wine/list-wine.component";
 import {AdminComponent} from "./containers/admin/admin.component";
 import {OrderListComponent} from "./containers/order-list/order-list.component";
 import {EditWineComponent} from "./containers/edit-wine/edit-wine.component";
+import {LostDataGuard} from "./guards/lost-data.guard";
 
 const routes: Routes = [
   {
     path: '', component: AccountComponent, canActivate: [AuthGuard], children: [
-      {path: 'addWine', component: AddWineComponent, canActivate: [AuthGuard]},
+      {path: 'addWine', component: AddWineComponent, canDeactivate: [LostDataGuard],canActivate: [AuthGuard]},
       {path: 'listWine', component: ListWineComponent, canActivate: [AuthGuard]},
       {path: 'orderList', component: OrderListComponent, canActivate: [AuthGuard]},
       {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
@@ -24,7 +25,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard, LostDataGuard]
 })
 export class AccountRoutingModule {
 }
