@@ -1,13 +1,15 @@
-.wrapper {
+.contacts-wrapper {
   display: flex;
-  width: 70vw;
+  width: 90vw;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .contact-details {
   flex-basis: 30%;
+  margin: 1em 0;
   border: 1px solid gray;
+  border-radius: 0.25em;
   box-sizing: border-box;
   padding: 2em 1em;
 }
@@ -77,4 +79,19 @@ input:focus {
   background-color: seagreen;
   color: white;
   border-radius: 0.25em;
+}
+
+@media (max-width: 40em) {
+  .contacts-wrapper {
+    flex-direction: column;
+  }
+
+  .form-message {
+    padding: 0;
+    width: 100%;
+  }
+
+  .messageForm {
+    width: 100%;
+  }
 }
