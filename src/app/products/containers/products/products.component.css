@@ -1,0 +1,8 @@
+.noMatches {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 2em;
+  width: 50%;
+  text-align: center;
+  color: #6D3023;
+}

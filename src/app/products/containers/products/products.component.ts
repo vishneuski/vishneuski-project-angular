@@ -40,14 +40,6 @@ export class ProductsComponent implements OnInit {
     this.fbProducts = this.activatedRoute.snapshot.data['resolvedProducts'];
     this.filteredProducts = this.fbProducts;
 
-
-    // this.productsService.getfbProducts().subscribe(
-    //   products => {
-    //     this.fbProducts = products;
-    //     this.filteredProducts = this.fbProducts;
-    //   }
-    // );
-
     this.authService.getAuth().subscribe(
       val => {
         this.isLoggedIn = val;

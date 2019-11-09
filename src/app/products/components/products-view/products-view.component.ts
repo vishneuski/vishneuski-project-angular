@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from "../../models/product.interface";
 import {JwPaginationComponent} from "jw-angular-pagination";
 
@@ -12,6 +12,9 @@ export class ProductsViewComponent {
 
   searchItem: string;
   pageOfItems: Array<any>;
+
+  @ContentChild('noMatches', {static: false})
+  noMatches: ElementRef;
 
   @Input()
   products: Product[];
