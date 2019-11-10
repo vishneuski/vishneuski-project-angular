@@ -75,3 +75,10 @@
     transform: translate(-50%, 0);
   }
 }
+
+.auth-link {
+  color: #6D3023;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}

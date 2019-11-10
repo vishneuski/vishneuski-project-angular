@@ -2,22 +2,29 @@
      *ngFor="let product of products"
      [hidden]="filter(product?.email | lowercase)">
   <div class="card">
-    <img class="card-img-top bottle-mini" [src]="product?.photo" alt="wine photo">
-    <div class="card-body">
-      <h5 class="card-title">{{product?.name}}</h5>
-      <p class="card-text">
-        {{product?.country}}
-      </p>
-      <div class="card-buttons">
-        <a class="btn btn-primary"
-           routerLink="/account/{{product?.id}}"
-           (click)="editWine(product)">
-          Edit
-        </a>
-        <a class="btn btn-danger"
-           (click)="deleteWine(product)">
-          Delete
-        </a>
+    <div class="card-info">
+      <img class="card-img-top bottle-mini" [src]="product?.photo" alt="wine photo">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{product?.name}}
+        </h5>
+        <p class="card-text">
+          {{product?.country}}
+        </p>
+        <p class="card-text">
+          {{product?.price | currency }}
+        </p>
+        <div class="card-buttons">
+          <a class="btn btn-primary"
+             routerLink="/account/{{product?.id}}"
+             (click)="editWine(product)">
+            Edit
+          </a>
+          <a class="btn btn-danger"
+             (click)="deleteWine(product)">
+            Delete
+          </a>
+        </div>
       </div>
     </div>
   </div>

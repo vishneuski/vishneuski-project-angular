@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+.card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
 .card-wrapper {
   width: 60%;
   margin: 0 auto;

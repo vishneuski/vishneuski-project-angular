@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ContactsService} from "../../services/contacts.service";
 import {AuthService} from "../../../auth/services/auth.service";
 import {Message} from "../../models/message";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-contacts',
@@ -15,6 +15,7 @@ export class ContactsComponent implements OnInit {
   loggedInUser: string;
 
   constructor(
+    private flashMessage: FlashMessagesService,
     private contactsService: ContactsService,
     private authService: AuthService
   ) {
@@ -35,6 +36,9 @@ export class ContactsComponent implements OnInit {
 
   addNewMessage(message: Message) {
     this.contactsService.addMessage(message);
+    this.flashMessage.show(`${message.firstName}. Your message send successfully! `, {
+      cssClass: 'alert-success', timeout: 3000
+    });
   }
 }
 

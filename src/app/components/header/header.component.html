@@ -6,12 +6,15 @@
     <ul class="user-info">
       <li class="user-info-item user-mail">{{loggedInUser}}</li>
       <li class="user-info-item">
-        <a *ngIf="!isLoggedIn" routerLink='/auth/login'>
+        <a class="auth-link"
+           *ngIf="!isLoggedIn"
+           routerLink='/auth/login'>
           Login
         </a>
       </li>
-      <li class="user-info-item">
-        <a *ngIf="isLoggedIn"
+      <li *ngIf="isLoggedIn"
+          class="user-info-item">
+        <a class="auth-link"
            (click)="onLogoutClick()"
            href='#'>
           Logout
@@ -19,7 +22,8 @@
       </li>
       <li *ngIf="!isLoggedIn" class="user-info-item">|</li>
       <li *ngIf="!isLoggedIn" class="user-info-item">
-        <a routerLink='/auth/register'>
+        <a class="auth-link"
+           routerLink='/auth/register'>
           Register
         </a>
       </li>
