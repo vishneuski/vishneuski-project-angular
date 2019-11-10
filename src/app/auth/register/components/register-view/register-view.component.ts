@@ -15,9 +15,6 @@ export class RegisterViewComponent implements OnInit, AfterViewInit {
   @Input()
   user: RegisterInfo;
 
-  @Input()
-  registerMessage;
-
   @Output()
   register: EventEmitter<RegisterInfo> = new EventEmitter<RegisterInfo>();
 
@@ -35,7 +32,6 @@ export class RegisterViewComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit(): void {
-    console.log(this.registerForm.value);
     this.register.emit(this.registerForm.value);
   }
 }

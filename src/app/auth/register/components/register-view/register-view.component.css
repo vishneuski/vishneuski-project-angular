@@ -4,7 +4,6 @@
   padding: 1em;
   width: 50vw;
   height: auto;
-  /*border: 1px solid darkgray;*/
 }
 
 input {
@@ -28,7 +27,6 @@ button {
 h3 {
   text-align: center;
 }
-
 
 .error {
   color: #da6969;
