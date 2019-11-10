@@ -3,6 +3,7 @@ import {Product} from "../../models/product.interface";
 import {ProductsService} from "../../services/products.service";
 import {AuthService} from "../../../auth/services/auth.service";
 import {ActivatedRoute} from "@angular/router";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-products',
@@ -29,6 +30,7 @@ export class ProductsComponent implements OnInit {
   }
 
   constructor(
+    private flashMessage: FlashMessagesService,
     private productsService: ProductsService,
     private authService: AuthService,
     private activatedRoute: ActivatedRoute
@@ -49,5 +51,6 @@ export class ProductsComponent implements OnInit {
 
   addToBasket(product: Product) {
     this.productsService.addProduct(product);
+
   }
 }

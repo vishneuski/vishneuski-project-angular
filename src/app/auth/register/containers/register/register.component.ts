@@ -32,7 +32,7 @@ export class RegisterComponent {
         this.flashMessage.show(`${userInfo.email}. You have successfully registered! Welcome!`, {
           cssClass: 'alert-success', timeout: 3000
         });
-        this.router.navigate(['/home'])
+        this.router.navigate(['/products'])
       })
       .catch(err => {
         if (err.message === 'The email address is already in use by another account.') {

@@ -28,7 +28,8 @@ a.page-link {
 }
 
 a.page-link:hover {
-  background-color: #da6969;
+  background-color: seagreen;
+  color: white;
 }
 
 .pagination-wrapper {

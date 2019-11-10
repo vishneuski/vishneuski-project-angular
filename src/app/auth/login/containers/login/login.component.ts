@@ -29,18 +29,15 @@ export class LoginComponent implements OnInit {
       .then(res => {
         console.log(res);
         this.loginError = null;
-        this.flashMessage.show(`${user.email} logged in`, {
-          cssClass: 'alert-success', timeout: 4000
+        this.flashMessage.show(`${user.email} logged in successfully! Hi!`, {
+          cssClass: 'alert-success', timeout: 3000
         });
-        this.router.navigate(['shopping-list']);
+        this.router.navigate(['/products']);
       })
 
       .catch(err => {
         this.loginError = 'Wrong password or email!';
-        this.flashMessage.show(`You are not logged in`, {
-          cssClass: 'alert-danger', timeout: 3000
-        });
-        console.log(err)
+        console.log(err);
       })
   }
 }

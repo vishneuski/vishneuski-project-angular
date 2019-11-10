@@ -17,8 +17,8 @@
           Logout
         </a>
       </li>
-      <li class="user-info-item">|</li>
-      <li class="user-info-item">
+      <li *ngIf="!isLoggedIn" class="user-info-item">|</li>
+      <li *ngIf="!isLoggedIn" class="user-info-item">
         <a routerLink='/auth/register'>
           Register
         </a>

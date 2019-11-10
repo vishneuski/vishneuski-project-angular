@@ -20,6 +20,7 @@ export class ProductsService {
 
   constructor(
     private router: Router,
+    private flashMessage: FlashMessagesService,
     private afs: AngularFirestore,
   ) {
     this.fbProductsCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
@@ -63,8 +64,14 @@ export class ProductsService {
   addProduct(product: Product) {
     let tempProduct = this.cartProducts.find(item => item.id === product.id);
     if (tempProduct === undefined) {
-
       this.cartProducts.push(product);
+      this.flashMessage.show(`${product.name} added in shopping cart successfully !`, {
+        cssClass: 'alert-success', timeout: 3000
+      });
+    } else if (tempProduct !== undefined) {
+      this.flashMessage.show(`${product.name} already in your shopping cart !`, {
+        cssClass: 'alert-danger', timeout: 3000
+      });
     }
     console.log('CartProducts - ', this.cartProducts);
     this.cartSubject.next(<any>{products: this.cartProducts});
