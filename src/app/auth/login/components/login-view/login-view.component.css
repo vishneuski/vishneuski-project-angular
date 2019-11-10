@@ -4,7 +4,6 @@
   padding: 1em;
   width: 50vw;
   height: 20em;
-  /*border: 1px solid darkgray;*/
 }
 
 input {
@@ -41,3 +40,10 @@ div {
 button {
   margin: 0 0 1.25em;
 }
+
+@media (max-width: 40em) {
+  .signInForm {
+    width: 100%;
+  }
+}
+

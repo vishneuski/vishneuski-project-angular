@@ -27,6 +27,7 @@ export class OrderListViewComponent {
   }
 
   deleteOrder(order) {
+    console.log(order);
     this.deleteOrd.emit(order)
   }
 }

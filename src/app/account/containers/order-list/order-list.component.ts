@@ -41,15 +41,4 @@ export class OrderListComponent implements OnInit {
       orders => this.orders = orders
     );
   }
-
-  deleteOrder(product) {
-    if (confirm('Are you sure?')) {
-      this.flashMessage.show(`${product.name} was deleted! `, {
-        cssClass: 'alert-danger', timeout: 3000
-      });
-
-      this.orderService.deleteOrder(product)
-    }
-    this.router.navigate(['/account/orderList']);
-  }
 }

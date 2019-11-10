@@ -42,8 +42,8 @@ export class OrderService {
     this.fbOrdersCollection.add(order);
   }
 
-  deleteOrder(order: Product) {
-    this.fbOrderDoc = this.afs.doc(`orders/${order.id}`);
-    this.fbOrderDoc.delete();
-  }
+  // deleteOrder(order: Product) {
+  //   this.fbOrderDoc = this.afs.doc(`orders/${order.id}`);
+  //   this.fbOrderDoc.delete();
+  // }
 }
