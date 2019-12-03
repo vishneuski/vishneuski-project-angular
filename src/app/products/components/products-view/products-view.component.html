@@ -20,6 +20,12 @@
       </button>
     </div>
   </div>
+  <!--<hr>-->
+  <!--<div *ngFor="let product of (cartProducts | async).cartProducts">-->
+    <!--{{product.name}}-->
+    <!--<img [src]="product.photo" alt="">-->
+  <!--</div>-->
+  <!--<hr>-->
 </form>
 <div class="product-cart-layout">
   <div *ngFor="let item of pageOfItems">
@@ -50,6 +56,7 @@
   </div>
 </div>
 <ng-content></ng-content>
+
 <div class="pagination-wrapper">
   <jw-pagination [items]="filteredProducts"
                  [pageSize]="12"

@@ -4,6 +4,10 @@
   [isLoggedIn]="isLoggedIn"
   (basket)="addToBasket($event)"
   (filter)="filterProducts($event)">
-  <div class="noMatches" #noMatches *ngIf="!filteredProducts ||  filteredProducts.length === 0 || filteredProducts === undefined || filteredProducts === null">No matches found</div>
+  <!--[cartProducts]="cartProducts"-->
+  <div class="noMatches" #noMatches
+       *ngIf="!filteredProducts ||  filteredProducts.length === 0 || filteredProducts === undefined || filteredProducts === null">
+    No matches found
+  </div>
 </app-products-view>
 

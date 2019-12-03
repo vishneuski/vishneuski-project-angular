@@ -1,6 +1,6 @@
 import {Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
-import {Product} from "../../models/product.interface";
-import {JwPaginationComponent} from "jw-angular-pagination";
+import {Product} from '../../models/product.interface';
+import {JwPaginationComponent} from 'jw-angular-pagination';
 
 @Component({
   selector: 'app-products-view',
@@ -18,6 +18,9 @@ export class ProductsViewComponent {
 
   @Input()
   products: Product[];
+
+  // @Input()
+  // cartProducts: Product[];
 
   @Input()
   fbProducts: Product[];
@@ -51,6 +54,6 @@ export class ProductsViewComponent {
 
   updateProduct() {
     this.searchItem = '';
-    this.filterProduct(this.searchItem)
+    this.filterProduct(this.searchItem);
   }
 }

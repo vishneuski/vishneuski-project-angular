@@ -1,6 +1,6 @@
 import {Component, ContentChild, ElementRef, EventEmitter, Input, Output} from '@angular/core';
-import {Product} from "../../../../products/models/product.interface";
-import {FlashMessagesService} from "angular2-flash-messages";
+import {Product} from '../../../../products/models/product.interface';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-shopping-list-view',
@@ -16,6 +16,9 @@ export class ShoppingListViewComponent {
     private flashMessage: FlashMessagesService
   ) {
   }
+
+  @Input()
+  cartProducts: Product[];
 
   @Input()
   products: Product[];

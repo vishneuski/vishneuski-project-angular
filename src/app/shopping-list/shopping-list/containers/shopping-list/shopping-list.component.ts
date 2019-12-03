@@ -1,13 +1,15 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
-import {Product} from "../../../../products/models/product.interface";
-import {Subscription} from "rxjs/internal/Subscription";
+import {Product} from '../../../../products/models/product.interface';
+import {Subscription} from 'rxjs/internal/Subscription';
 
-import {AuthService} from "../../../../auth/services/auth.service";
-import {ProductsService} from "../../../../products/services/products.service";
-import {OrderService} from "../../../services/order.service";
+import {AuthService} from '../../../../auth/services/auth.service';
+import {ProductsService} from '../../../../products/services/products.service';
+import {OrderService} from '../../../services/order.service';
 
-import {FlashMessagesService} from "angular2-flash-messages";
+import {FlashMessagesService} from 'angular2-flash-messages';
+import {Observable} from 'rxjs';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-basket-component',
@@ -20,6 +22,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   public loggedInUser: any;
   public products: Product[];
   private subscription: Subscription;
+
+  cartProducts: Observable<{ cartProducts: Product[] }>;
 
   public orderPr = {
     email: '',
@@ -36,6 +40,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   };
 
   constructor(
+    private store: Store<{ shoppingList: { cartProducts: Product[] } }>,
     private orderService: OrderService,
     private authService: AuthService,
     private productsService: ProductsService,
@@ -44,6 +49,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.cartProducts = this.store.select('shoppingList');
+
     this.subscription = this.productsService.CartState.subscribe((state: any) => {
       this.products = state.products;
       this.products !== undefined ? console.log(this.products) : this.basketIsEmpty = true;

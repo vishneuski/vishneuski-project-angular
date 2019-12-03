@@ -1,9 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Product} from "../../models/product.interface";
-import {ProductsService} from "../../services/products.service";
-import {AuthService} from "../../../auth/services/auth.service";
-import {ActivatedRoute} from "@angular/router";
-import {FlashMessagesService} from "angular2-flash-messages";
+import {Product} from '../../models/product.interface';
+import {ProductsService} from '../../services/products.service';
+import {AuthService} from '../../../auth/services/auth.service';
+import {ActivatedRoute} from '@angular/router';
+import {FlashMessagesService} from 'angular2-flash-messages';
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import * as ShoppingListActions from './../../../shopping-list/shopping-list.actions';
 
 @Component({
   selector: 'app-products',
@@ -12,6 +15,8 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 
 export class ProductsComponent implements OnInit {
+
+  cartProducts: Observable<{ cartProducts: Product[] }>;
 
   fbProducts: Product[];
   filteredProducts: Product[];
@@ -33,11 +38,14 @@ export class ProductsComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private productsService: ProductsService,
     private authService: AuthService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private store: Store<{ shoppingList: { cartProducts: Product[] } }>
   ) {
   }
 
   ngOnInit() {
+
+    this.cartProducts = this.store.select('shoppingList');
 
     this.fbProducts = this.activatedRoute.snapshot.data['resolvedProducts'];
     this.filteredProducts = this.fbProducts;
@@ -46,11 +54,11 @@ export class ProductsComponent implements OnInit {
       val => {
         this.isLoggedIn = val;
       }
-    )
+    );
   }
 
   addToBasket(product: Product) {
-    this.productsService.addProduct(product);
-
+    this.store.dispatch(new ShoppingListActions.AddProduct(product));
+    // this.productsService.addProduct(product);
   }
 }
