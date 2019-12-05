@@ -9,14 +9,19 @@ const initialState = {
 
 export function shoppingListReducer(
   state = initialState,
-  action: ShoppingListActions.AddProduct) {
+  action: ShoppingListActions.ProductsActions) {
   switch (action.type) {
-    case ShoppingListActions.ADD_PRODUCT:
+    case ShoppingListActions.ProductActions.ADD_PRODUCT:
       return {
         ...state,
         cartProducts: [...state.cartProducts, action.payload]
       };
-    default:
+    case ShoppingListActions.ProductActions.GET_PRODUCTS:
+      return {
+        ...state,
+        cartProducts: [...state.cartProducts]
+      };
+      default:
       return state;
   }
 }

@@ -7,6 +7,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import * as ShoppingListActions from './../../../shopping-list/shopping-list.actions';
+import {filter, find, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
@@ -17,6 +18,10 @@ import * as ShoppingListActions from './../../../shopping-list/shopping-list.act
 export class ProductsComponent implements OnInit {
 
   cartProducts: Observable<{ cartProducts: Product[] }>;
+
+  testProducts: Observable<{ cartProducts: Product[] }>;
+
+  testProductsContainer: Product[] = [];
 
   fbProducts: Product[];
   filteredProducts: Product[];
@@ -47,6 +52,8 @@ export class ProductsComponent implements OnInit {
 
     this.cartProducts = this.store.select('shoppingList');
 
+    this.testProducts = this.store.select('shoppingList');
+
     this.fbProducts = this.activatedRoute.snapshot.data['resolvedProducts'];
     this.filteredProducts = this.fbProducts;
 
@@ -58,7 +65,36 @@ export class ProductsComponent implements OnInit {
   }
 
   addToBasket(product: Product) {
-    this.store.dispatch(new ShoppingListActions.AddProduct(product));
-    // this.productsService.addProduct(product);
+    this.cartProducts.subscribe(
+      val => {
+        const tempProduct = val.cartProducts.find(item =>
+          item.id === product.id);
+        if (tempProduct === undefined) {
+          this.store.dispatch(new ShoppingListActions.AddProduct(product));
+          this.flashMessage.show(`${product.name} added in shopping cart successfully !`, {
+            cssClass: 'alert-success', timeout: 3000
+          });
+        } else {
+          this.flashMessage.show(`${product.name} already in your shopping cart !`, {
+            cssClass: 'alert-danger', timeout: 3000
+          });
+        }
+      }
+    );
+  }
+
+// this.productsService.addProduct(product);
+
+  getProductsFromBasket() {
+    console.log('Hello from product.comp!');
+    // console.log(this.testProducts);
+    //   this.store.dispatch(new ShoppingListActions.GetProducts());
+    this.testProducts
+      .subscribe(val => {
+          console.log(val.cartProducts);
+          this.testProductsContainer = val.cartProducts;
+          console.log(this.testProductsContainer);
+        }
+      );
   }
 }

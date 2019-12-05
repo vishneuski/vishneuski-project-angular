@@ -20,12 +20,13 @@
       </button>
     </div>
   </div>
-  <!--<hr>-->
-  <!--<div *ngFor="let product of (cartProducts | async).cartProducts">-->
-    <!--{{product.name}}-->
-    <!--<img [src]="product.photo" alt="">-->
-  <!--</div>-->
-  <!--<hr>-->
+  <hr>
+  <button (click)="getProductsFromBasket()">Get Products from basket</button>
+  <div *ngFor="let product of testProducts">
+    {{product.name}}
+    <img [src]="product.photo">
+  </div>
+  <hr>
 </form>
 <div class="product-cart-layout">
   <div *ngFor="let item of pageOfItems">

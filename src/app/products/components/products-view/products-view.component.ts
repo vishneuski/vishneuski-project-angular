@@ -19,8 +19,8 @@ export class ProductsViewComponent {
   @Input()
   products: Product[];
 
-  // @Input()
-  // cartProducts: Product[];
+  @Input()
+  testProducts: Product[];
 
   @Input()
   fbProducts: Product[];
@@ -35,6 +35,9 @@ export class ProductsViewComponent {
   basket: EventEmitter<Product> = new EventEmitter<Product>();
 
   @Output()
+  getFromBasket: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
   @Output()
@@ -46,6 +49,10 @@ export class ProductsViewComponent {
 
   addToBasket(product: Product) {
     this.basket.emit(product);
+  }
+
+  getProductsFromBasket() {
+    this.getFromBasket.emit();
   }
 
   filterProduct(searchItem: string) {
