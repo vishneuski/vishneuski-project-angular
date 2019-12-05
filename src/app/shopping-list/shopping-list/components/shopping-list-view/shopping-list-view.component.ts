@@ -27,6 +27,9 @@ export class ShoppingListViewComponent {
   deleteFromBasket: EventEmitter<Product> = new EventEmitter<Product>();
 
   @Output()
+  deleteThisWine: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output()
   orderProduct: EventEmitter<Product> = new EventEmitter<Product>();
 
   delete(product: Product) {
@@ -34,6 +37,11 @@ export class ShoppingListViewComponent {
       cssClass: 'alert-success', timeout: 3000
     });
     this.deleteFromBasket.emit(product);
+  }
+
+  deleteThis(product: Product) {
+    console.log(product);
+    this.deleteThisWine.emit(product);
   }
 
   order(product: Product) {

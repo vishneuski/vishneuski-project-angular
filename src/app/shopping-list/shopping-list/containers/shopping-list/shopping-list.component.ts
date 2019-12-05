@@ -10,6 +10,7 @@ import {OrderService} from '../../../services/order.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
+import * as ShoppingListActions from '../../../shopping-list.actions';
 
 @Component({
   selector: 'app-basket-component',
@@ -86,7 +87,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   deleteFromBasket(product) {
     this.productsService.deleteProduct(product);
-  };
+  }
+
+  deleteThisWine(product: Product) {
+    this.store.dispatch(new ShoppingListActions.DeleteProduct(product));
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

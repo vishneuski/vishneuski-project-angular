@@ -67,17 +67,19 @@ export class ProductsComponent implements OnInit {
   addToBasket(product: Product) {
     this.cartProducts.subscribe(
       val => {
-        const tempProduct = val.cartProducts.find(item =>
-          item.id === product.id);
-        if (tempProduct === undefined) {
-          this.store.dispatch(new ShoppingListActions.AddProduct(product));
-          this.flashMessage.show(`${product.name} added in shopping cart successfully !`, {
-            cssClass: 'alert-success', timeout: 3000
-          });
-        } else {
-          this.flashMessage.show(`${product.name} already in your shopping cart !`, {
-            cssClass: 'alert-danger', timeout: 3000
-          });
+        if (val.cartProducts !== null) {
+          const tempProduct = val.cartProducts.find(item =>
+            item.id === product.id);
+          if (tempProduct === undefined) {
+            // this.flashMessage.show(`${product.name} added in shopping cart successfully !`, {
+            //   cssClass: 'alert-success', timeout: 3000
+            // });
+            this.store.dispatch(new ShoppingListActions.AddProduct(product));
+          } else if (tempProduct !== undefined) {
+            this.flashMessage.show(`${product.name} already in your shopping cart !`, {
+              cssClass: 'alert-danger', timeout: 3000
+            });
+          }
         }
       }
     );

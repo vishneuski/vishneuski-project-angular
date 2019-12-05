@@ -3,9 +3,10 @@
 </div>
 
 <hr>
-<div *ngFor="let product of (cartProducts | async).cartProducts">
+<div *ngFor="let product of (cartProducts | async).cartProducts; let i = index">
   {{product.name}}
   <img [src]="product.photo" alt="">
+  <button (click)="deleteThis(product)">Delete from basket</button>
 </div>
 <hr>
 
